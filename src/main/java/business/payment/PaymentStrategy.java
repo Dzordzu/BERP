@@ -16,8 +16,8 @@ public interface PaymentStrategy {
 	/**
 	 * They are the same value
 	 */
-	void setNetEmploymentCost();
-	void setGrossEmployeeSalary();
+	void setNetEmploymentCost(Money cost);
+	void setGrossEmployeeSalary(Money salary);
 
 	Money getNetEmploymentCost();
 	Money getGrossEmployeeSalary();
