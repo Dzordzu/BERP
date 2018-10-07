@@ -1,17 +1,16 @@
-package factory;
+package seeder;
 
 import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
 
-public abstract class Factory {
+public abstract class Seeder {
     private String file;
 
-    public Factory(String file) {
+    public Seeder(String file) {
         this.file = file;
     }
 

@@ -6,24 +6,18 @@ import business.jobs.JuniorDev;
 import business.jobs.Manager;
 import business.person.Person;
 import business.person.PersonBuilder;
-import factory.people.AddressList;
-import factory.people.NamesList;
+import seeder.people.NamesList;
 import logic.valueobj.human.ID;
 import logic.valueobj.human.IDType;
 import logic.valueobj.human.NameBuilder;
 import logic.valueobj.human.Sex;
 import logic.valueobj.money.Money;
-import logic.valueobj.place.Address;
 import logic.valueobj.place.AddressBuilder;
 import logic.valueobj.place.Country;
 import logic.valueobj.time.Age;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Currency;
-import java.util.List;
-import java.util.Vector;
 
 public class Main {
 	public static void main(String[] args) throws IOException {

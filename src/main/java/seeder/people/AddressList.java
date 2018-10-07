@@ -1,6 +1,6 @@
-package factory.people;
+package seeder.people;
 
-import factory.Factory;
+import seeder.Seeder;
 import logic.valueobj.place.*;
 import org.json.JSONObject;
 
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
-public class AddressList extends Factory {
+public class AddressList extends Seeder {
     private static AddressList ourInstance = new AddressList();
 
     public static AddressList getInstance() {
@@ -16,7 +16,7 @@ public class AddressList extends Factory {
     }
 
     private AddressList() {
-        super("/addresslist.json");
+        super("/Seeders/addresslist.json");
     }
 
     public List<Address> getList() throws IOException {

@@ -1,6 +1,6 @@
-package factory.people;
+package seeder.people;
 
-import factory.Factory;
+import seeder.Seeder;
 import logic.valueobj.human.Name;
 import logic.valueobj.human.NameBuilder;
 import org.json.JSONArray;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-public class NamesList extends Factory {
+public class NamesList extends Seeder {
     private static NamesList ourInstance = new NamesList();
 
     public static NamesList getInstance() {
@@ -50,6 +50,6 @@ public class NamesList extends Factory {
     }
 
     private NamesList() {
-        super("/nameslist.json");
+        super("/Seeders/nameslist.json");
     }
 }
