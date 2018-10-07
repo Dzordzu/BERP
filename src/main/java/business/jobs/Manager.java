@@ -1,12 +1,12 @@
 package business.jobs;
 
+import business.payment.PaymentStrategy;
 import logic.valueobj.money.Money;
 
 public class Manager extends Job {
 	
-	public Manager(Money basePayment) {
-		super(basePayment);
-		super.jobName = "Manager";
+	public Manager(PaymentStrategy salary) {
+		super("Manager", salary);
 	}
 	
 	/*

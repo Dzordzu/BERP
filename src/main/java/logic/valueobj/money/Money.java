@@ -1,5 +1,6 @@
 package logic.valueobj.money;
 
+import java.math.BigDecimal;
 import java.util.Currency;
 
 /**
@@ -27,9 +28,17 @@ public class Money {
 	Money(long ammount, String currencyCode) {}
 	
 	
-	public long getAmmount() {
+	public long getUnscaledAmmount() {
 		return ammount;
 	}
+	public double getAmmount() {
+		return BigDecimal.valueOf(ammount)
+				.setScale(this.getPrecision(), BigDecimal.ROUND_HALF_DOWN)
+				.setScale(this.getScale())
+				.doubleValue();
+
+	}
+
 	public Currency getCurrency() {
 		return currency;
 	}

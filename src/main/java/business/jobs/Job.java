@@ -1,20 +1,22 @@
 package business.jobs;
 
-import logic.valueobj.money.Money;
+import business.payment.PaymentStrategy;
 
 public abstract class Job {
-	
-	protected String jobName;
-	private Money basePayment;
-	
-	Job(Money basePayment) {
-		this.basePayment = basePayment;
+
+	protected String jobTitle;
+	protected PaymentStrategy salary;
+
+	Job(String jobTitle, PaymentStrategy salary) {
+		this.jobTitle = jobTitle;
+		this.salary = salary;
 	}
-	
-	public String getName() {
-		return this.jobName;
+
+	public String getJobTitle() {
+		return jobTitle;
 	}
-	public Money getBasePayment() {
-		return this.basePayment;
+
+	public PaymentStrategy getSalary() {
+		return salary;
 	}
 }
