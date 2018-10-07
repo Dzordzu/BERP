@@ -1,4 +1,4 @@
-package gui;
+package gui.controller;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-public class Controller {
+public class Basic {
 
     @FXML VBox mainContent;
     static public Pane mainContentS;
