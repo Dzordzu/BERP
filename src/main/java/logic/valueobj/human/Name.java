@@ -67,7 +67,6 @@ public class Name {
 	}
 	
 	public String toString() {
-		//return firstname + " " + surname;
-		return this.getFullName() + "\n";
+		return firstname + " " + surname;
 	}
 }

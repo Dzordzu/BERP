@@ -85,6 +85,11 @@ public class Main {
 
 		for(Person p: people) {
 			System.out.println(p.getName());
+			System.out.println((p.getAge().getBirthDate()));
+			System.out.println(p.getHomeAddress());
+			System.out.println(p.getId());
+			System.out.println(p.getSex());
+			System.out.print("\n");
 		}
 
 	}
