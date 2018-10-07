@@ -7,6 +7,7 @@ import business.jobs.Manager;
 import business.person.Person;
 import business.person.PersonBuilder;
 import factory.people.AddressList;
+import factory.people.NamesList;
 import logic.valueobj.human.ID;
 import logic.valueobj.human.IDType;
 import logic.valueobj.human.NameBuilder;
@@ -86,6 +87,6 @@ public class Main {
 //		System.out.println(Pjoter.getId());
 
 
-		System.out.print(AddressList.getInstance().getList());
+		System.out.print(NamesList.getInstance().getList());
 	}
 }
