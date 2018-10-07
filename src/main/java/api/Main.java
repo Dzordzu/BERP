@@ -6,6 +6,7 @@ import business.jobs.JuniorDev;
 import business.jobs.Manager;
 import business.person.Person;
 import business.person.PersonBuilder;
+import seeder.people.AgeList;
 import seeder.people.NamesList;
 import logic.valueobj.human.ID;
 import logic.valueobj.human.IDType;
@@ -15,6 +16,7 @@ import logic.valueobj.money.Money;
 import logic.valueobj.place.AddressBuilder;
 import logic.valueobj.place.Country;
 import logic.valueobj.time.Age;
+import seeder.people.SexList;
 
 import java.io.IOException;
 import java.util.Currency;
@@ -80,7 +82,9 @@ public class Main {
 //		System.out.println(Pjoter.getAge().getYears());
 //		System.out.println(Pjoter.getId());
 
+		for(Age a: AgeList.getInstance().getList()) {
+			System.out.print(a.getBirthDate() + "\n");
+		}
 
-		System.out.print(NamesList.getInstance().getList());
 	}
 }

@@ -50,6 +50,6 @@ public class NamesList extends Seeder {
     }
 
     private NamesList() {
-        super("/seeders/nameslist.json");
+        super("/seeders-data/nameslist.json");
     }
 }
