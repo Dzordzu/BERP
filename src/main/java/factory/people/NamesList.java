@@ -3,9 +3,11 @@ package factory.people;
 import factory.Factory;
 import logic.valueobj.human.Name;
 import logic.valueobj.human.NameBuilder;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
@@ -24,6 +26,15 @@ public class NamesList extends Factory {
         return (List<Name>)result;
     }
 
+    private List<String> JSONArrayToListString(JSONArray yourJSONresponse) {
+        JSONArray arr = yourJSONresponse;
+        List<String> list = new ArrayList<String>();
+        for(Object i: arr){
+            list.add((String)i);
+        }
+        return list;
+    }
+
     public Name createAddressFromJSON(Object obj) {
 
         if(!(obj instanceof JSONObject)) throw new Error("Cannot read Name");
@@ -32,8 +43,8 @@ public class NamesList extends Factory {
         NameBuilder.clear();
         NameBuilder.setFirstname(object.getString("Firstname"));
         NameBuilder.setSurname(object.getString("Surname"));
-        NameBuilder.setMiddlenames((String[] )object.get("Middlenames"));
-        NameBuilder.setSuffixes((String[])object.get("Suffixes"));
+        NameBuilder.setMiddlenames(this.JSONArrayToListString(object.getJSONArray("Middlenames")));
+        NameBuilder.setSuffixes(this.JSONArrayToListString(object.getJSONArray("Suffixes")));
 
         return NameBuilder.buildAndClear();
     }
