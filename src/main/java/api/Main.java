@@ -12,13 +12,17 @@ import logic.valueobj.human.IDType;
 import logic.valueobj.human.NameBuilder;
 import logic.valueobj.human.Sex;
 import logic.valueobj.money.Money;
+import logic.valueobj.place.Address;
 import logic.valueobj.place.AddressBuilder;
 import logic.valueobj.place.Country;
 import logic.valueobj.time.Age;
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Currency;
+import java.util.List;
+import java.util.Vector;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
@@ -81,7 +85,7 @@ public class Main {
 //		System.out.println(Pjoter.getAge().getYears());
 //		System.out.println(Pjoter.getId());
 
-		JSONObject address = AddressList.getInstance().getJSON();
-		System.out.println(address);
+
+		System.out.print(AddressList.getInstance().getList());
 	}
 }
