@@ -24,8 +24,33 @@ public class Money {
 	private int ownScale; 
 	
 	Money(String money) {}
-	public Money(long ammount, Currency currency) {}
-	Money(long ammount, String currencyCode) {}
+
+	public Money(long ammount, Currency currency) {
+		this.ammount = ammount;
+		this.currency = currency;
+	}
+	Money(long ammount, String currencyCode) {
+		this.ammount = ammount;
+		this.currency = Currency.getInstance(currencyCode);
+	}
+
+	private long doubleToLong(double d) {
+		return
+		BigDecimal.valueOf(d)
+				.setScale(-this.getScale())
+				.setScale(-this.getPrecision(), BigDecimal.ROUND_HALF_DOWN)
+				.longValue();
+	}
+
+
+	public Money(double ammount, Currency currency) {
+		this.ammount = ammount;
+		this.currency = currency;
+	}
+	Money(double ammount, String currencyCode) {
+		this.ammount = ammount;
+		this.currency = Currency.getInstance(currencyCode);
+	}
 	
 	
 	public long getUnscaledAmmount() {

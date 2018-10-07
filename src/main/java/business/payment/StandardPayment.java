@@ -5,6 +5,9 @@ import logic.valueobj.money.tax.Assurances;
 import logic.valueobj.money.tax.PensionTax;
 import logic.valueobj.money.tax.Tax;
 
+/**
+ * @Facade
+ */
 public class StandardPayment implements PaymentStrategy {
 
 	Money netEmploymentCost;

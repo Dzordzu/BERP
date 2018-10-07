@@ -4,6 +4,8 @@ import business.Employee;
 import business.EmployeeBuilder;
 import business.jobs.JuniorDev;
 import business.jobs.Manager;
+import business.payment.PaymentStrategy;
+import business.payment.StandardPayment;
 import business.person.Person;
 import business.person.PersonBuilder;
 import seeder.people.*;
@@ -44,6 +46,9 @@ public class Main {
 		PersonBuilder.setSex(new Sex("male"));
 		PersonBuilder.setName(NameBuilder.buildAndClear());
 		PersonBuilder.setHomeAddress(AddressBuilder.buildAndClear());
+
+		PaymentStrategy payment = new StandardPayment();
+		payment.setNetEmployeeSalary(new Money());
 		
 		EmployeeBuilder.setId(new ID(IDType.COMPANYID, "a01-b5-90199"));
 		EmployeeBuilder.setPerson(PersonBuilder.build());
