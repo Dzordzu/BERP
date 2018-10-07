@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/src/api/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/EmployeeBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/EmployeeManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/jobs/Job.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/jobs/JuniorDev.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/jobs/Manager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/payment/Payment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/payment/PaymentBonus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/payment/startegy/PaymentStrategy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/person/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/business/person/PersonBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factory/Factory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factory/people/AddressList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/factory/people/addresslist.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/EmployeesController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/about.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/base.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/billings.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/employee.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/gui/employees.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/human/ID.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/human/IDType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/human/Name.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/human/NameBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/human/Sex.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/money/Converter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/money/Markup.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/money/Money.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/place/Address.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/place/AddressBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/place/City.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/place/Country.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/place/Home.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/time/Age.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/time/Date.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/logic/valueobj/time/DateDifferenceInterface.java" beforeDir="false" />
+    </list>
     <ignored path="JavaFxApplication.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -66,6 +106,7 @@
           <entry key="fxml" value="2" />
           <entry key="gitignore" value="1" />
           <entry key="java" value="7" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -73,7 +114,7 @@
           <entry key="CLASS" value="1" />
           <entry key="JAVA" value="7" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="XML" value="2" />
+          <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -93,64 +134,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/api/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-667">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="35" column="70" selection-start-line="35" selection-start-column="70" selection-end-line="35" selection-end-column="70" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#367#368#0" expanded="true" />
-                <element signature="e#409#410#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/gui/EmployeesController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/factory/Factory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="150">
+              <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
             </state>
           </provider>
         </entry>
@@ -173,6 +161,7 @@
         <option value="$PROJECT_DIR$/src/gui/Controller.java" />
         <option value="$PROJECT_DIR$/src/gui/EmployeesController.java" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -199,11 +188,6 @@
               <item name="BERP" type="b2602c69:ProjectViewProjectNode" />
               <item name="BERP" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BERP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="BERP" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -220,7 +204,7 @@
     <property name="MemberChooser.sorted" value="false" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538921951994" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538922884384" />
     <property name="dynamic.classpath" value="false" />
     <property name="recentsLimit" value="5" />
   </component>
@@ -381,14 +365,13 @@
     <frame x="0" y="27" width="1366" height="741" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Designer" />
-      <window_info id="Image Layers" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.6703755" visible="true" weight="0.25378788" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Image Layers" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33001658" />
@@ -403,9 +386,7 @@
       <window_info anchor="bottom" id="Profiler" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32838285" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="bottom" id="Terminal" order="14" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -413,6 +394,9 @@
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Palette" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -430,7 +414,7 @@
     <entry file="file://$PROJECT_DIR$/src/sample/Main.java" />
     <entry file="file://$PROJECT_DIR$/src/sample/sample.fxml" />
     <entry file="file://$PROJECT_DIR$/src/sample/Controller.java" />
-    <entry file="file://$PROJECT_DIR$/src/factory/Factory.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/factory/Factory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="26" column="8" lean-forward="true" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="8" />
@@ -447,11 +431,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/about.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gui/about.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/base.fxml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gui/base.fxml">
       <provider editor-type-id="JavaFX-Scene-Builder" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="101">
@@ -473,33 +457,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gui/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="21" column="5" lean-forward="true" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/Controller.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gui/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="35" column="70" selection-start-line="35" selection-start-column="70" selection-end-line="35" selection-end-column="70" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#367#368#0" expanded="true" />
-            <element signature="e#409#410#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/gui/EmployeesController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/gui/EmployeesController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
           <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/api/Main.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/api/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-667">
           <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
@@ -510,6 +489,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="4" lean-forward="true" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
         </state>
       </provider>
     </entry>
