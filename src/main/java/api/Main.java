@@ -18,6 +18,7 @@ import logic.valueobj.time.Age;
 
 import java.io.IOException;
 import java.util.Currency;
+import java.util.List;
 
 public class Main {
 	public static void main(String[] args) throws IOException {
@@ -80,8 +81,10 @@ public class Main {
 //		System.out.println(Pjoter.getAge().getYears());
 //		System.out.println(Pjoter.getId());
 
-		for(ID a: IDCompanyList.getInstance().getList()) {
-			System.out.print(a + "\n");
+		List<Person> people = PeopleSeeder.getInstance().getPeople();
+
+		for(Person p: people) {
+			System.out.println(p.getName());
 		}
 
 	}
