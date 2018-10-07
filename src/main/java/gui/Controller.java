@@ -20,20 +20,20 @@ public class Controller {
 
 
     public void loadBillings() throws IOException {
-        TableView newLoadedPane =  FXMLLoader.load(getClass().getResource("billings.fxml"));
+        TableView newLoadedPane =  FXMLLoader.load(getClass().getResource("/billings.fxml"));
         mainContent.getChildren().clear();
         mainContent.getChildren().add(newLoadedPane);
     }
 
     public void loadEmployees() throws IOException {
-        ScrollPane newLoadedPane =  FXMLLoader.load(getClass().getResource("employees.fxml"));
+        ScrollPane newLoadedPane =  FXMLLoader.load(getClass().getResource("/employees.fxml"));
         mainContent.getChildren().clear();
         mainContent.getChildren().add(newLoadedPane);
     }
 
 
     public void loadAbout() throws IOException {
-        Pane newLoadedPane =  FXMLLoader.load(getClass().getResource("about.fxml"));
+        Pane newLoadedPane =  FXMLLoader.load(getClass().getResource("/about.fxml"));
         mainContent.getChildren().clear();
         mainContent.getChildren().add(newLoadedPane);
     }

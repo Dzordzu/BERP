@@ -10,6 +10,6 @@ public class AddressList extends Factory {
     }
 
     private AddressList() {
-        super("addresslist.json");
+        super("/addresslist.json");
     }
 }

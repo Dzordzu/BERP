@@ -15,6 +15,7 @@ import logic.valueobj.money.Money;
 import logic.valueobj.place.AddressBuilder;
 import logic.valueobj.place.Country;
 import logic.valueobj.time.Age;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Currency;
@@ -80,7 +81,7 @@ public class Main {
 //		System.out.println(Pjoter.getAge().getYears());
 //		System.out.println(Pjoter.getId());
 
-		String address = AddressList.getInstance().readFile();
+		JSONObject address = AddressList.getInstance().getJSON();
 		System.out.println(address);
 	}
 }

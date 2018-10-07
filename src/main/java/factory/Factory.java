@@ -1,5 +1,7 @@
 package factory;
 
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -31,6 +33,11 @@ public abstract class Factory {
         fis.close();
 
         return sb.toString();
+    }
+
+    public JSONObject getJSON() throws IOException {
+        JSONObject json = new JSONObject(this.readFile());
+        return json;
     }
 
 
