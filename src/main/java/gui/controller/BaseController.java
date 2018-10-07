@@ -9,7 +9,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 
-public class Basic {
+public class BaseController {
 
     @FXML VBox mainContent;
     static public Pane mainContentS;

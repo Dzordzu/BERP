@@ -1,6 +1,5 @@
 package gui.controller;
 
-import gui.controller.Basic;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
@@ -9,7 +8,7 @@ import javafx.scene.text.Text;
 
 import java.io.IOException;
 
-public class Employees {
+public class EmployeesController {
 
     @FXML VBox employeesList;
 
@@ -20,8 +19,8 @@ public class Employees {
 
     public void loadSingleEmployee() throws IOException {
         Pane newLoadedPane =  FXMLLoader.load(getClass().getResource("/employee.fxml"));
-        Basic.mainContentS.getChildren().clear();
-        Basic.mainContentS.getChildren().add(newLoadedPane);
+        BaseController.mainContentS.getChildren().clear();
+        BaseController.mainContentS.getChildren().add(newLoadedPane);
     }
 
 
