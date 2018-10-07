@@ -16,7 +16,7 @@ public class AddressList extends Seeder {
     }
 
     private AddressList() {
-        super("/Seeders/addresslist.json");
+        super("/seeders/addresslist.json");
     }
 
     public List<Address> getList() throws IOException {
