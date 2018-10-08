@@ -1,4 +1,4 @@
-package seeder.people;
+package seeder.job;
 
 import logic.valueobj.human.ID;
 import logic.valueobj.human.IDType;

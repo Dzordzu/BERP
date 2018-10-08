@@ -1,0 +1,79 @@
+package seeder.job;
+
+import business.jobs.Job;
+import business.jobs.JuniorDev;
+import business.jobs.Manager;
+import business.payment.BonusPayment;
+import business.payment.PaymentStrategy;
+import business.payment.StandardPayment;
+import business.payment.TestPeriodPayment;
+import logic.valueobj.money.Money;
+import org.json.JSONObject;
+import seeder.SeederFileReader;
+
+import java.io.IOException;
+import java.util.Currency;
+import java.util.List;
+import java.util.Vector;
+
+public class JobFileReader extends SeederFileReader {
+    private static JobFileReader ourInstance = new JobFileReader();
+
+    public static JobFileReader getInstance() {
+        return ourInstance;
+    }
+
+    private JobFileReader() {
+        super("/seeders-data/joblist.json");
+    }
+
+    private Job createJob(String jobName, long payment, String paymentStrategyString) throws Exception {
+        PaymentStrategy paymentStrategy;
+        Job result;
+
+        switch(paymentStrategyString) {
+            default:
+            case "Standard":
+                paymentStrategy = new StandardPayment();
+                break;
+            case "Bonus":
+                paymentStrategy = new BonusPayment();
+                break;
+            case "TestPeriod":
+                paymentStrategy = new TestPeriodPayment();
+                break;
+        }
+
+        paymentStrategy.setNetEmploymentCost(new Money(payment, Currency.getInstance("PLN")));
+
+        switch(jobName) {
+            default:
+                throw new Exception("Improper JobName");
+            case "JuniorDev":
+                result = new JuniorDev(paymentStrategy);
+                break;
+            case "Manager":
+                result = new Manager(paymentStrategy);
+                break;
+        }
+
+        return result;
+    }
+
+    public List<Job> getList() throws Exception {
+
+        Vector<Job> result = new Vector<>();
+
+        for(Object obj: super.getJSON().getJSONArray("Job")) {
+            JSONObject object = (JSONObject)obj;
+
+            String jobName = object.getString("JobName");
+            long payment = object.getLong("NetEmployeeCost");
+            String paymentStrategy = object.getString("PaymentStrategy");
+
+            result.add(this.createJob(jobName, payment, paymentStrategy));
+        }
+
+        return result;
+    }
+}

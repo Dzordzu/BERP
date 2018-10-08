@@ -1,502 +1,505 @@
-[
-  {
-    "NetEmploymentCost": 5448,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 3560,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 9784,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 8608,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 9026,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 8025,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 9157,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 2632,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 9518,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 3496,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 2805,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 2509,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 4384,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 2011,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 9184,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 4412,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 4065,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 7111,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 3595,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 8864,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 5231,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 7594,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 9922,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 4496,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 2171,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 2307,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 4120,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 3567,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 7383,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 9606,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 7557,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 2516,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 3486,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 9222,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 9064,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 6870,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 6239,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 4567,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 8726,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 3107,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 3965,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 3046,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 6111,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 9221,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 7633,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 3553,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 6594,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 8314,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 5624,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 4209,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 6156,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 2391,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 8560,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 9586,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 4360,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 2064,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 9227,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 3066,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 5985,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 6036,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 5023,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 7498,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 9242,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 4353,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 4865,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 6087,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 6059,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 7087,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 8791,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 6485,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 3135,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 7063,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 9426,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 2886,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 4759,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 8615,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 7759,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 8470,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 6940,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 2429,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 3057,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 5091,
-    "JobName": "Manager",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 9646,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 6763,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 9622,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 3887,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 9887,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 7516,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 2549,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 4657,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 3196,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 8835,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 5608,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 2457,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 4669,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 5890,
-    "JobName": "JuniorDev",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 9591,
-    "JobName": "JuniorDev",
-    "PaymentType": "Standard"
-  },
-  {
-    "NetEmploymentCost": 3291,
-    "JobName": "Manager",
-    "PaymentType": "TestPeriod"
-  },
-  {
-    "NetEmploymentCost": 2075,
-    "JobName": "Manager",
-    "PaymentType": "Bonus"
-  },
-  {
-    "NetEmploymentCost": 9064,
-    "JobName": "JuniorDev",
-    "PaymentType": "Bonus"
+{
+  "Job": [
+    {
+      "NetEmploymentCost": 5448,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 3560,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 9784,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 8608,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 9026,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 8025,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 9157,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 2632,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 9518,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 3496,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 2805,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 2509,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 4384,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 2011,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 9184,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 4412,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 4065,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 7111,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 3595,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 8864,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 5231,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 7594,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 9922,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 4496,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 2171,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 2307,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 4120,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 3567,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 7383,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 9606,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 7557,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 2516,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 3486,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 9222,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 9064,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 6870,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 6239,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 4567,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 8726,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 3107,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 3965,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 3046,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 6111,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 9221,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 7633,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 3553,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 6594,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 8314,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 5624,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 4209,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 6156,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 2391,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 8560,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 9586,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 4360,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 2064,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 9227,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 3066,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 5985,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 6036,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 5023,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 7498,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 9242,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 4353,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 4865,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 6087,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 6059,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 7087,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 8791,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 6485,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 3135,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 7063,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 9426,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 2886,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 4759,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 8615,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 7759,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 8470,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 6940,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 2429,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 3057,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 5091,
+      "JobName": "Manager",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 9646,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 6763,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 9622,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 3887,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 9887,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 7516,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 2549,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 4657,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 3196,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 8835,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 5608,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 2457,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 4669,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 5890,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 9591,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Standard"
+    },
+    {
+      "NetEmploymentCost": 3291,
+      "JobName": "Manager",
+      "PaymentStrategy": "TestPeriod"
+    },
+    {
+      "NetEmploymentCost": 2075,
+      "JobName": "Manager",
+      "PaymentStrategy": "Bonus"
+    },
+    {
+      "NetEmploymentCost": 9064,
+      "JobName": "JuniorDev",
+      "PaymentStrategy": "Bonus"
+    }
+  ]
   }
-]
+}

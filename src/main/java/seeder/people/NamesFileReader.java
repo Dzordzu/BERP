@@ -35,7 +35,7 @@ public class NamesFileReader extends SeederFileReader {
         return list;
     }
 
-    public Name createAddressFromJSON(Object obj) {
+    private Name createAddressFromJSON(Object obj) {
 
         if(!(obj instanceof JSONObject)) throw new Error("Cannot read Name");
         JSONObject object = (JSONObject)obj;
