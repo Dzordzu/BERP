@@ -28,6 +28,6 @@ public class SexFileReader extends SeederFileReader {
             result.add(new Sex((String)object));
         }
 
-        return (List<Sex>)result;
+        return result;
     }
 }
