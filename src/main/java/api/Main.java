@@ -48,15 +48,15 @@ public class Main {
 		PersonBuilder.setHomeAddress(AddressBuilder.buildAndClear());
 
 		PaymentStrategy payment = new StandardPayment();
-		payment.setNetEmployeeSalary(new Money());
+		payment.setNetEmployeeSalary(new Money((long)2000, "PLN"));
 		
 		EmployeeBuilder.setId(new ID(IDType.COMPANYID, "a01-b5-90199"));
 		EmployeeBuilder.setPerson(PersonBuilder.build());
-		EmployeeBuilder.setJob(new Manager(new Money(2000, Currency.getInstance("PLN"))));
+		EmployeeBuilder.setJob(new Manager(payment));
 		
 		Employee emp1 = EmployeeBuilder.build();
 		
-		EmployeeBuilder.setJob(new JuniorDev(new Money(20, Currency.getInstance("PLN"))));
+		EmployeeBuilder.setJob(new JuniorDev(payment));
 		Employee emp2 = EmployeeBuilder.buildAndClear();
 		
 		

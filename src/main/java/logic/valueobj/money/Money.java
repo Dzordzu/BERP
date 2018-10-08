@@ -29,7 +29,7 @@ public class Money {
 		this.ammount = ammount;
 		this.currency = currency;
 	}
-	Money(long ammount, String currencyCode) {
+	public Money(long ammount, String currencyCode) {
 		this.ammount = ammount;
 		this.currency = Currency.getInstance(currencyCode);
 	}
@@ -44,11 +44,11 @@ public class Money {
 
 
 	public Money(double ammount, Currency currency) {
-		this.ammount = ammount;
+		this.ammount = doubleToLong(ammount);
 		this.currency = currency;
 	}
-	Money(double ammount, String currencyCode) {
-		this.ammount = ammount;
+	public Money(double ammount, String currencyCode) {
+		this.ammount = doubleToLong(ammount);
 		this.currency = Currency.getInstance(currencyCode);
 	}
 	
