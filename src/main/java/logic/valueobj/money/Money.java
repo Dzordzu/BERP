@@ -1,6 +1,5 @@
 package logic.valueobj.money;
 
-import java.math.BigDecimal;
 import java.util.Currency;
 
 /**
@@ -15,74 +14,34 @@ import java.util.Currency;
  *
  */
 public class Money {
-	private long ammount;
-	
+	private double amount;
 	private Currency currency;
-	private short precision;
-	// By default scale will be read from the currency field
-	private boolean useOwnScale = false;
-	private int ownScale; 
-	
-	Money(String money) {}
 
-	public Money(long ammount, Currency currency) {
-		this.ammount = ammount;
+	public Money(long amount, Currency currency) {
+		this.amount = (double)amount;
 		this.currency = currency;
 	}
-	public Money(long ammount, String currencyCode) {
-		this.ammount = ammount;
+	public Money(long amount, String currencyCode) {
+		this.amount = (double)amount;
 		this.currency = Currency.getInstance(currencyCode);
 	}
 
-	private long doubleToLong(double d) {
-		return
-		BigDecimal.valueOf(d)
-				.setScale(-this.getScale())
-				.setScale(-this.getPrecision(), BigDecimal.ROUND_HALF_DOWN)
-				.longValue();
-	}
 
-
-	public Money(double ammount, Currency currency) {
-		this.ammount = doubleToLong(ammount);
+	public Money(double amount, Currency currency) {
+		this.amount = amount;
 		this.currency = currency;
 	}
-	public Money(double ammount, String currencyCode) {
-		this.ammount = doubleToLong(ammount);
+	public Money(double amount, String currencyCode) {
+		this.amount = amount;
 		this.currency = Currency.getInstance(currencyCode);
 	}
-	
-	
-	public long getUnscaledAmmount() {
-		return ammount;
-	}
-	public double getAmmount() {
-		return BigDecimal.valueOf(ammount)
-				.setScale(this.getPrecision(), BigDecimal.ROUND_HALF_DOWN)
-				.setScale(this.getScale())
-				.doubleValue();
 
+	public double getAmount() {
+		return amount;
 	}
 
 	public Currency getCurrency() {
 		return currency;
-	}
-	public short getPrecision() {
-		return precision;
-	}
-	public void setPrecision(short precision) {
-		this.precision = precision;
-	}
-	public void unsetScale() {
-		this.useOwnScale = false;
-	}
-	public int getScale() {
-		if(this.useOwnScale) return ownScale;
-		else return currency.getDefaultFractionDigits();
-	}
-	public void setOwnScale(short ownScale) {
-		this.useOwnScale = true;
-		this.ownScale = ownScale;
 	}
 	
 

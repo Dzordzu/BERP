@@ -23,13 +23,13 @@ public class PensionTax implements Tax {
 
     @Override
     public Money applyTax(Money sum) {
-        long value = (long)(sum.getUnscaledAmmount()*percentage.getFraction());
+        long value = (long)(sum.getAmount()*percentage.getFraction());
         return new Money(value, Currency.getInstance("PLN"));
     }
 
     @Override
     public Money revertTax(Money sum) {
-        long value = (long)(sum.getUnscaledAmmount()/percentage.getFraction());
+        long value = (long)(sum.getAmount()/percentage.getFraction());
         return new Money(value, Currency.getInstance("PLN"));
     }
 }
