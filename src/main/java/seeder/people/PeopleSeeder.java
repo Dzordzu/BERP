@@ -7,12 +7,13 @@ import logic.valueobj.human.Name;
 import logic.valueobj.human.Sex;
 import logic.valueobj.place.Address;
 import logic.valueobj.time.Age;
+import seeder.Seeder;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
-public class PeopleSeeder {
+public class PeopleSeeder implements Seeder {
     private static PeopleSeeder ourInstance;
 
     static {
