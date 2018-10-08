@@ -7,10 +7,10 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 
-public abstract class Seeder {
+public abstract class SeederList {
     private String file;
 
-    public Seeder(String file) {
+    public SeederList(String file) {
         this.file = file;
     }
 

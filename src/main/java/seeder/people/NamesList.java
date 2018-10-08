@@ -1,6 +1,6 @@
 package seeder.people;
 
-import seeder.Seeder;
+import seeder.SeederList;
 import logic.valueobj.human.Name;
 import logic.valueobj.human.NameBuilder;
 import org.json.JSONArray;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-public class NamesList extends Seeder {
+public class NamesList extends SeederList {
     private static NamesList ourInstance = new NamesList();
 
     public static NamesList getInstance() {

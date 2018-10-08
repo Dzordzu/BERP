@@ -2,13 +2,13 @@ package seeder.people;
 
 import logic.valueobj.time.Age;
 import org.json.JSONObject;
-import seeder.Seeder;
+import seeder.SeederList;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
-public class AgeList extends Seeder {
+public class AgeList extends SeederList {
     private static AgeList ourInstance = new AgeList();
 
     public static AgeList getInstance() {

@@ -2,13 +2,13 @@ package seeder.people;
 
 import logic.valueobj.human.Sex;
 import org.json.JSONObject;
-import seeder.Seeder;
+import seeder.SeederList;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
-public class SexList extends Seeder {
+public class SexList extends SeederList {
     private static SexList ourInstance = new SexList();
 
     public static SexList getInstance() {

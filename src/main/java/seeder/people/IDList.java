@@ -3,7 +3,7 @@ package seeder.people;
 import logic.valueobj.human.ID;
 import logic.valueobj.human.IDType;
 import org.json.JSONObject;
-import seeder.Seeder;
+import seeder.SeederList;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.Vector;
  * @XXX DANGEROUS AREA!
  */
 
-public class IDList extends Seeder {
+public class IDList extends SeederList {
     private static IDList ourInstance = new IDList();
 
     public static IDList getInstance() {

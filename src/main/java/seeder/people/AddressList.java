@@ -1,6 +1,6 @@
 package seeder.people;
 
-import seeder.Seeder;
+import seeder.SeederList;
 import logic.valueobj.place.*;
 import org.json.JSONObject;
 
@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
-public class AddressList extends Seeder {
+public class AddressList extends SeederList {
     private static AddressList ourInstance = new AddressList();
 
     public static AddressList getInstance() {
