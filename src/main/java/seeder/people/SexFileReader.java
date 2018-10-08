@@ -2,20 +2,20 @@ package seeder.people;
 
 import logic.valueobj.human.Sex;
 import org.json.JSONObject;
-import seeder.SeederList;
+import seeder.SeederFileReader;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
-public class SexList extends SeederList {
-    private static SexList ourInstance = new SexList();
+public class SexFileReader extends SeederFileReader {
+    private static SexFileReader ourInstance = new SexFileReader();
 
-    public static SexList getInstance() {
+    public static SexFileReader getInstance() {
         return ourInstance;
     }
 
-    private SexList() {
+    private SexFileReader() {
         super("/seeders-data/sexlist.json");
     }
 

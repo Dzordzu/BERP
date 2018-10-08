@@ -31,11 +31,11 @@ public class PeopleSeeder {
 
     private PeopleSeeder() throws IOException {
         Vector<Person> people = new Vector<>();
-        List<Age> ages = AgeList.getInstance().getList();
-        List<ID> ids = IDList.getInstance().getList();
-        List<Name> names = NamesList.getInstance().getList();
-        List<Sex> sexes = SexList.getInstance().getList();
-        List<Address> addresses = AddressList.getInstance().getList();
+        List<Age> ages = AgeFileReader.getInstance().getList();
+        List<ID> ids = IDFileReader.getInstance().getList();
+        List<Name> names = NamesFileReader.getInstance().getList();
+        List<Sex> sexes = SexFileReader.getInstance().getList();
+        List<Address> addresses = AddressFileReader.getInstance().getList();
 
         PersonBuilder.clear();
 

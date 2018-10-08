@@ -1,6 +1,6 @@
 package seeder.people;
 
-import seeder.SeederList;
+import seeder.SeederFileReader;
 import logic.valueobj.place.*;
 import org.json.JSONObject;
 
@@ -8,14 +8,14 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
-public class AddressList extends SeederList {
-    private static AddressList ourInstance = new AddressList();
+public class AddressFileReader extends SeederFileReader {
+    private static AddressFileReader ourInstance = new AddressFileReader();
 
-    public static AddressList getInstance() {
+    public static AddressFileReader getInstance() {
         return ourInstance;
     }
 
-    private AddressList() {
+    private AddressFileReader() {
         super("/seeders-data/addresslist.json");
     }
 

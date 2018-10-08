@@ -1,6 +1,6 @@
 package seeder.people;
 
-import seeder.SeederList;
+import seeder.SeederFileReader;
 import logic.valueobj.human.Name;
 import logic.valueobj.human.NameBuilder;
 import org.json.JSONArray;
@@ -11,10 +11,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Vector;
 
-public class NamesList extends SeederList {
-    private static NamesList ourInstance = new NamesList();
+public class NamesFileReader extends SeederFileReader {
+    private static NamesFileReader ourInstance = new NamesFileReader();
 
-    public static NamesList getInstance() {
+    public static NamesFileReader getInstance() {
         return ourInstance;
     }
 
@@ -49,7 +49,7 @@ public class NamesList extends SeederList {
         return NameBuilder.buildAndClear();
     }
 
-    private NamesList() {
+    private NamesFileReader() {
         super("/seeders-data/nameslist.json");
     }
 }

@@ -3,25 +3,26 @@ package seeder.people;
 import logic.valueobj.human.ID;
 import logic.valueobj.human.IDType;
 import org.json.JSONObject;
-import seeder.SeederList;
+import seeder.SeederFileReader;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
-
 /**
  * @XXX DANGEROUS AREA!
  */
 
-public class IDList extends SeederList {
-    private static IDList ourInstance = new IDList();
+public class IDCompanyFileReader extends SeederFileReader {
+    private static IDCompanyFileReader ourInstance = new IDCompanyFileReader();
 
-    public static IDList getInstance() {
+    public static IDCompanyFileReader getInstance() {
         return ourInstance;
     }
 
-    private IDList() {super("/seeders-data/idlist.json"); }
+    private IDCompanyFileReader() {
+        super("/seeders-data/idlist-company.json");
+    }
 
     public List<ID> getList() throws IOException {
         JSONObject obj = this.getJSON();
@@ -29,7 +30,7 @@ public class IDList extends SeederList {
         Vector<ID> result = new Vector<ID>();
 
         for(Object object: obj.getJSONArray("ID")) {
-            result.add(new ID(IDType.PESEL, (String)object));
+            result.add(new ID(IDType.COMPANYID, (String)object));
         }
 
         return (List<ID>)result;

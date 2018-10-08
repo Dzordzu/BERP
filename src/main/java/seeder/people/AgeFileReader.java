@@ -2,20 +2,20 @@ package seeder.people;
 
 import logic.valueobj.time.Age;
 import org.json.JSONObject;
-import seeder.SeederList;
+import seeder.SeederFileReader;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.Vector;
 
-public class AgeList extends SeederList {
-    private static AgeList ourInstance = new AgeList();
+public class AgeFileReader extends SeederFileReader {
+    private static AgeFileReader ourInstance = new AgeFileReader();
 
-    public static AgeList getInstance() {
+    public static AgeFileReader getInstance() {
         return ourInstance;
     }
 
-    private AgeList() {
+    private AgeFileReader() {
         super("/seeders-data/bornlist.json");
     }
 
