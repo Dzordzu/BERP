@@ -11,6 +11,8 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
+        EmployeeManager.getInstance();
+        ElementsHandler.getInstance();
         Parent root = FXMLLoader.load(getClass().getResource("/base.fxml"));
         primaryStage.setTitle("BERP");
         primaryStage.setScene(new Scene(root, 600, 400));

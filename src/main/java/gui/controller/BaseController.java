@@ -1,5 +1,6 @@
 package gui.controller;
 
+import gui.ElementsHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ScrollPane;
@@ -12,10 +13,9 @@ import java.io.IOException;
 public class BaseController {
 
     @FXML VBox mainContent;
-    static public Pane mainContentS;
 
     public void initialize() {
-        mainContentS = mainContent;
+        ElementsHandler.getInstance().setMainContent(mainContent);
     }
 
 

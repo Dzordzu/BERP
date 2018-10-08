@@ -48,7 +48,7 @@ public class Main {
 		PersonBuilder.setHomeAddress(AddressBuilder.buildAndClear());
 
 		PaymentStrategy payment = new StandardPayment();
-		payment.setNetEmployeeSalary(new Money((long)2000, "PLN"));
+		payment.setNetEmployeeSalary(new Money(2000, "PLN"));
 		
 		EmployeeBuilder.setId(new ID(IDType.COMPANYID, "a01-b5-90199"));
 		EmployeeBuilder.setPerson(PersonBuilder.build());
