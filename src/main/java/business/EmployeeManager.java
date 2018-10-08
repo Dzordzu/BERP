@@ -8,6 +8,7 @@ import java.util.Vector;
 
 /**
  * @AggregateRoot EmployeeManager
+ * There should be the only one instance in the whole app
  */
 
 public class EmployeeManager {
@@ -21,10 +22,6 @@ public class EmployeeManager {
 
     private EmployeeManager() {
         this.employees = new Vector<Employee>();
-    }
-
-    private EmployeeManager(List<Employee> employees) {
-        this.employees = (Vector<Employee>)employees;
     }
 
     public List<Employee> getEmployees() {

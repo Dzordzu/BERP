@@ -48,7 +48,7 @@ public class Main {
 		PersonBuilder.setHomeAddress(AddressBuilder.buildAndClear());
 
 		PaymentStrategy payment = new StandardPayment();
-		payment.setNetEmployeeSalary(new Money(2000, "PLN"));
+		payment.setGrossEmployeeSalary(new Money(2000, "PLN"));
 		
 		EmployeeBuilder.setId(new ID(IDType.COMPANYID, "a01-b5-90199"));
 		EmployeeBuilder.setPerson(PersonBuilder.build());
@@ -75,8 +75,8 @@ public class Main {
 		
 		
 		
-//		System.out.println(emp1.getJob());
-//		System.out.println(emp2.getJob());
+		System.out.println(emp1.getJob().getSalary().getPaymentName());
+		System.out.println(emp2.getJob().getSalary().getNetEmploymentCost());
 //
 //
 //		System.out.println(Pjoter.getName().getFullName());

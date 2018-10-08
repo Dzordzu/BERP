@@ -2,11 +2,21 @@ package logic.valueobj.money;
 
 import lombok.Getter;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.Currency;
 
 public class Money {
-	@Getter private double amount;
+	private double amount;
 	@Getter private Currency currency;
+
+	private static double round(double value, int places) {
+		if (places < 0) throw new IllegalArgumentException();
+
+		BigDecimal bd = new BigDecimal(value);
+		bd = bd.setScale(places, RoundingMode.HALF_UP);
+		return bd.doubleValue();
+	}
 
 	public Money(long amount, Currency currency) {
 		this.amount = (double)amount;
@@ -26,6 +36,13 @@ public class Money {
 		this.amount = amount;
 		this.currency = Currency.getInstance(currencyCode);
 	}
-	
 
+	public double getAmount() {
+		return round(this.amount, currency.getDefaultFractionDigits());
+	}
+
+	@Override
+	public String toString() {
+		return getAmount() + currency.getCurrencyCode();
+	}
 }
