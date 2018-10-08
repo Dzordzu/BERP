@@ -1,17 +1,13 @@
 package logic.valueobj.human;
 
+import lombok.Getter;
+
 public class ID {
-	private IDType type;
-	private String value;
+	@Getter private IDType type;
+	@Getter private String value;
 	public ID(IDType type, String value) {
 		this.type = type;
 		this.value = value;
-	}
-	public IDType getType() {
-		return type;
-	}
-	public String getValue() {
-		return value;
 	}
 	
 	public String toString() {

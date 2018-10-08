@@ -1,5 +1,7 @@
 package logic.valueobj.place;
 
+import lombok.Getter;
+
 public class Address {
 	
 	public Address(Country country, City city, Home home) {
@@ -8,19 +10,10 @@ public class Address {
 		this.home = home;
 	}
 	
-	private Country country;
-	private City city;
-	private Home home;
-	
-	public Country getCountry() {
-		return country;
-	}
-	public City getCity() {
-		return city;
-	}
-	public Home getHome() {
-		return home;
-	}
+	@Getter private Country country;
+	@Getter private City city;
+	@Getter private Home home;
+
 	
 	public String toString() {
 		return home + ", " + city + ", " + country;

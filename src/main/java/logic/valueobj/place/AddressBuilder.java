@@ -9,8 +9,8 @@ public class AddressBuilder {
 	private static String cityName = null;
 	private static String region = null;
 	private static Country country = null;
-	
-	
+
+
 	public static void setHomeNumber(String homeNumber) {
 		AddressBuilder.homeNumber = homeNumber;
 	}

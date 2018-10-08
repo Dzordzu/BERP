@@ -1,15 +1,17 @@
 package logic.valueobj.place;
 
+import lombok.Getter;
+
 public enum Country {
 	
 	POLAND("PL", "Republic of Poland", "Poland", "Rzeczpospolita Polska", "Polska"),
 	UK("UK", "United Kingdom", "England", "United Kingdom", "England")
 	;
-	private String shortand;
-	private String fullName;
-	private String name;
-	private String fullLocalName;
-	private String localName;
+	@Getter private String shortand;
+	@Getter private String fullName;
+	@Getter private String name;
+	@Getter private String fullLocalName;
+	@Getter private String localName;
 	
 	private Country(String shortand, String fullName, String name, String fullLocalName, String localName) {
 		this.shortand = shortand;
@@ -19,25 +21,6 @@ public enum Country {
 		this.localName = localName;
 	}
 
-	public String getShortand() {
-		return shortand;
-	}
-
-	public String getFullName() {
-		return fullName;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public String getFullLocalName() {
-		return fullLocalName;
-	}
-
-	public String getLocalName() {
-		return localName;
-	}
 	
 	public String toString() {
 		return name;

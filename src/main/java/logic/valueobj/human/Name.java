@@ -1,13 +1,15 @@
 package logic.valueobj.human;
 
+import lombok.Getter;
+
 import java.util.Arrays;
 import java.util.List;
 
 public class Name {
-	protected String firstname = null;
-	protected String surname = null;
-	protected List<String> middlenames = null;
-	protected List<String> suffixes = null;
+	@Getter protected String firstname = null;
+	@Getter protected String surname = null;
+	@Getter protected List<String> middlenames = null;
+	@Getter protected List<String> suffixes = null;
 
 	
 	public Name(String firstname, String surname, List<String> middlenames, List<String> suffixes) {
@@ -32,22 +34,6 @@ public class Name {
 	public Name setSuffixes(String[] suffixes) {
 		this.suffixes = Arrays.asList(suffixes);
 		return this;
-	}
-
-	public String getFirstname() {
-		return firstname;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public List<String> getMiddlenames() {
-		return middlenames;
-	}
-
-	public List<String> getSuffixes() {
-		return suffixes;
 	}
 	
 	public String getFullName() {

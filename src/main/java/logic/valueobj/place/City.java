@@ -1,20 +1,16 @@
 package logic.valueobj.place;
 
+import lombok.Getter;
+
 public class City {
-	private String name;
-	private String region;
+	@Getter private String name;
+	@Getter private String region;
 	
 	public City(String name, String region) {
 		this.name = name;
 		this.region = region;
 	}
-	
-	public String getName() {
-		return name;
-	}
-	public String getRegion() {
-		return region;
-	}
+
 	
 	public String toString() {
 		return name + ", " + region;

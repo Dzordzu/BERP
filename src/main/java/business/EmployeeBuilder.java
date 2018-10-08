@@ -3,26 +3,13 @@ package business;
 import business.jobs.Job;
 import business.person.Person;
 import logic.valueobj.human.ID;
+import lombok.Setter;
 
 public class EmployeeBuilder {
 	
-	private static ID id;
-	private static Person person;
-	private static Job job;
-
-	public static void setId(ID id) {
-		EmployeeBuilder.id = id;
-	}
-
-
-	public static void setPerson(Person person) {
-		EmployeeBuilder.person = person;
-	}
-
-
-	public static void setJob(Job job) {
-		EmployeeBuilder.job = job;
-	}
+	@Setter private static ID id;
+	@Setter private static Person person;
+	@Setter private static Job job;
 	
 	public static void clear() {
 		id = null;
