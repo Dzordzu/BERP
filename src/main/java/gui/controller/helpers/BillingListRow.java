@@ -8,6 +8,7 @@ public class BillingListRow {
     String Name;
     String PaymentStrategy;
     String GrossCost;
+    String EmployeeNetSalary;
 
     public String getID() {
         return ID;
@@ -48,8 +49,6 @@ public class BillingListRow {
     public void setEmployeeNetSalary(String employeeNetSalary) {
         EmployeeNetSalary = employeeNetSalary;
     }
-
-    String EmployeeNetSalary;
 
     public BillingListRow(Employee e) {
         ID = e.getId().getValue();

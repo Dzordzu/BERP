@@ -50,14 +50,14 @@ public class BaseController {
 
         TableColumn<BillingListRow,String> paymentCol = new TableColumn<BillingListRow,String>("Payment Startegy");
         paymentCol.setCellValueFactory(new PropertyValueFactory("PaymentStrategy"));
-//
-//        TableColumn<BillingListRow,String> idCol = new TableColumn<BillingListRow,String>("ID");
-//        idCol.setCellValueFactory(new PropertyValueFactory("ID"));
-//
-//        TableColumn<BillingListRow,String> idCol = new TableColumn<BillingListRow,String>("ID");
-//        idCol.setCellValueFactory(new PropertyValueFactory("ID"));
 
-        table.getColumns().setAll(idCol, nameCol, paymentCol);
+        TableColumn<BillingListRow,String> grossCol = new TableColumn<BillingListRow,String>("Gross Employment Cost ");
+        grossCol.setCellValueFactory(new PropertyValueFactory("GrossCost"));
+
+        TableColumn<BillingListRow,String> salaryCol = new TableColumn<BillingListRow,String>("Employee Net Salary");
+        salaryCol.setCellValueFactory(new PropertyValueFactory("EmployeeNetSalary"));
+
+        table.getColumns().setAll(idCol, nameCol, paymentCol, grossCol, salaryCol);
 
         ElementsHandler.getInstance().getMainContent().getChildren().add(table);
     }
