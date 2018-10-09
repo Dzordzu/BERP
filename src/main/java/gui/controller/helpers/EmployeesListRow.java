@@ -17,8 +17,8 @@ public class EmployeesListRow {
     Button details;
     Button fire;
 
-    public String idVal;
-    public String nameVal;
+    public String idVal = "XD";
+    public String nameVal = "AS";
 
     public EmployeesListRow(Employee e) {
         idVal = e.getId().getValue();
@@ -32,10 +32,10 @@ public class EmployeesListRow {
     public HBox getFXML() throws IOException {
         HBox reg = (HBox) SourceLoader.getInstance().getRegion("/employees-element.fxml");
 
-        id = (Text) reg.lookup("id");
-        name = (Text) reg.lookup("name");
-        details = (Button) reg.lookup("details");
-        fire = (Button) reg.lookup("fire");
+        id = (Text) reg.lookup("#id");
+        name = (Text) reg.lookup("#name");
+        details = (Button) reg.lookup("#details");
+        fire = (Button) reg.lookup("#fire");
 
 
         id.setText(idVal);

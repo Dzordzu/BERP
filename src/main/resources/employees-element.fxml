@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="box" alignment="CENTER_LEFT" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="box" alignment="CENTER_LEFT" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.EmployeeListRowController">
     <children>
         <Text fx:id="id" strokeType="OUTSIDE" strokeWidth="0.0">
             <HBox.margin>
@@ -17,12 +17,12 @@
                 <Insets left="40.0" />
             </HBox.margin>
         </Text>
-        <Button mnemonicParsing="false" text="Details">
+        <Button fx:id="details" mnemonicParsing="false" onMouseClicked="#getEmployeeDetails" text="Details">
             <HBox.margin>
                 <Insets left="20.0" />
             </HBox.margin>
         </Button>
-        <Button mnemonicParsing="false" onMouseClicked="#sayTest" text="Fire">
+        <Button fx:id="fire" mnemonicParsing="false" onMouseClicked="#fireEmployee" text="Fire">
             <HBox.margin>
                 <Insets left="20.0" />
             </HBox.margin>

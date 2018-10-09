@@ -5,6 +5,7 @@ import business.EmployeeManager;
 import gui.ElementsHandler;
 import gui.SourceLoader;
 import gui.controller.helpers.BillingListRow;
+import gui.controller.helpers.EmployeesListRow;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -67,9 +68,11 @@ public class BaseController {
 
     public void loadEmployees() throws IOException {
         SourceLoader.getInstance().loadMain("/employees.fxml");
+        VBox employeesList = ElementsHandler.getInstance().getEmployeesList();
 
         for(Employee e:EmployeeManager.getInstance().getEmployees()) {
-
+            EmployeesListRow row = new EmployeesListRow(e);
+            employeesList.getChildren().add(row.getFXML());
         }
     }
 
