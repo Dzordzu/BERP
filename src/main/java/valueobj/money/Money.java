@@ -1,4 +1,4 @@
-package logic.valueobj.money;
+package valueobj.money;
 
 import lombok.Getter;
 

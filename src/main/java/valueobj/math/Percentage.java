@@ -1,4 +1,4 @@
-package logic.valueobj.math;
+package valueobj.math;
 
 public class Percentage {
     private double value;

@@ -1,4 +1,4 @@
-package logic.valueobj.place;
+package valueobj.place;
 
 public class AddressBuilder {
 	

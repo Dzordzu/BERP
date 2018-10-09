@@ -2,7 +2,7 @@ package business;
 
 import business.jobs.Job;
 import business.person.Person;
-import logic.valueobj.human.ID;
+import valueobj.human.ID;
 import lombok.Getter;
 
 /**

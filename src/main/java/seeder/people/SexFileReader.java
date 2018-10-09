@@ -1,6 +1,6 @@
 package seeder.people;
 
-import logic.valueobj.human.Sex;
+import valueobj.human.Sex;
 import org.json.JSONObject;
 import seeder.SeederFileReader;
 

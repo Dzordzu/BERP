@@ -1,4 +1,4 @@
-package logic.valueobj.time;
+package valueobj.time;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 

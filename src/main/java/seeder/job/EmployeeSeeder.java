@@ -3,7 +3,7 @@ package seeder.job;
 import business.Employee;
 import business.jobs.Job;
 import business.person.Person;
-import logic.valueobj.human.ID;
+import valueobj.human.ID;
 import seeder.Seeder;
 import seeder.people.PeopleSeeder;
 

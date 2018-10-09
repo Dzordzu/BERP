@@ -1,6 +1,6 @@
 package business.payment;
 
-import logic.valueobj.money.Money;
+import valueobj.money.Money;
 
 public class BonusPayment implements PaymentStrategy{
 
@@ -9,7 +9,7 @@ public class BonusPayment implements PaymentStrategy{
 
     @Override
     public String getPaymentName() {
-        return null;
+        return "Bonus Payment";
     }
 
     @Override

@@ -1,4 +1,4 @@
-package logic.valueobj.human;
+package valueobj.human;
 
 import java.util.Arrays;
 import java.util.List;

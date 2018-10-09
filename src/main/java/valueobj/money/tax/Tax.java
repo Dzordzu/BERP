@@ -1,6 +1,6 @@
-package logic.valueobj.money.tax;
+package valueobj.money.tax;
 
-import logic.valueobj.money.Money;
+import valueobj.money.Money;
 
 public interface Tax {
     String getDescription();

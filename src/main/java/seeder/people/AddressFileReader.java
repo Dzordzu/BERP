@@ -1,8 +1,10 @@
 package seeder.people;
 
 import seeder.SeederFileReader;
-import logic.valueobj.place.*;
 import org.json.JSONObject;
+import valueobj.place.Address;
+import valueobj.place.AddressBuilder;
+import valueobj.place.Country;
 
 import java.io.IOException;
 import java.util.List;

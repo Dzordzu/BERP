@@ -1,7 +1,6 @@
 package business.jobs;
 
 import business.payment.PaymentStrategy;
-import logic.valueobj.money.Money;
 
 public class Manager extends Job {
 	

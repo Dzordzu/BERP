@@ -8,18 +8,17 @@ import business.payment.PaymentStrategy;
 import business.payment.StandardPayment;
 import business.person.Person;
 import business.person.PersonBuilder;
-import seeder.people.*;
-import logic.valueobj.human.ID;
-import logic.valueobj.human.IDType;
-import logic.valueobj.human.NameBuilder;
-import logic.valueobj.human.Sex;
-import logic.valueobj.money.Money;
-import logic.valueobj.place.AddressBuilder;
-import logic.valueobj.place.Country;
-import logic.valueobj.time.Age;
+import seeder.job.EmployeeSeeder;
+import valueobj.human.ID;
+import valueobj.human.IDType;
+import valueobj.human.NameBuilder;
+import valueobj.human.Sex;
+import valueobj.money.Money;
+import valueobj.place.AddressBuilder;
+import valueobj.place.Country;
+import valueobj.time.Age;
 
 import java.io.IOException;
-import java.util.Currency;
 import java.util.List;
 
 public class Main {
@@ -86,14 +85,15 @@ public class Main {
 //		System.out.println(Pjoter.getAge().getYears());
 //		System.out.println(Pjoter.getId());
 
-		List<Person> people = PeopleSeeder.getInstance().getPeople();
+		List<Employee> employees = EmployeeSeeder.getInstance().getEmployees();
 
-		for(Person p: people) {
-			System.out.println(p.getName());
-			System.out.println((p.getAge().getBirthDate()));
-			System.out.println(p.getHomeAddress());
+		for(Employee p: employees) {
+			System.out.println(p.getJob().getSalary().getNetEmploymentCost());
+			System.out.println(p.getJob().getJobTitle());
+			System.out.println((p.getPerson().getAge().getBirthDate()));
+			System.out.println(p.getPerson().getHomeAddress());
 			System.out.println(p.getId());
-			System.out.println(p.getSex());
+			System.out.println(p.getPerson().getSex());
 			System.out.print("\n");
 		}
 

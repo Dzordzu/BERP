@@ -7,11 +7,10 @@ import business.payment.BonusPayment;
 import business.payment.PaymentStrategy;
 import business.payment.StandardPayment;
 import business.payment.TestPeriodPayment;
-import logic.valueobj.money.Money;
+import valueobj.money.Money;
 import org.json.JSONObject;
 import seeder.SeederFileReader;
 
-import java.io.IOException;
 import java.util.Currency;
 import java.util.List;
 import java.util.Vector;
@@ -68,7 +67,7 @@ public class JobFileReader extends SeederFileReader {
             JSONObject object = (JSONObject)obj;
 
             String jobName = object.getString("JobName");
-            long payment = object.getLong("NetEmployeeCost");
+            long payment = object.getLong("NetEmploymentCost");
             String paymentStrategy = object.getString("PaymentStrategy");
 
             result.add(this.createJob(jobName, payment, paymentStrategy));

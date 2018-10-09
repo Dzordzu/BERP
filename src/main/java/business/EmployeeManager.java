@@ -1,9 +1,8 @@
 package business;
 
-import logic.valueobj.human.ID;
+import valueobj.human.ID;
 
 import java.util.List;
-import java.util.Observable;
 import java.util.Vector;
 
 /**

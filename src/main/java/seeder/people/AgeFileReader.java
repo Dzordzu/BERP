@@ -1,6 +1,6 @@
 package seeder.people;
 
-import logic.valueobj.time.Age;
+import valueobj.time.Age;
 import org.json.JSONObject;
 import seeder.SeederFileReader;
 

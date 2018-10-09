@@ -1,4 +1,4 @@
-package logic.valueobj.time;
+package valueobj.time;
 
 public interface DateDifferenceInterface {
 	public long getDays();

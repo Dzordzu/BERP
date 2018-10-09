@@ -1,11 +1,10 @@
 package business.person;
-import logic.valueobj.human.ID;
-import logic.valueobj.human.Name;
-import logic.valueobj.human.Sex;
-import logic.valueobj.place.Address;
-import logic.valueobj.time.Age;
+import valueobj.human.ID;
+import valueobj.human.Name;
+import valueobj.human.Sex;
+import valueobj.place.Address;
+import valueobj.time.Age;
 import lombok.Getter;
-import lombok.Setter;
 
 public class Person {
 

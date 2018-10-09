@@ -1,9 +1,7 @@
-package logic.valueobj.money.tax;
+package valueobj.money.tax;
 
-import logic.valueobj.math.Percentage;
-import logic.valueobj.money.Money;
-
-import java.util.Currency;
+import valueobj.math.Percentage;
+import valueobj.money.Money;
 
 public class Assurances implements Tax {
     private static Assurances ourInstance = new Assurances();

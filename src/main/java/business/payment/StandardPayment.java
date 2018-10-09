@@ -1,9 +1,9 @@
 package business.payment;
 
-import logic.valueobj.money.Money;
-import logic.valueobj.money.tax.Assurances;
-import logic.valueobj.money.tax.PensionTax;
-import logic.valueobj.money.tax.Tax;
+import valueobj.money.Money;
+import valueobj.money.tax.Assurances;
+import valueobj.money.tax.PensionTax;
+import valueobj.money.tax.Tax;
 
 /**
  * @Facade

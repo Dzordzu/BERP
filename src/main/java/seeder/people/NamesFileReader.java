@@ -1,8 +1,8 @@
 package seeder.people;
 
 import seeder.SeederFileReader;
-import logic.valueobj.human.Name;
-import logic.valueobj.human.NameBuilder;
+import valueobj.human.Name;
+import valueobj.human.NameBuilder;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
