@@ -14,10 +14,16 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
+        /**
+         * Fill employee manager with faked data
+         */
         for(Employee e: EmployeeSeeder.getInstance().getEmployees()) {
             EmployeeManager.getInstance().hireEmployee(e);
         }
 
+        /**
+         * Prepare Elements handler that will pass global references to the FXML objects
+         */
         ElementsHandler.getInstance();
 
         Parent root = FXMLLoader.load(getClass().getResource("/base.fxml"));
