@@ -27,7 +27,7 @@ public class SourceLoader {
 
     public void loadMain(String source) throws IOException {
         Region newLoadedPane =  FXMLLoader.load(getClass().getResource(source));
-
+        ElementsHandler.getInstance().getMainContent().getChildren().clear();
         ElementsHandler.getInstance().getMainContent().getChildren().add(newLoadedPane);
     }
 }

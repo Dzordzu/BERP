@@ -19,11 +19,11 @@ public class TestPeriod implements Tax {
 
     @Override
     public Money applyTax(Money sum) {
-        return new Money(sum.getAmount() - 250, sum.getCurrency());
+        return new Money(sum.getAmount()/2, sum.getCurrency());
     }
 
     @Override
     public Money revertTax(Money sum) {
-        return new Money(sum.getAmount() + 250, sum.getCurrency());
+        return new Money(sum.getAmount()*2, sum.getCurrency());
     }
 }
