@@ -15,7 +15,7 @@ public class BonusPayment implements PaymentStrategy{
 
     @Override
     public String getPaymentName() {
-        return "Standard Payment";
+        return "Bonus Payment";
     }
 
     @Override

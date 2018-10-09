@@ -15,15 +15,19 @@ public class SourceLoader {
     private SourceLoader() {}
 
     /**
-     * Simple alias
+     * Simple aliases
      */
     public Region getRegion(String source) throws IOException {
         return FXMLLoader.load(getClass().getResource(source));
     }
 
+    public void clearMain() {
+        ElementsHandler.getInstance().getMainContent().getChildren().clear();
+    }
+
     public void loadMain(String source) throws IOException {
         Region newLoadedPane =  FXMLLoader.load(getClass().getResource(source));
-        ElementsHandler.getInstance().getMainContent().getChildren().clear();
+
         ElementsHandler.getInstance().getMainContent().getChildren().add(newLoadedPane);
     }
 }

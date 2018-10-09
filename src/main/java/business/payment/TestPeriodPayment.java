@@ -15,7 +15,7 @@ public class TestPeriodPayment implements PaymentStrategy {
 
     @Override
     public String getPaymentName() {
-        return "Standard Payment";
+        return "Test Period Payment";
     }
 
     @Override
