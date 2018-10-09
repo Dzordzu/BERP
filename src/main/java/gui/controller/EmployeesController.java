@@ -15,6 +15,10 @@ public class EmployeesController {
 
     @FXML VBox employeesList;
 
+    public void initialize() {
+        ElementsHandler.getInstance().setEmployeesList(employeesList);
+    }
+
     public void sayTest() {
         employeesList.getChildren().add(new Text("XD"));
         System.out.println("TEST");
