@@ -1,11 +1,13 @@
 package gui.controller;
 
 import gui.ElementsHandler;
+import gui.SourceLoader;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 
 import java.io.IOException;
@@ -18,24 +20,16 @@ public class BaseController {
         ElementsHandler.getInstance().setMainContent(mainContent);
     }
 
-
     public void loadBillings() throws IOException {
-        TableView newLoadedPane =  FXMLLoader.load(getClass().getResource("/billings.fxml"));
-        mainContent.getChildren().clear();
-        mainContent.getChildren().add(newLoadedPane);
+        SourceLoader.getInstance().loadMain("/billings.fxml");
     }
 
     public void loadEmployees() throws IOException {
-        ScrollPane newLoadedPane =  FXMLLoader.load(getClass().getResource("/employees.fxml"));
-        mainContent.getChildren().clear();
-        mainContent.getChildren().add(newLoadedPane);
+        SourceLoader.getInstance().loadMain("/employees.fxml");
     }
 
-
     public void loadAbout() throws IOException {
-        Pane newLoadedPane =  FXMLLoader.load(getClass().getResource("/about.fxml"));
-        mainContent.getChildren().clear();
-        mainContent.getChildren().add(newLoadedPane);
+        SourceLoader.getInstance().loadMain("/about.fxml");
     }
 
 
