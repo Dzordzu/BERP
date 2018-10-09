@@ -7,8 +7,26 @@ public class BillingListRow {
     String ID;
     String Name;
     String PaymentStrategy;
-    String GrossCost;
-    String EmployeeNetSalary;
+    double GrossCost;
+    double EmployeeNetSalary;
+
+    public void setGrossCost(double grossCost) {
+        GrossCost = grossCost;
+    }
+
+    public void setEmployeeNetSalary(double employeeNetSalary) {
+        EmployeeNetSalary = employeeNetSalary;
+    }
+
+    public String getCurrency() {
+        return Currency;
+    }
+
+    public void setCurrency(String currency) {
+        Currency = currency;
+    }
+
+    String Currency;
 
     public String getID() {
         return ID;
@@ -34,27 +52,21 @@ public class BillingListRow {
         PaymentStrategy = paymentStategy;
     }
 
-    public String getGrossCost() {
+    public double getGrossCost() {
         return GrossCost;
     }
 
-    public void setGrossCost(String grossCost) {
-        GrossCost = grossCost;
-    }
-
-    public String getEmployeeNetSalary() {
+    public double getEmployeeNetSalary() {
         return EmployeeNetSalary;
     }
 
-    public void setEmployeeNetSalary(String employeeNetSalary) {
-        EmployeeNetSalary = employeeNetSalary;
-    }
 
     public BillingListRow(Employee e) {
         ID = e.getId().getValue();
         Name = e.getPerson().getName().toString();
         PaymentStrategy = e.getJob().getSalary().getPaymentName();
-        GrossCost = e.getJob().getSalary().getGrossEmploymentCost().toString();
-        EmployeeNetSalary = e.getJob().getSalary().getNetEmployeeSalary().toString();
+        GrossCost = e.getJob().getSalary().getGrossEmploymentCost().getAmount();
+        EmployeeNetSalary = e.getJob().getSalary().getNetEmployeeSalary().getAmount();
+        Currency = e.getJob().getSalary().getGrossEmployeeSalary().getCurrency().getCurrencyCode();
     }
 }
