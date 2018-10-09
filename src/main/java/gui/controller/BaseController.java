@@ -48,7 +48,7 @@ public class BaseController {
         TableColumn<BillingListRow,String> nameCol = new TableColumn<BillingListRow,String>("Name");
         nameCol.setCellValueFactory(new PropertyValueFactory("Name"));
 
-        TableColumn<BillingListRow,String> paymentCol = new TableColumn<BillingListRow,String>("Payment Startegy");
+        TableColumn<BillingListRow,String> paymentCol = new TableColumn<BillingListRow,String>("Payment Strategy");
         paymentCol.setCellValueFactory(new PropertyValueFactory("PaymentStrategy"));
 
         TableColumn<BillingListRow,Double> grossCol = new TableColumn<BillingListRow,Double>("Gross Employment Cost ");
@@ -67,6 +67,10 @@ public class BaseController {
 
     public void loadEmployees() throws IOException {
         SourceLoader.getInstance().loadMain("/employees.fxml");
+
+        for(Employee e:EmployeeManager.getInstance().getEmployees()) {
+
+        }
     }
 
     public void loadAbout() throws IOException {
