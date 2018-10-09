@@ -89,6 +89,7 @@ public class Main {
 
 		for(Employee p: employees) {
 			System.out.println(p.getJob().getSalary().getNetEmploymentCost());
+			System.out.println(p.getJob().getSalary().getPaymentName());
 			System.out.println(p.getJob().getJobTitle());
 			System.out.println((p.getPerson().getAge().getBirthDate()));
 			System.out.println(p.getPerson().getHomeAddress());
