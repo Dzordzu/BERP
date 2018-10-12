@@ -17,8 +17,8 @@ public class EmployeesListRow {
     Button details;
     Button fire;
 
-    public String idVal = "XD";
-    public String nameVal = "AS";
+    public String idVal;
+    public String nameVal;
 
     public EmployeesListRow(Employee e) {
         idVal = e.getId().getValue();
@@ -47,7 +47,7 @@ public class EmployeesListRow {
         details.setId("det-empl-" + idVal);
         fire.setId("fire-empl-" + idVal);
 
-        reg.setId("empl-" + idVal);
+        //reg.setId("empl-" + idVal);
         return reg;
     }
 }
