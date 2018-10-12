@@ -1,5 +1,7 @@
 package business;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import valueobj.human.ID;
 
 import java.util.List;
@@ -23,8 +25,8 @@ public class EmployeeManager {
         this.employees = new Vector<Employee>();
     }
 
-    public List<Employee> getEmployees() {
-        return (List<Employee>)employees;
+    public ObservableList<Employee> getEmployees() {
+        return FXCollections.observableList(employees);
     }
 
     public Employee getEmployee(String id) {
@@ -41,7 +43,6 @@ public class EmployeeManager {
     public void fireEmployee(String id) {
         employees.remove(this.getEmployee(id));
     }
-
     public void fireEmployee(ID id) {
         employees.remove(this.getEmployee(id));
     }
