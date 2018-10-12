@@ -33,6 +33,7 @@ public class App extends Application {
         Scene primaryScene = new Scene(scene);
         ElementsHandler.getInstance().setPrimaryScene(primaryScene);
         primaryStage.setScene(primaryScene);
+        SceneSwitcher.getInstance().switchScene("fxml/billings.fxml");
 
         primaryStage.setTitle("BERP");
         primaryStage.show();
