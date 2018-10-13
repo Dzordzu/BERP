@@ -1,8 +1,10 @@
 package gui;
 
 import javafx.application.Application;
+import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
@@ -17,10 +19,11 @@ public class App extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
+    public void start(Stage primaryStage) throws Exception {
 
 
         VBox scene = new VBox();
+        scene.setAlignment(Pos.TOP_CENTER);
 
         Parent topBar = ContentLoader.getInstance().loadParent("fxml/topbar.fxml");
         Parent about = ContentLoader.getInstance().loadParent("fxml/about.fxml");
@@ -33,7 +36,7 @@ public class App extends Application {
         Scene primaryScene = new Scene(scene);
         ElementsHandler.getInstance().setPrimaryScene(primaryScene);
         primaryStage.setScene(primaryScene);
-        SceneSwitcher.getInstance().switchScene("fxml/billings.fxml");
+        SceneSwitcher.getInstance().<TableView>switchScene("fxml/billings.fxml");
 
         primaryStage.setTitle("BERP");
         primaryStage.show();

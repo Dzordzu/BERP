@@ -23,3 +23,26 @@
     -fx-padding: 4;
     -fx-text-fill: #fff;
 }
+
+.table-view .column-header-background .label {
+    -fx-background-color: #333;
+    -fx-text-fill: #fff;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: #333;
+}
+
+.table-view {
+    -fx-background-color: #333;
+}
+
+.table-view .nested-column-header {
+    -fx-border-color: #fff;
+}
+
+.table-view .column-header {
+    -fx-background-color: #333;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: #fff;
+}
