@@ -2,6 +2,7 @@ package gui;
 
 import javafx.scene.Node;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 
@@ -26,9 +27,15 @@ public class SceneSwitcher {
         VBox.setVgrow(node, Priority.ALWAYS);
     }
 
+    private void loadPane(Pane node) {
+        ElementsHandler.getInstance().getMain().getChildren().add(1, node);
+        VBox.setVgrow(node, Priority.ALWAYS);
+    }
+
     public <T> void switchScene(T node) throws Exception {
         removeScene();
         if(node instanceof TableView) loadTableView((TableView) node);
+        else if (node instanceof Pane) loadPane((Pane) node);
 
         else throw new Exception("Unsuported type");
     }

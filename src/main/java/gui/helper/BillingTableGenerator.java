@@ -1,5 +1,6 @@
 package gui.helper;
 
+import gui.SceneSwitcher;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -29,6 +30,18 @@ public class BillingTableGenerator {
         return fireColumn;
     }
 
+    private TableColumn<EmployeeRow, Button> editColumn() {
+        TableColumn<EmployeeRow, Button> fireColumn = new TableColumn<>("Edit");
+        fireColumn.setCellFactory(ActionButtonTableCell.forTableColumn("Edit", (EmployeeRow p) -> {
+            
+            return p;
+        }));
+
+        fireColumn.visibleProperty().setValue(false);
+
+        return fireColumn;
+    }
+
     public TableView generate() {
 
         TableView<EmployeeRow> tableView = new TableView<>();
@@ -46,7 +59,8 @@ public class BillingTableGenerator {
                 column("grossEmploymentCost", "Gross Employment Cost"),
                 column("paymentCurrency", "Currency"),
                 paymentDiff,
-                fireColumn()
+                fireColumn(),
+                editColumn()
         );
 
         tableView.setTableMenuButtonVisible(true);
