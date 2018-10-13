@@ -25,8 +25,8 @@ public class EmployeeManager {
         this.employees = new Vector<Employee>();
     }
 
-    public ObservableList<Employee> getEmployees() {
-        return FXCollections.observableList(employees);
+    public Vector<Employee> getEmployees() {
+        return employees;
     }
 
     public Employee getEmployee(String id) {

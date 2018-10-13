@@ -1,5 +1,7 @@
 package gui;
 
+import business.EmployeeManager;
+import gui.helper.BillingTableGenerator;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
@@ -9,6 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Priority;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import seeder.job.EmployeeSeeder;
 
 import java.io.IOException;
 
@@ -21,6 +24,7 @@ public class App extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
 
+        EmployeeSeeder.getInstance().seed();
 
         VBox scene = new VBox();
         scene.setAlignment(Pos.TOP_CENTER);
@@ -36,9 +40,10 @@ public class App extends Application {
         Scene primaryScene = new Scene(scene);
         ElementsHandler.getInstance().setPrimaryScene(primaryScene);
         primaryStage.setScene(primaryScene);
-        SceneSwitcher.getInstance().<TableView>switchScene("fxml/billings.fxml");
+        SceneSwitcher.getInstance().switchScene(BillingTableGenerator.getInstance().generate());
 
         primaryStage.setTitle("BERP");
         primaryStage.show();
+
     }
 }
