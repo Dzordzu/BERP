@@ -1,8 +1,7 @@
 package gui.helper;
 
-import javafx.scene.control.SelectionMode;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.event.ActionEvent;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class BillingTableGenerator {
@@ -18,10 +17,25 @@ public class BillingTableGenerator {
         return prop;
     }
 
+    private TableColumn<EmployeeRow, Button> fireColumn() {
+        TableColumn<EmployeeRow, Button> fireColumn = new TableColumn<>("Fire");
+        fireColumn.setCellFactory(ActionButtonTableCell.forTableColumn("Remove", (EmployeeRow p) -> {
+            EmployeeManagerWrapper.getInstance().fireEmployee(p);
+            return p;
+        }));
+
+        fireColumn.visibleProperty().setValue(false);
+
+        return fireColumn;
+    }
+
     public TableView generate() {
 
         TableView<EmployeeRow> tableView = new TableView<>();
         tableView.setItems(EmployeeManagerWrapper.getInstance().getEmployees());
+
+        TableColumn paymentDiff = column("paymentDiff", "NES/GEC (%)");
+        paymentDiff.visibleProperty().setValue(false);
 
         tableView.getColumns().setAll(
                 column("employeeId", "ID"),
@@ -30,7 +44,9 @@ public class BillingTableGenerator {
                 column("paymentStrategy", "Payment Strategy"),
                 column("netEmployeeSalary", "Net Employee Salary"),
                 column("grossEmploymentCost", "Gross Employment Cost"),
-                column("paymentCurrency", "Currency")
+                column("paymentCurrency", "Currency"),
+                paymentDiff,
+                fireColumn()
         );
 
         tableView.setTableMenuButtonVisible(true);

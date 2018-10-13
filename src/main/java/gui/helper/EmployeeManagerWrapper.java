@@ -31,4 +31,8 @@ public class EmployeeManagerWrapper {
     public ObservableList<EmployeeRow> getEmployees() {
         return employees;
     }
+    public void fireEmployee(EmployeeRow employee) {
+        EmployeeManager.getInstance().fireEmployee(employee.getEmployeeId());
+        employees.remove(employee);
+    }
 }
