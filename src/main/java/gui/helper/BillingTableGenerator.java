@@ -33,19 +33,35 @@ public class BillingTableGenerator {
     }
 
     private TableColumn<EmployeeRow, Button> editColumn() {
-        TableColumn<EmployeeRow, Button> fireColumn = new TableColumn<>("Edit");
-        fireColumn.setCellFactory(ActionButtonTableCell.forTableColumn("Edit", (EmployeeRow p) -> {
+        TableColumn<EmployeeRow, Button> editColumn = new TableColumn<>("Edit");
+        editColumn.setCellFactory(ActionButtonTableCell.forTableColumn("Edit", (EmployeeRow p) -> {
             try {
-                SceneSwitcher.getInstance().switchScene(EmployeeViewGenerator.EDIT_MODE.generate());
+                SceneSwitcher.getInstance().switchScene(EmployeeViewGenerator.EDIT_MODE.generate(p));
             } catch (Exception e) {
                 e.printStackTrace();
             }
             return p;
         }));
 
-        fireColumn.visibleProperty().setValue(false);
+        editColumn.visibleProperty().setValue(false);
 
-        return fireColumn;
+        return editColumn;
+    }
+
+    private TableColumn<EmployeeRow, Button> viewColumn() {
+        TableColumn<EmployeeRow, Button> viewColumn = new TableColumn<>("View");
+        viewColumn.setCellFactory(ActionButtonTableCell.forTableColumn("View", (EmployeeRow p) -> {
+            try {
+                SceneSwitcher.getInstance().switchScene(EmployeeViewGenerator.VIEW_MODE.generate(p));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return p;
+        }));
+
+        viewColumn.visibleProperty().setValue(false);
+
+        return viewColumn;
     }
 
     public TableView generate() {
@@ -66,7 +82,8 @@ public class BillingTableGenerator {
                 column("paymentCurrency", "Currency"),
                 paymentDiff,
                 fireColumn(),
-                editColumn()
+                editColumn(),
+                viewColumn()
         );
 
         tableView.setTableMenuButtonVisible(true);

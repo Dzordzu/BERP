@@ -4,15 +4,23 @@ import business.Employee;
 import lombok.Getter;
 import valueobj.math.Percentage;
 
+import java.time.LocalDate;
+
 public class EmployeeRow {
 
-    @Getter String fullnameLong, fullnameShort, humanId, firstname, surname;
+    @Getter String fullnameLong, fullnameShort, humanId, humanIDType, firstname, surname, sex;
     @Getter String employeeId, paymentStrategy, paymentCurrency, jobTitle;
     @Getter double netEmployeeSalary, grossEmploymentCost;
+    @Getter LocalDate birthdate;
     Percentage paymentDiff;
 
     public EmployeeRow(Employee employee) {
-
+        humanIDType = employee.getPerson().getId().getType().name();
+        humanId = employee.getPerson().getId().getValue();
+        firstname = employee.getPerson().getName().getFirstname();
+        surname = employee.getPerson().getName().getSurname();
+        sex = employee.getPerson().getSex().toString();
+        birthdate = employee.getPerson().getAge().getBirthDate();
         fullnameLong = employee.getPerson().getName().getFullName();
         fullnameShort = employee.getPerson().getName().toString();
         employeeId = employee.getId().getValue();

@@ -14,7 +14,7 @@ public enum EmployeeViewGenerator {
     EDIT_MODE
     ;
 
-    public Parent generate(Employee e) {
+    public Parent generate(EmployeeRow e) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/employee.fxml"));
         Parent result = loader.load();
         EmployeeController resultController = loader.getController();

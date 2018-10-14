@@ -11,16 +11,17 @@ public class EmployeeController {
     @FXML PersonalController personalController;
 
     public void setMode(String mode) {
-        switch(mode) {
-            case "EDIT_MODE":
-                personalController.setMode(mode);
-                System.out.println(personalController);
-                break;
-        }
+        personalController.setMode(mode);
     }
 
     public void setEmployee(EmployeeRow e) {
-        //personalController.setBirthdateValue(;
+        personalController.setFirstnameValue(e.getFirstname());
+        personalController.setSurnameValue(e.getSurname());
+        personalController.setBirthdateValue(e.getBirthdate());
+        personalController.setPersonIDTypeValue(e.getHumanIDType());
+        personalController.setPersonIDValue(e.getHumanId());
+        personalController.setSexValue(e.getSex());
+        personalController.applyValues();
     }
 
     public void save() {
