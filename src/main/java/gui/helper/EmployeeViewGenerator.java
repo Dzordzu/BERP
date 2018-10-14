@@ -1,21 +1,38 @@
 package gui.helper;
 
-import gui.ContentLoader;
+import business.Employee;
+import gui.controller.EmployeeController;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
 import java.io.IOException;
 
-public class EmployeeViewGenerator {
+public enum EmployeeViewGenerator {
 
-    private static EmployeeViewGenerator ourInstance = new EmployeeViewGenerator();
-    public static EmployeeViewGenerator getInstance() {
-        return ourInstance;
+    VIEW_MODE,
+    CREATE_MODE,
+    EDIT_MODE
+    ;
+
+    public Parent generate(Employee e) {
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/employee.fxml"));
+        Parent result = loader.load();
+        EmployeeController resultController = loader.getController();
+        resultController.setEmployee(e);
+        resultController.setMode(this.name());
+        return result;
     }
-    private EmployeeViewGenerator() {}
 
     public Parent generate() throws IOException {
 
-        return ContentLoader.getInstance().loadParent("fxml/employee.fxml");
-
+        /*
+         * @NOTE We could not use here ContentLoader. We have to gain access to the employee.fxml
+         *  controller. It's why we are using manual method
+         */
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/employee.fxml"));
+        Parent result = loader.load();
+        EmployeeController resultController = loader.getController();
+        resultController.setMode(this.name());
+        return result;
     }
 }

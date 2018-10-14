@@ -11,8 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.PersonalController">
    <children>
       <Label minHeight="40.0" text="Personal" VBox.vgrow="ALWAYS">
          <font>
@@ -22,7 +21,7 @@
             <Insets top="10.0" />
          </VBox.margin>
       </Label>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="40.0" styleClass="employee-field">
+      <HBox fx:id="personIDType" alignment="CENTER" minHeight="40.0" prefHeight="40.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Person ID Type">
                <HBox.margin>
@@ -36,7 +35,7 @@
             </SplitMenuButton>
          </children>
       </HBox>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="personID" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Person ID">
                <HBox.margin>
@@ -46,7 +45,7 @@
             <TextField />
          </children>
       </HBox>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="firstname" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname">
                <HBox.margin>
@@ -56,7 +55,7 @@
             <TextField />
          </children>
       </HBox>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="surname" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surname">
                <HBox.margin>
@@ -66,7 +65,7 @@
             <TextField />
          </children>
       </HBox>
-      <HBox alignment="CENTER" disable="true" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="sex" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sex">
                <HBox.margin>
@@ -76,7 +75,7 @@
             <TextField />
          </children>
       </HBox>
-      <HBox alignment="CENTER" disable="true" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="birthdate" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Birthdate" />
             <DatePicker />

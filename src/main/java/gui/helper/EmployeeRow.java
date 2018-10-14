@@ -6,12 +6,13 @@ import valueobj.math.Percentage;
 
 public class EmployeeRow {
 
-    @Getter String fullnameLong, fullnameShort, humanId;
+    @Getter String fullnameLong, fullnameShort, humanId, firstname, surname;
     @Getter String employeeId, paymentStrategy, paymentCurrency, jobTitle;
     @Getter double netEmployeeSalary, grossEmploymentCost;
     Percentage paymentDiff;
 
     public EmployeeRow(Employee employee) {
+
         fullnameLong = employee.getPerson().getName().getFullName();
         fullnameShort = employee.getPerson().getName().toString();
         employeeId = employee.getId().getValue();

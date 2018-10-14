@@ -36,7 +36,7 @@ public class BillingTableGenerator {
         TableColumn<EmployeeRow, Button> fireColumn = new TableColumn<>("Edit");
         fireColumn.setCellFactory(ActionButtonTableCell.forTableColumn("Edit", (EmployeeRow p) -> {
             try {
-                SceneSwitcher.getInstance().switchScene(EmployeeViewGenerator.getInstance().generate());
+                SceneSwitcher.getInstance().switchScene(EmployeeViewGenerator.EDIT_MODE.generate());
             } catch (Exception e) {
                 e.printStackTrace();
             }

@@ -44,7 +44,7 @@
                   </HBox>
                </right>
             </BorderPane>
-             <fx:include source="employee-personal.fxml" />
+             <fx:include fx:id="personal" source="employee-personal.fxml" />
              <fx:include source="employee-address.fxml" />
              <fx:include source="employee-job.fxml" />
          </children>
