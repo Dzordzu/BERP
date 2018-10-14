@@ -3,15 +3,13 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -19,69 +17,50 @@
 
 <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="514.0" prefWidth="470.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <content>
-      <VBox>
+      <VBox alignment="CENTER">
          <children>
-            <GridPane prefHeight="456.0" prefWidth="379.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints maxHeight="60.0" minHeight="60.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-                  <RowConstraints maxHeight="40.0" minHeight="40.0" prefHeight="40.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <BorderPane minHeight="50.0" prefHeight="131.0" prefWidth="468.0" styleClass="employee-title" stylesheets="@styles/main.css" VBox.vgrow="ALWAYS">
+               <left>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="employee-title-text" text="ID" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                     <font>
+                        <Font name="Roboto Regular" size="18.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets left="20.0" />
+                     </BorderPane.margin>
+                  </Text>
+               </left>
+               <right>
+                  <HBox alignment="CENTER" BorderPane.alignment="CENTER">
+                     <children>
+                        <Button mnemonicParsing="false" text="Save">
+                           <HBox.margin>
+                              <Insets right="5.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button mnemonicParsing="false" styleClass="employee-button" text="Cancel">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <BorderPane.margin>
+                        <Insets right="20.0" />
+                     </BorderPane.margin>
+                  </HBox>
+               </right>
+            </BorderPane>
+            <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
                <children>
-                  <BorderPane prefHeight="56.0" prefWidth="307.0" styleClass="employee-title" stylesheets="@styles/main.css" GridPane.hgrow="NEVER" GridPane.vgrow="ALWAYS">
-                     <left>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="employee-title-text" text="ID" textAlignment="CENTER" BorderPane.alignment="CENTER">
-                           <font>
-                              <Font name="Roboto Regular" size="18.0" />
-                           </font>
-                           <BorderPane.margin>
-                              <Insets left="20.0" />
-                           </BorderPane.margin>
-                        </Text>
-                     </left>
-                     <right>
-                        <HBox alignment="CENTER" BorderPane.alignment="CENTER">
-                           <children>
-                              <Button mnemonicParsing="false" text="Save">
-                                 <HBox.margin>
-                                    <Insets right="5.0" />
-                                 </HBox.margin>
-                              </Button>
-                              <Button mnemonicParsing="false" styleClass="employee-button" text="Cancel">
-                                 <HBox.margin>
-                                    <Insets />
-                                 </HBox.margin>
-                              </Button>
-                           </children>
-                           <BorderPane.margin>
-                              <Insets right="20.0" />
-                           </BorderPane.margin>
-                        </HBox>
-                     </right>
-                     <GridPane.margin>
-                        <Insets bottom="10.0" />
-                     </GridPane.margin>
-                  </BorderPane>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Personal" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                  <Label minHeight="40.0" text="Personal" VBox.vgrow="ALWAYS">
                      <font>
                         <Font size="15.0" />
                      </font>
-                  </Text>
-                  <HBox alignment="CENTER" prefHeight="58.0" styleClass="employee-field" GridPane.rowIndex="2">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox alignment="CENTER" minHeight="40.0" prefHeight="40.0" styleClass="employee-field">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Person ID Type">
                            <HBox.margin>
@@ -95,7 +74,7 @@
                         </SplitMenuButton>
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="58.0" styleClass="employee-field" GridPane.rowIndex="3">
+                  <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Person ID">
                            <HBox.margin>
@@ -105,7 +84,7 @@
                         <TextField />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="58.0" styleClass="employee-field" GridPane.hgrow="NEVER" GridPane.rowIndex="4" GridPane.vgrow="ALWAYS">
+                  <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname">
                            <HBox.margin>
@@ -114,11 +93,8 @@
                         </Text>
                         <TextField />
                      </children>
-                     <GridPane.margin>
-                        <Insets />
-                     </GridPane.margin>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="58.0" styleClass="employee-field" GridPane.hgrow="NEVER" GridPane.rowIndex="5" GridPane.vgrow="ALWAYS">
+                  <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surname">
                            <HBox.margin>
@@ -128,7 +104,7 @@
                         <TextField />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" disable="true" prefHeight="58.0" styleClass="employee-field" GridPane.hgrow="NEVER" GridPane.rowIndex="6" GridPane.vgrow="ALWAYS">
+                  <HBox alignment="CENTER" disable="true" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sex">
                            <HBox.margin>
@@ -138,22 +114,22 @@
                         <TextField />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" disable="true" prefHeight="58.0" styleClass="employee-field" GridPane.rowIndex="7">
+                  <HBox alignment="CENTER" disable="true" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Birthdate">
-                           <HBox.margin>
-                              <Insets left="15.0" right="20.0" />
-                           </HBox.margin>
-                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Birthdate" />
                         <DatePicker />
                      </children>
                   </HBox>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Address" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" VBox.vgrow="ALWAYS">
+               <children>
+                  <Label minHeight="40.0" text="Address">
                      <font>
                         <Font size="15.0" />
                      </font>
-                  </Text>
-                  <HBox alignment="CENTER" prefHeight="58.0" styleClass="employee-field" GridPane.rowIndex="9">
+                  </Label>
+                  <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Street">
                            <HBox.margin>
@@ -163,7 +139,7 @@
                         <TextField />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="58.0" styleClass="employee-field" GridPane.rowIndex="10">
+                  <HBox alignment="CENTER" maxHeight="58.0" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Street Number">
                            <HBox.margin>
@@ -173,7 +149,7 @@
                         <TextField />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" prefHeight="58.0" styleClass="employee-field" GridPane.rowIndex="11">
+                  <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Home Number">
                            <HBox.margin>
@@ -183,29 +159,32 @@
                         <TextField />
                      </children>
                   </HBox>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Job" GridPane.halignment="CENTER" GridPane.rowIndex="12">
-                     <font>
-                        <Font size="15.0" />
-                     </font>
-                  </Text>
-                  <HBox alignment="CENTER" prefHeight="58.0" styleClass="employee-field" GridPane.hgrow="NEVER" GridPane.rowIndex="13" GridPane.vgrow="ALWAYS">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Strategy">
-                           <HBox.margin>
-                              <Insets left="15.0" right="20.0" />
-                           </HBox.margin>
-                        </Text>
-                        <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Standard">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Standard" />
-                            <MenuItem mnemonicParsing="false" text="Bonus" />
-                              <MenuItem mnemonicParsing="false" text="Test Period" />
-                          </items>
-                        </SplitMenuButton>
-                     </children>
-                  </HBox>
                </children>
-            </GridPane>
+            </VBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Job">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Text>
+            <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Strategy">
+                     <HBox.margin>
+                        <Insets left="15.0" right="20.0" />
+                     </HBox.margin>
+                  </Text>
+                  <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Standard">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Standard" />
+                      <MenuItem mnemonicParsing="false" text="Bonus" />
+                        <MenuItem mnemonicParsing="false" text="Test Period" />
+                    </items>
+                  </SplitMenuButton>
+               </children>
+            </HBox>
          </children>
       </VBox>
    </content>
