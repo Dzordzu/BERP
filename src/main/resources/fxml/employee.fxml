@@ -15,7 +15,7 @@
          <children>
             <BorderPane minHeight="50.0" prefWidth="200.0" styleClass="employee-title" stylesheets="@styles/main.css">
                <left>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="employee-title-text" text="ID" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                  <Text fx:id="id" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="employee-title-text" text="ID" textAlignment="CENTER" BorderPane.alignment="CENTER">
                      <font>
                         <Font name="Roboto Regular" size="18.0" />
                      </font>
@@ -45,8 +45,8 @@
                </right>
             </BorderPane>
              <fx:include fx:id="personal" source="employee-personal.fxml" />
-             <fx:include source="employee-address.fxml" />
-             <fx:include source="employee-job.fxml" />
+             <fx:include fx:id="address" source="employee-address.fxml" />
+             <fx:include fx:id="job" source="employee-job.fxml" />
          </children>
       </VBox>
    </content>

@@ -10,14 +10,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.JobController">
    <children>
       <Label minHeight="40.0" text="Job">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="jobTitle" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation">
                <HBox.margin>
@@ -32,7 +32,7 @@
             </SplitMenuButton>
          </children>
       </HBox>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="paymentStrategy" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Strategy">
                <HBox.margin>
@@ -48,7 +48,7 @@
             </SplitMenuButton>
          </children>
       </HBox>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="payment" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
                <HBox.margin>
@@ -67,7 +67,7 @@
             </SplitMenuButton>
          </children>
       </HBox>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="paymentType" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment type">
                <HBox.margin>
