@@ -47,3 +47,38 @@
     -fx-border-color: #333;
     -fx-border-width: 0 1;
 }
+
+.employee-title {
+    -fx-background-color: #333;
+}
+
+.employee-title .button {
+    -fx-background-radius: 0;
+    -fx-background-color: #ccc;
+}
+
+.employee-title .button:focused {
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: #fff;
+    -fx-background-color: #aaa;
+}
+
+
+.employee-title-text {
+   -fx-fill: #fff;
+}
+
+.employee-split-menu-button .label, .employee-split-menu-button > .menu {
+   -fx-background-radius: 0;
+   -fx-background-color: #333;
+   -fx-text-fill: #fff;
+}
+
+.employee-split-menu-button .text {
+    -fx-text-fill: #fff;
+}
+
+.employee-split-menu-button {
+}
+
+

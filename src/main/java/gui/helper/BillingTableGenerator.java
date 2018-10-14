@@ -1,8 +1,10 @@
 package gui.helper;
 
 import gui.SceneSwitcher;
-import javafx.event.ActionEvent;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 public class BillingTableGenerator {
@@ -33,7 +35,11 @@ public class BillingTableGenerator {
     private TableColumn<EmployeeRow, Button> editColumn() {
         TableColumn<EmployeeRow, Button> fireColumn = new TableColumn<>("Edit");
         fireColumn.setCellFactory(ActionButtonTableCell.forTableColumn("Edit", (EmployeeRow p) -> {
-            
+            try {
+                SceneSwitcher.getInstance().switchScene("fxml/employee.fxml");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
             return p;
         }));
 
