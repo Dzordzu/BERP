@@ -27,12 +27,12 @@
                <right>
                   <HBox alignment="CENTER" BorderPane.alignment="CENTER">
                      <children>
-                        <Button mnemonicParsing="false" text="Save">
+                        <Button mnemonicParsing="false" onMouseClicked="#save" text="Save">
                            <HBox.margin>
                               <Insets right="5.0" />
                            </HBox.margin>
                         </Button>
-                        <Button mnemonicParsing="false" styleClass="employee-button" text="Cancel">
+                        <Button mnemonicParsing="false" onMouseClicked="#cancel" styleClass="employee-button" text="Cancel">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
