@@ -9,7 +9,7 @@
    <children>
       <Text lineSpacing="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="BERP" textAlignment="CENTER" wrappingWidth="83.9130859375">
          <font>
-            <Font name="System Bold" size="21.0" />
+            <Font name="Roboto Bold Italic" size="27.0" />
          </font>
       </Text>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="A Basic ERP" textAlignment="CENTER">

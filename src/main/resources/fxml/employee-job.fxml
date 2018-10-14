@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label minHeight="40.0" text="Job">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Occupation">
+               <HBox.margin>
+                  <Insets left="15.0" right="20.0" />
+               </HBox.margin>
+            </Text>
+            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Junior Dev">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Junior Dev" />
+                  <MenuItem mnemonicParsing="false" text="Manager" />
+               </items>
+            </SplitMenuButton>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Strategy">
+               <HBox.margin>
+                  <Insets left="15.0" right="20.0" />
+               </HBox.margin>
+            </Text>
+            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Standard">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Standard" />
+                <MenuItem mnemonicParsing="false" text="Bonus" />
+                  <MenuItem mnemonicParsing="false" text="Test Period" />
+              </items>
+            </SplitMenuButton>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment">
+               <HBox.margin>
+                  <Insets left="15.0" right="20.0" />
+               </HBox.margin>
+            </Text>
+            <TextField>
+               <HBox.margin>
+                  <Insets right="5.0" />
+               </HBox.margin>
+            </TextField>
+            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="PLN">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="PLN" />
+               </items>
+            </SplitMenuButton>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payment type">
+               <HBox.margin>
+                  <Insets left="15.0" right="20.0" />
+               </HBox.margin>
+            </Text>
+            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Net Employment Cost">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Net Employment Cost" />
+                  <MenuItem mnemonicParsing="false" text="Gross Employment Cost" />
+                  <MenuItem mnemonicParsing="false" text="Net Employmee Salary" />
+               </items>
+            </SplitMenuButton>
+         </children>
+      </HBox>
+   </children>
+</VBox>

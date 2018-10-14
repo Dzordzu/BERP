@@ -1,0 +1,82 @@
+.menu-bar {
+    -fx-background-color: #333;
+    -fx-border-color: #333;
+}
+
+.context-menu {
+    -fx-background-color: #333;
+    -fx-border-color: #333;
+    -fx-padding: 0;
+}
+
+.menu-item {
+    -fx-background-color: #333;
+    -fx-border-color: #333;
+}
+
+.menu-item:focused {
+    -fx-background-color: #555;
+    -fx-border-color: #333;
+}
+
+.menu .label {
+    -fx-padding: 4;
+    -fx-text-fill: #fff;
+}
+
+.table-view .column-header-background .label {
+    -fx-background-color: #fff;
+    -fx-text-fill: #333;
+}
+
+.table-view .column-header-background .filler {
+    -fx-background-color: #fff;
+}
+
+.table-view {
+    -fx-background-color: #fff;
+}
+
+.table-view .nested-column-header {
+    -fx-border-color: #333;
+}
+
+.table-view .column-header {
+    -fx-background-color: #fff;
+    -fx-alignment: CENTER_LEFT;
+    -fx-border-color: #333;
+    -fx-border-width: 0 1;
+}
+
+.employee-title {
+    -fx-background-color: #444;
+}
+
+.employee-title .button {
+    -fx-background-radius: 0;
+    -fx-background-color: #ccc;
+}
+
+.employee-title .button:hover {
+    -fx-background-color: #aaa;
+}
+
+
+.employee-title-text {
+   -fx-fill: #fff;
+}
+
+.employee-split-menu-button .label, .employee-split-menu-button > .menu {
+   -fx-background-radius: 0;
+   -fx-background-color: #333;
+   -fx-text-fill: #fff;
+}
+
+.employee-split-menu-button .text {
+    -fx-text-fill: #fff;
+}
+
+.employee-split-menu-button {
+}
+
+

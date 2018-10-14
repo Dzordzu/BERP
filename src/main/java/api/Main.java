@@ -88,7 +88,7 @@ public class Main {
 		List<Employee> employees = EmployeeSeeder.getInstance().getEmployees();
 
 		for(Employee p: employees) {
-			System.out.println(p.getJob().getSalary().getNetEmploymentCost());
+			System.out.println(p.getPerson().getName().getFullName());
 			System.out.println(p.getJob().getSalary().getPaymentName());
 			System.out.println(p.getJob().getJobTitle());
 			System.out.println((p.getPerson().getAge().getBirthDate()));

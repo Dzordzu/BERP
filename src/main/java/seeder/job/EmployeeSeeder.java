@@ -1,6 +1,7 @@
 package seeder.job;
 
 import business.Employee;
+import business.EmployeeManager;
 import business.jobs.Job;
 import business.person.Person;
 import valueobj.human.ID;
@@ -45,5 +46,8 @@ public class EmployeeSeeder implements Seeder {
         return employees;
     }
 
-    public void seed(){}
+    public void seed(){
+        for(Employee e: this.employees)
+            EmployeeManager.getInstance().hireEmployee(e);
+    }
 }

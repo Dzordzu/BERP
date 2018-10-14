@@ -15,13 +15,13 @@
           <Menu mnemonicParsing="false" text="Manage">
             <items>
               <MenuItem mnemonicParsing="false" text="Add Employee" />
-                  <MenuItem mnemonicParsing="false" onAction="#loadEmployees" text="View Employees" />
-                  <MenuItem mnemonicParsing="false" onAction="#loadBillings" text="View Billings" />
+                  <MenuItem mnemonicParsing="false" text="View Employees" />
+                  <MenuItem mnemonicParsing="false" text="View Billings" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
             <items>
-              <MenuItem mnemonicParsing="false" onAction="#loadAbout" text="About" />
+              <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>
         </menus>

@@ -1,4 +1,6 @@
 /out
-.exaple
+*.example
 /target
 /.idea
+.log
+.attach_*

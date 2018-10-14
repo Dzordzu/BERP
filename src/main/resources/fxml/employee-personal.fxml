@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.PersonalController">
+   <children>
+      <Label minHeight="40.0" text="Personal" VBox.vgrow="ALWAYS">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </Label>
+      <HBox fx:id="personIDType" alignment="CENTER" minHeight="40.0" prefHeight="40.0" styleClass="employee-field">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Person ID Type">
+               <HBox.margin>
+                  <Insets left="15.0" right="20.0" />
+               </HBox.margin>
+            </Text>
+            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="PESEL">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="PESEL" />
+               </items>
+            </SplitMenuButton>
+         </children>
+      </HBox>
+      <HBox fx:id="personID" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Person ID">
+               <HBox.margin>
+                  <Insets left="15.0" right="20.0" />
+               </HBox.margin>
+            </Text>
+            <TextField />
+         </children>
+      </HBox>
+      <HBox fx:id="firstname" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Firstname">
+               <HBox.margin>
+                  <Insets left="15.0" right="20.0" />
+               </HBox.margin>
+            </Text>
+            <TextField />
+         </children>
+      </HBox>
+      <HBox fx:id="surname" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Surname">
+               <HBox.margin>
+                  <Insets left="15.0" right="20.0" />
+               </HBox.margin>
+            </Text>
+            <TextField />
+         </children>
+      </HBox>
+      <HBox fx:id="sex" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sex">
+               <HBox.margin>
+                  <Insets left="15.0" right="20.0" />
+               </HBox.margin>
+            </Text>
+            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Male">
+               <items>
+                  <MenuItem mnemonicParsing="false" text="Male" />
+                  <MenuItem mnemonicParsing="false" text="Female" />
+               </items>
+            </SplitMenuButton>
+         </children>
+      </HBox>
+      <HBox fx:id="birthdate" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Birthdate" />
+            <DatePicker />
+         </children>
+      </HBox>
+   </children>
+</VBox>
