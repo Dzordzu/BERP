@@ -8,9 +8,11 @@ import javafx.fxml.FXML;
 public class EmployeeController {
 
     @FXML PersonalController personalController;
+    @FXML AddressController addressController;
 
     public void setMode(String mode) {
         personalController.setMode(mode);
+        addressController.setMode(mode);
     }
 
     public void setEmployee(EmployeeRow e) {
@@ -21,6 +23,15 @@ public class EmployeeController {
         personalController.setPersonIDValue(e.getHumanId());
         personalController.setSexValue(e.getSex());
         personalController.applyValues();
+
+        addressController.setCountryValue(e.getCountry());
+        addressController.setRegionValue(e.getRegion());
+        addressController.setCityValue(e.getCity());
+        addressController.setStreetValue(e.getStreet());
+        addressController.setStreetNumberValue(e.getStreetNumber());
+        addressController.setHomeNumberValue(e.getHomeNumber());
+        addressController.setPostalCodeValue(e.getPostalCode());
+        addressController.applyValues();
     }
 
     public void save() {

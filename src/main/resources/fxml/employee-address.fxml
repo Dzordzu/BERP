@@ -10,28 +10,38 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controller.AddressController">
    <children>
       <Label minHeight="40.0" text="Address">
          <font>
             <Font size="15.0" />
          </font>
       </Label>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="country" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Country">
                <HBox.margin>
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="POLAND">
+            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Republic of Poland">
                <items>
-                  <MenuItem mnemonicParsing="false" text="POLAND" />
+                  <MenuItem mnemonicParsing="false" text="Republic of Poland" />
                </items>
             </SplitMenuButton>
          </children>
       </HBox>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="region" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Region">
+               <HBox.margin>
+                  <Insets left="15.0" right="20.0" />
+               </HBox.margin>
+            </Text>
+            <TextField />
+         </children>
+      </HBox>
+      <HBox fx:id="city" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="City">
                <HBox.margin>
@@ -41,7 +51,7 @@
             <TextField />
          </children>
       </HBox>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="street" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Street">
                <HBox.margin>
@@ -51,7 +61,7 @@
             <TextField />
          </children>
       </HBox>
-      <HBox alignment="CENTER" maxHeight="58.0" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="streetNumber" alignment="CENTER" maxHeight="58.0" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Street Number">
                <HBox.margin>
@@ -61,7 +71,7 @@
             <TextField />
          </children>
       </HBox>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="homeNumber" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Home Number">
                <HBox.margin>
@@ -71,7 +81,7 @@
             <TextField />
          </children>
       </HBox>
-      <HBox alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="postalCode" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Postal Code">
                <HBox.margin>

@@ -9,12 +9,21 @@ import java.time.LocalDate;
 public class EmployeeRow {
 
     @Getter String fullnameLong, fullnameShort, humanId, humanIDType, firstname, surname, sex;
+    @Getter String country, region, city, street, streetNumber, homeNumber, postalCode;
     @Getter String employeeId, paymentStrategy, paymentCurrency, jobTitle;
     @Getter double netEmployeeSalary, grossEmploymentCost;
     @Getter LocalDate birthdate;
     Percentage paymentDiff;
 
     public EmployeeRow(Employee employee) {
+        country = employee.getPerson().getHomeAddress().getCountry().getFullName();
+        region = employee.getPerson().getHomeAddress().getCity().getRegion();
+        city = employee.getPerson().getHomeAddress().getCity().getName();
+        street = employee.getPerson().getHomeAddress().getHome().getStreet();
+        streetNumber = employee.getPerson().getHomeAddress().getHome().getStreetNumber();
+        homeNumber = employee.getPerson().getHomeAddress().getHome().getNumber();
+        postalCode = employee.getPerson().getHomeAddress().getHome().getPostalCode();
+
         humanIDType = employee.getPerson().getId().getType().name();
         humanId = employee.getPerson().getId().getValue();
         firstname = employee.getPerson().getName().getFirstname();
