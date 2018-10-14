@@ -1,6 +1,5 @@
 package gui.controller;
 
-import business.Employee;
 import gui.SceneSwitcher;
 import gui.helper.BillingTableGenerator;
 import gui.helper.EmployeeRow;
