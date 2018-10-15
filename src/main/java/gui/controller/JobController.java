@@ -1,6 +1,7 @@
 package gui.controller;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -32,10 +33,27 @@ public class JobController {
 
     public void applyValues() {
         ((SplitMenuButton)jobTitle.getChildren().get(1)).setText(jobTitleValue);
-        ((SplitMenuButton)paymentStrategy.getChildren().get(1)).setText(paymentStrategyValue);
+        ((MenuButton)paymentStrategy.getChildren().get(1)).setText(paymentStrategyValue);
         ((TextField)payment.getChildren().get(1)).setText(((Double)paymentValue).toString());
         ((SplitMenuButton)payment.getChildren().get(2)).setText(paymentCurrencyValue);
         ((SplitMenuButton)paymentType.getChildren().get(1)).setText(paymentTypeValue);
+    }
+
+    public void changePaymentStrategy(String value) {
+        ((MenuButton)paymentStrategy.getChildren().get(1)).setText(value);
+        paymentStrategyValue = value;
+    }
+
+    public void changePSToBonus() {
+        changePaymentStrategy("Bonus Payment");
+    }
+
+    public void changePSToStandard() {
+        changePaymentStrategy("Standard Payment");
+    }
+
+    public void changePSToTestPeriod() {
+        changePaymentStrategy("Test Period Payment");
     }
 
 

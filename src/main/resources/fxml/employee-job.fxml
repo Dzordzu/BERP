@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
@@ -39,13 +40,13 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Standard">
+            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Standard Payment">
               <items>
-                <MenuItem mnemonicParsing="false" text="Standard" />
-                <MenuItem mnemonicParsing="false" text="Bonus" />
-                  <MenuItem mnemonicParsing="false" text="Test Period" />
+                <MenuItem mnemonicParsing="false" onAction="#changePSToStandard" text="Standard Payment" />
+                <MenuItem mnemonicParsing="false" onAction="#changePSToBonus" text="Bonus Payment" />
+                  <MenuItem mnemonicParsing="false" onAction="#changePSToTestPeriod" text="Test Period Payment" />
               </items>
-            </SplitMenuButton>
+            </MenuButton>
          </children>
       </HBox>
       <HBox fx:id="payment" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
