@@ -143,7 +143,7 @@ public class EmployeeController {
         }
 
         EmployeeBuilder.setJob(job);
-        EmployeeManager.getInstance().hireEmployee(EmployeeBuilder.buildAndClear());
+        EmployeeManager.getInstance().updateEmployee(EmployeeBuilder.buildAndClear());
         EmployeeManagerWrapper.getInstance().refresh();
         SceneSwitcher.getInstance().switchScene(BillingTableGenerator.getInstance().generate());
     }
