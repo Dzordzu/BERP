@@ -56,7 +56,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <TextField>
+            <TextField onKeyReleased="#changePayment">
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin>

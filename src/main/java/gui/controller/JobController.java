@@ -56,5 +56,9 @@ public class JobController {
         changePaymentStrategy("Test Period Payment");
     }
 
+    public void changePayment() {
+        paymentValue = Double.valueOf(((TextField)payment.getChildren().get(1)).getText());
+    }
+
 
 }
