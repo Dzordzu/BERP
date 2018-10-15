@@ -11,7 +11,7 @@ public class EmployeeRow {
     @Getter String fullnameLong, fullnameShort, humanId, humanIDType, firstname, surname, sex;
     @Getter String country, region, city, street, streetNumber, homeNumber, postalCode;
     @Getter String employeeId, paymentStrategy, paymentCurrency, jobTitle;
-    @Getter double netEmployeeSalary, grossEmploymentCost;
+    @Getter double netEmployeeSalary, grossEmploymentCost, netEmploymentCost;
     @Getter LocalDate birthdate;
     Percentage paymentDiff;
 
@@ -30,14 +30,18 @@ public class EmployeeRow {
         surname = employee.getPerson().getName().getSurname();
         sex = employee.getPerson().getSex().toString();
         birthdate = employee.getPerson().getAge().getBirthDate();
+
+        employeeId = employee.getId().getValue();
         fullnameLong = employee.getPerson().getName().getFullName();
         fullnameShort = employee.getPerson().getName().toString();
-        employeeId = employee.getId().getValue();
-        paymentStrategy = employee.getJob().getSalary().getPaymentName();
-        paymentCurrency = employee.getJob().getSalary().getNetEmploymentCost().getCurrency().getCurrencyCode();
+
         jobTitle = employee.getJob().getJobTitle();
         netEmployeeSalary = employee.getJob().getSalary().getNetEmployeeSalary().getAmount();
         grossEmploymentCost = employee.getJob().getSalary().getGrossEmploymentCost().getAmount();
+        netEmploymentCost = employee.getJob().getSalary().getNetEmploymentCost().getAmount();
+        paymentStrategy = employee.getJob().getSalary().getPaymentName();
+        paymentCurrency = employee.getJob().getSalary().getNetEmploymentCost().getCurrency().getCurrencyCode();
+
         paymentDiff = new Percentage().setFraction(netEmployeeSalary/grossEmploymentCost);
     }
 

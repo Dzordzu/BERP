@@ -9,10 +9,12 @@ public class EmployeeController {
 
     @FXML PersonalController personalController;
     @FXML AddressController addressController;
+    @FXML JobController jobController;
 
     public void setMode(String mode) {
         personalController.setMode(mode);
         addressController.setMode(mode);
+        jobController.setMode(mode);
     }
 
     public void setEmployee(EmployeeRow e) {
@@ -32,6 +34,13 @@ public class EmployeeController {
         addressController.setHomeNumberValue(e.getHomeNumber());
         addressController.setPostalCodeValue(e.getPostalCode());
         addressController.applyValues();
+
+        jobController.setPaymentValue(e.getNetEmploymentCost());
+        jobController.setJobTitleValue(e.getJobTitle());
+        jobController.setPaymentStrategyValue(e.getPaymentStrategy());
+        jobController.setPaymentCurrencyValue(e.getPaymentCurrency());
+        jobController.setPaymentTypeValue("Net Employment Cost");
+        jobController.applyValues();
     }
 
     public void save() {
