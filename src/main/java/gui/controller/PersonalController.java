@@ -52,7 +52,18 @@ public class PersonalController {
 
     public void changeFirstname() {
         firstnameValue = ((TextField)firstname.getChildren().get(1)).getText();
-        System.out.println(firstnameValue);
+    }
+
+    public void changeSurname() {
+
+    }
+
+    public void changePersonID() {
+
+    }
+
+    public void changePersonIDType() {
+        
     }
 
 
