@@ -42,7 +42,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <TextField />
+            <TextField onKeyReleased="#changePersonID" />
          </children>
       </HBox>
       <HBox fx:id="firstname" alignment="CENTER" minHeight="40.0" onKeyReleased="#changeFirstname" prefHeight="58.0" styleClass="employee-field">
@@ -62,7 +62,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <TextField />
+            <TextField onKeyReleased="#changeSurname" />
          </children>
       </HBox>
       <HBox fx:id="sex" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">

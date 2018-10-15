@@ -55,15 +55,15 @@ public class PersonalController {
     }
 
     public void changeSurname() {
-
+       surnameValue = ((TextField)surname.getChildren().get(1)).getText();
     }
 
     public void changePersonID() {
-
+        personIDValue = ((TextField)personID.getChildren().get(1)).getText();
     }
 
     public void changePersonIDType() {
-        
+
     }
 
 

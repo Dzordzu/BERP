@@ -43,5 +43,9 @@ public class AddressController {
         ((TextField)postalCode.getChildren().get(1)).setText(postalCodeValue);
     }
 
+    public void changeRegion() {
+        regionValue = ((TextField)region.getChildren().get(1)).getText();
+    }
+
 
 }
