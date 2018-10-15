@@ -15,7 +15,7 @@
          <children>
             <BorderPane minHeight="50.0" prefWidth="200.0" styleClass="employee-title" stylesheets="@styles/main.css">
                <left>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="employee-title-text" text="ID" textAlignment="CENTER" BorderPane.alignment="CENTER">
+                  <Text fx:id="id" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="employee-title-text" text="ID" textAlignment="CENTER" BorderPane.alignment="CENTER">
                      <font>
                         <Font name="Roboto Regular" size="18.0" />
                      </font>

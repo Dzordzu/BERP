@@ -4,9 +4,11 @@ import gui.SceneSwitcher;
 import gui.helper.BillingTableGenerator;
 import gui.helper.EmployeeRow;
 import javafx.fxml.FXML;
+import javafx.scene.text.Text;
 
 public class EmployeeController {
 
+    @FXML Text id;
     @FXML PersonalController personalController;
     @FXML AddressController addressController;
     @FXML JobController jobController;
@@ -41,6 +43,8 @@ public class EmployeeController {
         jobController.setPaymentCurrencyValue(e.getPaymentCurrency());
         jobController.setPaymentTypeValue("Net Employment Cost");
         jobController.applyValues();
+
+        id.setText(e.getEmployeeId());
     }
 
     public void save() {
