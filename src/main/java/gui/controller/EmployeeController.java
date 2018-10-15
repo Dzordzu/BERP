@@ -12,6 +12,7 @@ import business.payment.TestPeriodPayment;
 import business.person.PersonBuilder;
 import gui.SceneSwitcher;
 import gui.helper.BillingTableGenerator;
+import gui.helper.EmployeeManagerWrapper;
 import gui.helper.EmployeeRow;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
@@ -68,6 +69,7 @@ public class EmployeeController {
     public void save() throws Exception {
 
         NameBuilder.clear();
+        System.out.println("Saved with firstname: " + personalController.getFirstnameValue());
         NameBuilder.setFirstname(personalController.getFirstnameValue());
         NameBuilder.setSurname(personalController.getSurnameValue());
 
@@ -142,6 +144,7 @@ public class EmployeeController {
 
         EmployeeBuilder.setJob(job);
         EmployeeManager.getInstance().hireEmployee(EmployeeBuilder.buildAndClear());
+        EmployeeManagerWrapper.getInstance().refresh();
         SceneSwitcher.getInstance().switchScene(BillingTableGenerator.getInstance().generate());
     }
 

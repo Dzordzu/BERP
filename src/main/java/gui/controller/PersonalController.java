@@ -50,5 +50,10 @@ public class PersonalController {
         ((DatePicker)birthdate.getChildren().get(1)).setValue(birthdateValue);
     }
 
+    public void changeFirstname() {
+        firstnameValue = ((TextField)firstname.getChildren().get(1)).getText();
+        System.out.println(firstnameValue);
+    }
+
 
 }
