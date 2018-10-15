@@ -36,7 +36,7 @@ public class JobController {
         ((MenuButton)paymentStrategy.getChildren().get(1)).setText(paymentStrategyValue);
         ((TextField)payment.getChildren().get(1)).setText(((Double)paymentValue).toString());
         ((SplitMenuButton)payment.getChildren().get(2)).setText(paymentCurrencyValue);
-        ((SplitMenuButton)paymentType.getChildren().get(1)).setText(paymentTypeValue);
+        ((MenuButton)paymentType.getChildren().get(1)).setText(paymentTypeValue);
     }
 
     public void changePaymentStrategy(String value) {
@@ -60,5 +60,20 @@ public class JobController {
         paymentValue = Double.valueOf(((TextField)payment.getChildren().get(1)).getText());
     }
 
+    public void changePaymentType(String type) {
+        ((MenuButton)paymentType.getChildren().get(1)).setText(type);
+        paymentTypeValue = type;
+    }
 
+    public void changePTToNetEmployeeSalary() {
+        changePaymentType("Net Employee Salary");
+    }
+
+    public void changePTToNetEmploymentCost() {
+        changePaymentType("Net Employment Cost");
+    }
+
+    public void changePTToGrossEmploymentCost() {
+        changePaymentType("Gross Employment Cost");
+    }
 }

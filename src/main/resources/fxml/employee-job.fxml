@@ -75,13 +75,13 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Net Employment Cost">
+            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Net Employment Cost">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Net Employment Cost" />
-                  <MenuItem mnemonicParsing="false" text="Gross Employment Cost" />
-                  <MenuItem mnemonicParsing="false" text="Net Employmee Salary" />
+                  <MenuItem mnemonicParsing="false" onAction="#changePTToNetEmploymentCost" text="Net Employment Cost" />
+                  <MenuItem mnemonicParsing="false" onAction="#changePTToGrossEmploymentCost" text="Gross Employment Cost" />
+                  <MenuItem mnemonicParsing="false" onAction="#changePTToNetEmployeeSalary" text="Net Employee Salary" />
                </items>
-            </SplitMenuButton>
+            </MenuButton>
          </children>
       </HBox>
    </children>
