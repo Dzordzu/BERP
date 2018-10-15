@@ -20,6 +20,10 @@ public class EmployeeManagerWrapper {
         return ourInstance;
     }
     private EmployeeManagerWrapper() {
+        refresh();
+    }
+
+    public void refresh() {
         Vector<EmployeeRow> result = new Vector<>();
         for(Employee e: EmployeeManager.getInstance().getEmployees()) {
             result.add(new EmployeeRow(e));

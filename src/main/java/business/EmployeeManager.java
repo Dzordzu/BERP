@@ -33,7 +33,7 @@ public class EmployeeManager {
         return employees.stream().filter(e -> e.getId().getValue() == id).findFirst().get();
     }
     public Employee getEmployee(ID id) {
-        return employees.stream().filter(e -> e.getId() == id).findFirst().get();
+        return employees.stream().filter(e -> e.getId().getValue() == id.getValue()).findFirst().get();
     }
 
     public void hireEmployee(Employee employee) {
@@ -45,6 +45,11 @@ public class EmployeeManager {
     }
     public void fireEmployee(ID id) {
         employees.remove(this.getEmployee(id));
+    }
+
+    public void updateEmployee(Employee employee) {
+        fireEmployee(employee.getId());
+        hireEmployee(employee);
     }
 
 

@@ -7,9 +7,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import lombok.Getter;
 import lombok.Setter;
+import valueobj.human.IDType;
 
 import java.time.LocalDate;
-import java.time.chrono.Chronology;
 
 public class PersonalController {
 
@@ -17,7 +17,10 @@ public class PersonalController {
     HBox personIDType, personID, firstname, surname, sex, birthdate;
     @Getter
     @Setter
-    private String personIDTypeValue, personIDValue, firstnameValue, surnameValue, sexValue;
+    private String personIDValue, firstnameValue, surnameValue, sexValue;
+    @Getter
+    @Setter
+    private IDType personIDTypeValue;
     @Getter
     @Setter
     private LocalDate birthdateValue;
@@ -39,12 +42,17 @@ public class PersonalController {
     }
 
     public void applyValues() {
-        ((SplitMenuButton)personIDType.getChildren().get(1)).setText(personIDTypeValue);
+        ((SplitMenuButton)personIDType.getChildren().get(1)).setText(personIDTypeValue.name());
         ((TextField)personID.getChildren().get(1)).setText(personIDValue);
         ((TextField)firstname.getChildren().get(1)).setText(firstnameValue);
         ((TextField)surname.getChildren().get(1)).setText(surnameValue);
         ((SplitMenuButton)sex.getChildren().get(1)).setText(sexValue);
         ((DatePicker)birthdate.getChildren().get(1)).setValue(birthdateValue);
+    }
+
+    public void changeFirstname() {
+        firstnameValue = ((TextField)firstname.getChildren().get(1)).getText();
+        System.out.println(firstnameValue);
     }
 
 
