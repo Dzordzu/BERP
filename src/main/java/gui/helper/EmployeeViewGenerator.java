@@ -1,6 +1,5 @@
 package gui.helper;
 
-import business.Employee;
 import gui.controller.EmployeeController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
