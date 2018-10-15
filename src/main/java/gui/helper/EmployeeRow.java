@@ -2,13 +2,14 @@ package gui.helper;
 
 import business.Employee;
 import lombok.Getter;
+import valueobj.human.IDType;
 import valueobj.math.Percentage;
 
 import java.time.LocalDate;
 
 public class EmployeeRow {
-
-    @Getter String fullnameLong, fullnameShort, humanId, humanIDType, firstname, surname, sex;
+    @Getter IDType humanIDType;
+    @Getter String fullnameLong, fullnameShort, humanId, firstname, surname, sex;
     @Getter String country, region, city, street, streetNumber, homeNumber, postalCode;
     @Getter String employeeId, paymentStrategy, paymentCurrency, jobTitle;
     @Getter double netEmployeeSalary, grossEmploymentCost, netEmploymentCost;
@@ -24,7 +25,7 @@ public class EmployeeRow {
         homeNumber = employee.getPerson().getHomeAddress().getHome().getNumber();
         postalCode = employee.getPerson().getHomeAddress().getHome().getPostalCode();
 
-        humanIDType = employee.getPerson().getId().getType().name();
+        humanIDType = employee.getPerson().getId().getType();
         humanId = employee.getPerson().getId().getValue();
         firstname = employee.getPerson().getName().getFirstname();
         surname = employee.getPerson().getName().getSurname();
