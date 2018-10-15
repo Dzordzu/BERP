@@ -24,9 +24,9 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Junior Dev">
+            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="JuniorDev">
                <items>
-                  <MenuItem mnemonicParsing="false" text="Junior Dev" />
+                  <MenuItem mnemonicParsing="false" text="JuniorDev" />
                   <MenuItem mnemonicParsing="false" text="Manager" />
                </items>
             </SplitMenuButton>
