@@ -25,12 +25,12 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="JuniorDev">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="JuniorDev" />
-                  <MenuItem mnemonicParsing="false" text="Manager" />
-               </items>
-            </SplitMenuButton>
+            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="JuniorDev">
+              <items>
+                  <MenuItem mnemonicParsing="false" onAction="#changeJTToJuniorDev" text="JuniorDev" />
+                  <MenuItem mnemonicParsing="false" onAction="#changeJTToManager" text="Manager" />
+              </items>
+            </MenuButton>
          </children>
       </HBox>
       <HBox fx:id="paymentStrategy" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">

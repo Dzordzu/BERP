@@ -32,7 +32,7 @@ public class JobController {
     }
 
     public void applyValues() {
-        ((SplitMenuButton)jobTitle.getChildren().get(1)).setText(jobTitleValue);
+        ((MenuButton)jobTitle.getChildren().get(1)).setText(jobTitleValue);
         ((MenuButton)paymentStrategy.getChildren().get(1)).setText(paymentStrategyValue);
         ((TextField)payment.getChildren().get(1)).setText(((Double)paymentValue).toString());
         ((SplitMenuButton)payment.getChildren().get(2)).setText(paymentCurrencyValue);
@@ -57,7 +57,9 @@ public class JobController {
     }
 
     public void changePayment() {
-        paymentValue = Double.valueOf(((TextField)payment.getChildren().get(1)).getText());
+        String value = ((TextField) payment.getChildren().get(1)).getText();
+        if(value == "" || value == null) value = "0";
+        paymentValue = Double.valueOf(value);
     }
 
     public void changePaymentType(String type) {
@@ -75,5 +77,18 @@ public class JobController {
 
     public void changePTToGrossEmploymentCost() {
         changePaymentType("Gross Employment Cost");
+    }
+
+    public void changeJT(String value) {
+        ((MenuButton)jobTitle.getChildren().get(1)).setText(value);
+        jobTitleValue = value;
+    }
+
+    public void changeJTToJuniorDev() {
+        changeJT("JuniorDev");
+    }
+
+    public void changeJTToManager() {
+        changeJT("Manager");
     }
 }
