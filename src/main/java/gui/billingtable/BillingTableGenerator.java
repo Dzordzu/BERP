@@ -18,7 +18,7 @@ public class BillingTableGenerator {
         tableView.setItems(EmployeeManagerWrapper.getInstance().getEmployees());
 
         for(Columns col: Columns.values()) {
-            tableView.getColumns().add(col.getTableViewColumn());
+            tableView.getColumns().add(col.getColumn());
         }
 
         tableView.setTableMenuButtonVisible(true);
