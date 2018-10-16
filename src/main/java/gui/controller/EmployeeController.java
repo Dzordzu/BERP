@@ -1,5 +1,6 @@
 package gui.controller;
 
+import business.Employee;
 import business.EmployeeBuilder;
 import business.EmployeeManager;
 import business.jobs.Job;
@@ -12,8 +13,6 @@ import business.payment.TestPeriodPayment;
 import business.person.PersonBuilder;
 import gui.SceneSwitcher;
 import gui.billingtable.BillingTableGenerator;
-import gui.helper.EmployeeManagerWrapper;
-import gui.helper.EmployeeRow;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 import logic.identity.ID;
@@ -53,32 +52,32 @@ public class EmployeeController {
         jobController.setMode(mode);
     }
 
-    public void setEmployee(EmployeeRow e) {
-        personalController.setFirstnameValue(e.getFirstname());
-        personalController.setSurnameValue(e.getSurname());
-        personalController.setBirthdateValue(e.getBirthdate());
-        personalController.setPersonIDTypeValue(e.getHumanIDType());
-        personalController.setPersonIDValue(e.getHumanId());
-        personalController.setSexValue(e.getSex());
+    public void setEmployee(Employee e) {
+        personalController.setFirstnameValue(e.getPerson().getName().getFirstname());
+        personalController.setSurnameValue(e.getPerson().getName().getSurname());
+        personalController.setBirthdateValue(e.getPerson().getAge().getBirthDate());
+        personalController.setPersonIDTypeValue(e.getPerson().getId().getType());
+        personalController.setPersonIDValue(e.getPerson().getId().getValue());
+        personalController.setSexValue(e.getPerson().getSex().toString());
         personalController.applyValues();
 
-        addressController.setCountryValue(e.getCountry());
-        addressController.setRegionValue(e.getRegion());
-        addressController.setCityValue(e.getCity());
-        addressController.setStreetValue(e.getStreet());
-        addressController.setStreetNumberValue(e.getStreetNumber());
-        addressController.setHomeNumberValue(e.getHomeNumber());
-        addressController.setPostalCodeValue(e.getPostalCode());
+        addressController.setCountryValue(e.getPerson().getHomeAddress().getCountry().getName());
+        addressController.setRegionValue(e.getPerson().getHomeAddress().getCity().getRegion());
+        addressController.setCityValue(e.getPerson().getHomeAddress().getCity().getName());
+        addressController.setStreetValue(e.getPerson().getHomeAddress().getHome().getStreet());
+        addressController.setStreetNumberValue(e.getPerson().getHomeAddress().getHome().getStreetNumber());
+        addressController.setHomeNumberValue(e.getPerson().getHomeAddress().getHome().getHomeNumber());
+        addressController.setPostalCodeValue(e.getPerson().getHomeAddress().getHome().getPostalCode());
         addressController.applyValues();
 
-        jobController.setPaymentValue(e.getNetEmploymentCost());
-        jobController.setJobTitleValue(e.getJobTitle());
-        jobController.setPaymentStrategyValue(e.getPaymentStrategy());
-        jobController.setPaymentCurrencyValue(e.getPaymentCurrency());
+        jobController.setPaymentValue(e.getJob().getSalary().getNetEmploymentCost().getAmount());
+        jobController.setJobTitleValue(e.getJob().getJobTitle());
+        jobController.setPaymentStrategyValue(e.getJob().getSalary().getPaymentName());
+        jobController.setPaymentCurrencyValue(e.getJob().getSalary().getGrossEmploymentCost().getCurrency().getCurrencyCode());
         jobController.setPaymentTypeValue("Net Employment Cost");
         jobController.applyValues();
 
-        id.setText(e.getEmployeeId());
+        id.setText(e.getId().getValue());
     }
 
     public void save() throws Exception {
@@ -159,7 +158,6 @@ public class EmployeeController {
 
         EmployeeBuilder.setJob(job);
         EmployeeManager.getInstance().updateEmployee(EmployeeBuilder.buildAndClear());
-        EmployeeManagerWrapper.getInstance().refresh();
         SceneSwitcher.getInstance().switchScene(BillingTableGenerator.getInstance().generate());
     }
 

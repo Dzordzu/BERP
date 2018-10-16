@@ -1,5 +1,7 @@
 package business;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import logic.identity.ID;
 
 import java.util.Vector;
@@ -16,13 +18,13 @@ public class EmployeeManager {
         return ourInstance;
     }
 
-    Vector<Employee> employees;
+    ObservableList <Employee> employees;
 
     private EmployeeManager() {
-        this.employees = new Vector<Employee>();
+        this.employees = FXCollections.observableList(new Vector<Employee>());
     }
 
-    public Vector<Employee> getEmployees() {
+    public ObservableList<Employee> getEmployees() {
         return employees;
     }
 
@@ -44,6 +46,7 @@ public class EmployeeManager {
     public void fireEmployee(String id) {
         employees.remove(this.getEmployee(id));
     }
+    public void fireEmployee(Employee e) {employees.remove(e);}
     public void fireEmployee(ID id) {
         Employee e = this.getEmployee(id);
         if(e != null) employees.remove(e);

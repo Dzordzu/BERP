@@ -1,7 +1,7 @@
 package gui.billingtable;
 
-import gui.helper.EmployeeManagerWrapper;
-import gui.helper.EmployeeRow;
+import business.Employee;
+import business.EmployeeManager;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableView;
 
@@ -14,8 +14,8 @@ public class BillingTableGenerator {
 
     public TableView generate() {
 
-        TableView<EmployeeRow> tableView = new TableView<>();
-        tableView.setItems(EmployeeManagerWrapper.getInstance().getEmployees());
+        TableView<Employee> tableView = new TableView<>();
+        tableView.setItems(EmployeeManager.getInstance().getEmployees());
 
         for(Columns col: Columns.values()) {
             tableView.getColumns().add(col.getColumn());
