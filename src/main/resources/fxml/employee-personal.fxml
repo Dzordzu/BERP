@@ -73,7 +73,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="male">
+            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css">
               <items>
                   <MenuItem mnemonicParsing="false" onAction="#changeMale" text="male" />
                   <MenuItem mnemonicParsing="false" onAction="#changeFemale" text="female" />
