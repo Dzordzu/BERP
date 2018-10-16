@@ -1,4 +1,4 @@
-package logic.human;
+package logic.identity;
 
 import logic.place.Country;
 

@@ -1,6 +1,6 @@
 package business;
 
-import logic.human.ID;
+import logic.identity.ID;
 
 import java.util.Vector;
 

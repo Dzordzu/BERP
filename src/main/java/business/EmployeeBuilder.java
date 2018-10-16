@@ -2,7 +2,7 @@ package business;
 
 import business.jobs.Job;
 import business.person.Person;
-import logic.human.ID;
+import logic.identity.ID;
 import lombok.Setter;
 
 public class EmployeeBuilder {

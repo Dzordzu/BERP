@@ -1,5 +1,5 @@
 package business.person;
-import logic.human.ID;
+import logic.identity.ID;
 import logic.human.Name;
 import logic.human.Sex;
 import logic.place.Address;

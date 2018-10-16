@@ -2,7 +2,7 @@ package gui.helper;
 
 import business.Employee;
 import lombok.Getter;
-import logic.human.IDType;
+import logic.identity.IDType;
 import logic.math.Percentage;
 
 import java.time.LocalDate;

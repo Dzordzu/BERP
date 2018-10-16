@@ -1,6 +1,11 @@
-package logic.human;
+package logic.identity;
 
 import lombok.Getter;
+
+/**
+ * <p> Representation of an ID. Can be bounded with any entity</p>
+ * Immutable
+ */
 
 public class ID {
 	@Getter private IDType type;
@@ -9,7 +14,8 @@ public class ID {
 		this.type = type;
 		this.value = value;
 	}
-	
+
+	@Override
 	public String toString() {
 		return type + ": " + value;
 	}

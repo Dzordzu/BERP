@@ -2,7 +2,7 @@ package seeder.people;
 
 import business.person.Person;
 import business.person.PersonBuilder;
-import logic.human.ID;
+import logic.identity.ID;
 import logic.human.Name;
 import logic.human.Sex;
 import logic.place.Address;
