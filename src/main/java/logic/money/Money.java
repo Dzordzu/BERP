@@ -6,6 +6,11 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.Currency;
 
+/**
+ * Term of money as the value with some currency. Money - as it is - cannot change itself. It can be base for another
+ * "money". This is why any created instance of this object is immutable
+ */
+
 public class Money {
 	private double amount;
 	@Getter private Currency currency;
@@ -41,6 +46,9 @@ public class Money {
 		return round(this.amount, currency.getDefaultFractionDigits());
 	}
 
+	/**
+	 * @return money String representing combined amount and currency code
+	 */
 	@Override
 	public String toString() {
 		return getAmount() + currency.getCurrencyCode();
