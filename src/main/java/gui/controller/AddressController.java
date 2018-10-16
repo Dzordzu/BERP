@@ -1,9 +1,12 @@
 package gui.controller;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import logic.place.Address;
+import logic.place.AddressBuilder;
+import logic.place.Country;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,9 +14,8 @@ public class AddressController {
 
     @FXML
     HBox country, region, city, street, streetNumber, homeNumber, postalCode;
-    @Getter
-    @Setter
-    private String countryValue, regionValue, cityValue, streetValue, streetNumberValue, homeNumberValue, postalCodeValue;
+    @Getter @Setter
+    Address address;
 
     public void setMode(String mode) {
         switch (mode) {
@@ -31,37 +33,49 @@ public class AddressController {
     }
 
     public void applyValues() {
-        ((SplitMenuButton)country.getChildren().get(1)).setText(countryValue);
-        ((TextField)region.getChildren().get(1)).setText(regionValue);
-        ((TextField)city.getChildren().get(1)).setText(cityValue);
-        ((TextField)street.getChildren().get(1)).setText(streetValue);
-        ((TextField)streetNumber.getChildren().get(1)).setText(streetNumberValue);
-        ((TextField)homeNumber.getChildren().get(1)).setText(homeNumberValue);
-        ((TextField)postalCode.getChildren().get(1)).setText(postalCodeValue);
+        ((MenuButton)country.getChildren().get(1)).setText(address.getCountry().getName());
+        ((TextField)region.getChildren().get(1)).setText(address.getCity().getRegion());
+        ((TextField)city.getChildren().get(1)).setText(address.getCity().getName());
+        ((TextField)street.getChildren().get(1)).setText(address.getHome().getStreet());
+        ((TextField)streetNumber.getChildren().get(1)).setText(address.getHome().getStreetNumber());
+        ((TextField)homeNumber.getChildren().get(1)).setText(address.getHome().getHomeNumber());
+        ((TextField)postalCode.getChildren().get(1)).setText(address.getHome().getPostalCode());
+        changeCountryTOPOLAND();
+        changeRegion();
+        changeCity();
+        changeStreet();
+        changeStreetNumber();
+        changeHomeNumber();
+        changePostalCode();
     }
 
     public void changeRegion() {
-        regionValue = ((TextField)region.getChildren().get(1)).getText();
+        AddressBuilder.getInstance().setRegion(((TextField)region.getChildren().get(1)).getText());
     }
 
     public void changeCity() {
-        cityValue = ((TextField)city.getChildren().get(1)).getText();
+        AddressBuilder.getInstance().setCityName(((TextField)city.getChildren().get(1)).getText());
     }
 
     public void changeStreet() {
-        streetValue = ((TextField)street.getChildren().get(1)).getText();
+        AddressBuilder.getInstance().setStreet(((TextField)street.getChildren().get(1)).getText());
     }
 
     public void changeStreetNumber() {
-        streetNumberValue = ((TextField)streetNumber.getChildren().get(1)).getText();
+        AddressBuilder.getInstance().setStreetNumber(((TextField)streetNumber.getChildren().get(1)).getText());
     }
 
     public void changeHomeNumber() {
-        homeNumberValue = ((TextField)homeNumber.getChildren().get(1)).getText();
+        AddressBuilder.getInstance().setHomeNumber(((TextField)homeNumber.getChildren().get(1)).getText());
     }
 
     public void changePostalCode() {
-        postalCodeValue = ((TextField)postalCode.getChildren().get(1)).getText();
+        AddressBuilder.getInstance().setPostalCode(((TextField)postalCode.getChildren().get(1)).getText());
+    }
+
+    public void changeCountryTOPOLAND() {
+        ((MenuButton)country.getChildren().get(1)).setText(Country.POLAND.getName());
+        AddressBuilder.getInstance().setCountry(Country.POLAND); //xD
     }
 
 

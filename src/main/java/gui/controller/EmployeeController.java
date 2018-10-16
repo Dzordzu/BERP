@@ -61,13 +61,7 @@ public class EmployeeController {
         personalController.setSexValue(e.getPerson().getSex().toString());
         personalController.applyValues();
 
-        addressController.setCountryValue(e.getPerson().getHomeAddress().getCountry().getName());
-        addressController.setRegionValue(e.getPerson().getHomeAddress().getCity().getRegion());
-        addressController.setCityValue(e.getPerson().getHomeAddress().getCity().getName());
-        addressController.setStreetValue(e.getPerson().getHomeAddress().getHome().getStreet());
-        addressController.setStreetNumberValue(e.getPerson().getHomeAddress().getHome().getStreetNumber());
-        addressController.setHomeNumberValue(e.getPerson().getHomeAddress().getHome().getHomeNumber());
-        addressController.setPostalCodeValue(e.getPerson().getHomeAddress().getHome().getPostalCode());
+        addressController.setAddress(e.getPerson().getHomeAddress());
         addressController.applyValues();
 
         jobController.setPaymentValue(e.getJob().getSalary().getNetEmploymentCost().getAmount());
@@ -85,15 +79,6 @@ public class EmployeeController {
         NameBuilder.getInstance().clear();
         NameBuilder.getInstance().setFirstname(personalController.getFirstnameValue());
         NameBuilder.getInstance().setSurname(personalController.getSurnameValue());
-
-        AddressBuilder.getInstance().clear();
-        AddressBuilder.getInstance().setCountry(Country.POLAND); //xD
-        AddressBuilder.getInstance().setRegion(addressController.getRegionValue());
-        AddressBuilder.getInstance().setCityName(addressController.getCityValue());
-        AddressBuilder.getInstance().setStreet(addressController.getStreetValue());
-        AddressBuilder.getInstance().setStreetNumber(addressController.getStreetNumberValue());
-        AddressBuilder.getInstance().setHomeNumber(addressController.getHomeNumberValue());
-        AddressBuilder.getInstance().setPostalCode(addressController.getPostalCodeValue());
 
         PersonBuilder.getInstance().clear();
         PersonBuilder.getInstance().setId(new ID(personalController.getPersonIDTypeValue(), personalController.getPersonIDValue()));

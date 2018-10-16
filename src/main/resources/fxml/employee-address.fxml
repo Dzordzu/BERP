@@ -2,8 +2,8 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -24,11 +24,11 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Republic of Poland">
-               <items>
-                  <MenuItem mnemonicParsing="false" text="Republic of Poland" />
-               </items>
-            </SplitMenuButton>
+            <MenuButton mnemonicParsing="false" onAction="#changeCountryTOPOLAND" styleClass="employee-split-menu-button" stylesheets="@styles/main.css">
+              <items>
+                  <MenuItem mnemonicParsing="false" text="Poland" />
+              </items>
+            </MenuButton>
          </children>
       </HBox>
       <HBox fx:id="region" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
