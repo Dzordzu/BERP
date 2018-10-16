@@ -1,6 +1,6 @@
 package business.payment;
 
-import valueobj.money.Money;
+import logic.money.Money;
 
 public interface PaymentStrategy {
 

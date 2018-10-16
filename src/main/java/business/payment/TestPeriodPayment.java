@@ -1,10 +1,10 @@
 package business.payment;
 
-import valueobj.money.Money;
-import valueobj.money.tax.Assurances;
-import valueobj.money.tax.PensionTax;
-import valueobj.money.tax.Tax;
-import valueobj.money.tax.TestPeriod;
+import logic.money.Money;
+import logic.money.tax.Assurances;
+import logic.money.tax.PensionTax;
+import logic.money.tax.Tax;
+import logic.money.tax.TestPeriod;
 
 public class TestPeriodPayment implements PaymentStrategy {
 

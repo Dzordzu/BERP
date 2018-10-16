@@ -2,9 +2,9 @@ package seeder.people;
 
 import seeder.SeederFileReader;
 import org.json.JSONObject;
-import valueobj.place.Address;
-import valueobj.place.AddressBuilder;
-import valueobj.place.Country;
+import logic.place.Address;
+import logic.place.AddressBuilder;
+import logic.place.Country;
 
 import java.io.IOException;
 import java.util.List;
@@ -38,16 +38,16 @@ public class AddressFileReader extends SeederFileReader {
 
         JSONObject object = (JSONObject)obj;
 
-        AddressBuilder.clear();
-        AddressBuilder.setCityName(object.getString("City"));
-        AddressBuilder.setCountry(Country.POLAND);
-        AddressBuilder.setPostalCode(object.getString("Postal"));
-        AddressBuilder.setHomeNumber(object.getString("HomeNum"));
-        AddressBuilder.setRegion(object.getString("Region"));
-        AddressBuilder.setStreet(object.getString("Street"));
-        AddressBuilder.setStreetNumber(object.getString("StreetNum"));
+        AddressBuilder.getInstance().clear();
+        AddressBuilder.getInstance().setCityName(object.getString("City"));
+        AddressBuilder.getInstance().setCountry(Country.POLAND);
+        AddressBuilder.getInstance().setPostalCode(object.getString("Postal"));
+        AddressBuilder.getInstance().setHomeNumber(object.getString("HomeNum"));
+        AddressBuilder.getInstance().setRegion(object.getString("Region"));
+        AddressBuilder.getInstance().setStreet(object.getString("Street"));
+        AddressBuilder.getInstance().setStreetNumber(object.getString("StreetNum"));
 
-        if(AddressBuilder.isComplete()) return AddressBuilder.buildAndClear();
+        if(AddressBuilder.getInstance().isComplete()) return AddressBuilder.getInstance().buildAndClear();
         else throw new Error("Incomplete Address");
     }
 }

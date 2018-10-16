@@ -4,7 +4,7 @@ import business.Employee;
 import business.EmployeeManager;
 import business.jobs.Job;
 import business.person.Person;
-import valueobj.human.ID;
+import logic.identity.ID;
 import seeder.Seeder;
 import seeder.people.PeopleSeeder;
 

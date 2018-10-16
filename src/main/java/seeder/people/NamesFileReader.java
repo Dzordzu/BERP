@@ -1,8 +1,8 @@
 package seeder.people;
 
 import seeder.SeederFileReader;
-import valueobj.human.Name;
-import valueobj.human.NameBuilder;
+import logic.human.Name;
+import logic.human.NameBuilder;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -40,13 +40,13 @@ public class NamesFileReader extends SeederFileReader {
         if(!(obj instanceof JSONObject)) throw new Error("Cannot read Name");
         JSONObject object = (JSONObject)obj;
 
-        NameBuilder.clear();
-        NameBuilder.setFirstname(object.getString("Firstname"));
-        NameBuilder.setSurname(object.getString("Surname"));
-        NameBuilder.setMiddlenames(this.JSONArrayToListString(object.getJSONArray("Middlenames")));
-        NameBuilder.setSuffixes(this.JSONArrayToListString(object.getJSONArray("Suffixes")));
+        NameBuilder.getInstance().clear();
+        NameBuilder.getInstance().setFirstname(object.getString("Firstname"));
+        NameBuilder.getInstance().setSurname(object.getString("Surname"));
+        NameBuilder.getInstance().setMiddlenames(this.JSONArrayToListString(object.getJSONArray("Middlenames")));
+        NameBuilder.getInstance().setSuffixes(this.JSONArrayToListString(object.getJSONArray("Suffixes")));
 
-        return NameBuilder.buildAndClear();
+        return NameBuilder.getInstance().buildAndClear();
     }
 
     private NamesFileReader() {

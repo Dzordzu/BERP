@@ -1,8 +1,8 @@
-package valueobj.time;
+package logic.time;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
-public abstract class Date implements DateDifferenceInterface {
+public abstract class AppliedDateDifference implements DateDifference {
 	protected LocalDate start;
 	protected LocalDate end = null;
 	

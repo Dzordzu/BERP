@@ -7,7 +7,7 @@ import business.payment.BonusPayment;
 import business.payment.PaymentStrategy;
 import business.payment.StandardPayment;
 import business.payment.TestPeriodPayment;
-import valueobj.money.Money;
+import logic.money.Money;
 import org.json.JSONObject;
 import seeder.SeederFileReader;
 

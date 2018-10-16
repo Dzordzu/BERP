@@ -1,10 +1,7 @@
 package business;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import valueobj.human.ID;
+import logic.identity.ID;
 
-import java.util.List;
 import java.util.Vector;
 
 /**

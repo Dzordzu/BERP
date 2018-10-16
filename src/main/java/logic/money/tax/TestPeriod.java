@@ -1,6 +1,6 @@
-package valueobj.money.tax;
+package logic.money.tax;
 
-import valueobj.money.Money;
+import logic.money.Money;
 
 public class TestPeriod implements Tax {
 

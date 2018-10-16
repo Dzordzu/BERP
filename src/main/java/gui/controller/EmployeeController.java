@@ -16,14 +16,14 @@ import gui.helper.EmployeeManagerWrapper;
 import gui.helper.EmployeeRow;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
-import valueobj.human.ID;
-import valueobj.human.IDType;
-import valueobj.human.NameBuilder;
-import valueobj.human.Sex;
-import valueobj.money.Money;
-import valueobj.place.AddressBuilder;
-import valueobj.place.Country;
-import valueobj.time.Age;
+import logic.identity.ID;
+import logic.identity.IDType;
+import logic.human.NameBuilder;
+import logic.human.Sex;
+import logic.money.Money;
+import logic.place.AddressBuilder;
+import logic.place.Country;
+import logic.time.Age;
 
 import java.time.LocalTime;
 import java.util.Random;
@@ -83,26 +83,25 @@ public class EmployeeController {
 
     public void save() throws Exception {
 
-        NameBuilder.clear();
-        System.out.println("Saved with firstname: " + personalController.getFirstnameValue());
-        NameBuilder.setFirstname(personalController.getFirstnameValue());
-        NameBuilder.setSurname(personalController.getSurnameValue());
+        NameBuilder.getInstance().clear();
+        NameBuilder.getInstance().setFirstname(personalController.getFirstnameValue());
+        NameBuilder.getInstance().setSurname(personalController.getSurnameValue());
 
-        AddressBuilder.clear();
-        AddressBuilder.setCountry(Country.POLAND); //xD
-        AddressBuilder.setRegion(addressController.getRegionValue());
-        AddressBuilder.setCityName(addressController.getCityValue());
-        AddressBuilder.setStreet(addressController.getStreetValue());
-        AddressBuilder.setStreetNumber(addressController.getStreetNumberValue());
-        AddressBuilder.setHomeNumber(addressController.getHomeNumberValue());
-        AddressBuilder.setPostalCode(addressController.getPostalCodeValue());
+        AddressBuilder.getInstance().clear();
+        AddressBuilder.getInstance().setCountry(Country.POLAND); //xD
+        AddressBuilder.getInstance().setRegion(addressController.getRegionValue());
+        AddressBuilder.getInstance().setCityName(addressController.getCityValue());
+        AddressBuilder.getInstance().setStreet(addressController.getStreetValue());
+        AddressBuilder.getInstance().setStreetNumber(addressController.getStreetNumberValue());
+        AddressBuilder.getInstance().setHomeNumber(addressController.getHomeNumberValue());
+        AddressBuilder.getInstance().setPostalCode(addressController.getPostalCodeValue());
 
         PersonBuilder.clear();
         PersonBuilder.setId(new ID(personalController.getPersonIDTypeValue(), personalController.getPersonIDValue()));
-        PersonBuilder.setName(NameBuilder.buildAndClear());
+        PersonBuilder.setName(NameBuilder.getInstance().buildAndClear());
         PersonBuilder.setSex(new Sex(personalController.getSexValue()));
         PersonBuilder.setAge(new Age(personalController.getBirthdateValue()));
-        PersonBuilder.setHomeAddress(AddressBuilder.buildAndClear());
+        PersonBuilder.setHomeAddress(AddressBuilder.getInstance().buildAndClear());
 
         EmployeeBuilder.clear();
         EmployeeBuilder.setId(new ID(IDType.COMPANYID, id.getText()));

@@ -1,6 +1,11 @@
-package valueobj.place;
+package logic.place;
 
 import lombok.Getter;
+
+/**
+ * Set of the supported countries. Damn. I don't have to explain it, do I? <br />
+ * Immutable
+ */
 
 public enum Country {
 	
@@ -13,7 +18,7 @@ public enum Country {
 	@Getter private String fullLocalName;
 	@Getter private String localName;
 	
-	private Country(String shortand, String fullName, String name, String fullLocalName, String localName) {
+	Country(String shortand, String fullName, String name, String fullLocalName, String localName) {
 		this.shortand = shortand;
 		this.fullName = fullName;
 		this.name = name;
@@ -21,7 +26,9 @@ public enum Country {
 		this.localName = localName;
 	}
 
-	
+	/**
+	 * @return name Same as getName()
+	 */
 	public String toString() {
 		return name;
 	}

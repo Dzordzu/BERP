@@ -8,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import lombok.Getter;
 import lombok.Setter;
-import valueobj.human.IDType;
+import logic.identity.IDType;
 
 import java.time.LocalDate;
 

@@ -2,8 +2,8 @@ package gui.helper;
 
 import business.Employee;
 import lombok.Getter;
-import valueobj.human.IDType;
-import valueobj.math.Percentage;
+import logic.identity.IDType;
+import logic.math.Percentage;
 
 import java.time.LocalDate;
 
@@ -22,7 +22,7 @@ public class EmployeeRow {
         city = employee.getPerson().getHomeAddress().getCity().getName();
         street = employee.getPerson().getHomeAddress().getHome().getStreet();
         streetNumber = employee.getPerson().getHomeAddress().getHome().getStreetNumber();
-        homeNumber = employee.getPerson().getHomeAddress().getHome().getNumber();
+        homeNumber = employee.getPerson().getHomeAddress().getHome().getHomeNumber();
         postalCode = employee.getPerson().getHomeAddress().getHome().getPostalCode();
 
         humanIDType = employee.getPerson().getId().getType();

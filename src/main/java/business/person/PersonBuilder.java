@@ -1,10 +1,10 @@
 package business.person;
 
-import valueobj.human.ID;
-import valueobj.human.Name;
-import valueobj.human.Sex;
-import valueobj.place.Address;
-import valueobj.time.Age;
+import logic.identity.ID;
+import logic.human.Name;
+import logic.human.Sex;
+import logic.place.Address;
+import logic.time.Age;
 
 public class PersonBuilder {
 	private static ID id;

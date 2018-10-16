@@ -1,6 +1,6 @@
-package valueobj.time;
+package logic.time;
 
-public interface DateDifferenceInterface {
+public interface DateDifference {
 	public long getDays();
 	public long getMonths();
 	public long getYears();
