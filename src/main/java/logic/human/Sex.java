@@ -1,5 +1,9 @@
 package logic.human;
 
+/**
+ * TODO - change to enum
+ */
+
 public class Sex {
 	
 	protected String sex;
