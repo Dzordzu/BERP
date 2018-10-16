@@ -1,5 +1,7 @@
 package gui.billingtable;
 
+import javafx.scene.control.TableColumn;
+
 /**
  * Handles all the cell factories
  */
@@ -7,5 +9,6 @@ package gui.billingtable;
 public enum CellFactories {
     Fire,
     Edit,
-    View
+    View,
+    ;
 }
