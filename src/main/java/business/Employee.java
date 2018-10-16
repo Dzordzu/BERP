@@ -6,7 +6,8 @@ import logic.identity.ID;
 import lombok.Getter;
 
 /**
- * @Entity Employee
+ * Employee entity. Identified by ID class. <br />
+ * Employee has two unmodifiable properties - id and person - and the one that can be changed - job
  */
 public class Employee {
 	
