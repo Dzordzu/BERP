@@ -1,4 +1,4 @@
-package valueobj.money;
+package logic.money;
 
 public class Markup {
 

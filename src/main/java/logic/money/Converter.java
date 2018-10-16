@@ -1,4 +1,4 @@
-package valueobj.money;
+package logic.money;
 
 import java.util.Currency;
 

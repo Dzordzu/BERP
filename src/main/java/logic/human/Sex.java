@@ -1,4 +1,4 @@
-package valueobj.human;
+package logic.human;
 
 public class Sex {
 	

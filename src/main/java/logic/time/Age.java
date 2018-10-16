@@ -1,4 +1,4 @@
-package valueobj.time;
+package logic.time;
 
 import java.time.LocalDate;
 

@@ -1,7 +1,7 @@
 package seeder.job;
 
-import valueobj.human.ID;
-import valueobj.human.IDType;
+import logic.human.ID;
+import logic.human.IDType;
 import org.json.JSONObject;
 import seeder.SeederFileReader;
 

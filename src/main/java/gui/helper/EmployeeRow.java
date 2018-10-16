@@ -2,8 +2,8 @@ package gui.helper;
 
 import business.Employee;
 import lombok.Getter;
-import valueobj.human.IDType;
-import valueobj.math.Percentage;
+import logic.human.IDType;
+import logic.math.Percentage;
 
 import java.time.LocalDate;
 

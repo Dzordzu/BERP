@@ -1,4 +1,4 @@
-package valueobj.place;
+package logic.place;
 
 import lombok.Getter;
 

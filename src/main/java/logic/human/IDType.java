@@ -1,6 +1,6 @@
-package valueobj.human;
+package logic.human;
 
-import valueobj.place.Country;
+import logic.place.Country;
 
 public enum IDType {
 	PESEL(Country.POLAND),

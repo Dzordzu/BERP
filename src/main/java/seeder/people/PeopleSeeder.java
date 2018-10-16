@@ -2,11 +2,11 @@ package seeder.people;
 
 import business.person.Person;
 import business.person.PersonBuilder;
-import valueobj.human.ID;
-import valueobj.human.Name;
-import valueobj.human.Sex;
-import valueobj.place.Address;
-import valueobj.time.Age;
+import logic.human.ID;
+import logic.human.Name;
+import logic.human.Sex;
+import logic.place.Address;
+import logic.time.Age;
 import seeder.Seeder;
 
 import java.io.IOException;

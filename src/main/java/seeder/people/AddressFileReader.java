@@ -2,9 +2,9 @@ package seeder.people;
 
 import seeder.SeederFileReader;
 import org.json.JSONObject;
-import valueobj.place.Address;
-import valueobj.place.AddressBuilder;
-import valueobj.place.Country;
+import logic.place.Address;
+import logic.place.AddressBuilder;
+import logic.place.Country;
 
 import java.io.IOException;
 import java.util.List;

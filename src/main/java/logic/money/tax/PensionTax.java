@@ -1,7 +1,7 @@
-package valueobj.money.tax;
+package logic.money.tax;
 
-import valueobj.math.Percentage;
-import valueobj.money.Money;
+import logic.math.Percentage;
+import logic.money.Money;
 
 public class PensionTax implements Tax {
     private static PensionTax ourInstance = new PensionTax();
