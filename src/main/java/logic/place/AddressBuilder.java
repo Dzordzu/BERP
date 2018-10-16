@@ -1,52 +1,24 @@
 package logic.place;
 
-public class AddressBuilder {
+import logic.Builder;
+import lombok.Setter;
+
+public class AddressBuilder implements Builder<Address> {
+	private static AddressBuilder ourInstance = new AddressBuilder();
+	public static AddressBuilder getInstance() {
+		return ourInstance;
+	}
+	private AddressBuilder() {}
 	
-	private static String homeNumber = null;
-	private static String streetNumber = null;
-	private static String postalCode = null;
-	private static String street = null;
-	private static String cityName = null;
-	private static String region = null;
-	private static Country country = null;
+	@Setter private String homeNumber;
+	@Setter private String streetNumber;
+	@Setter private String postalCode;
+	@Setter private String street;
+	@Setter private String cityName;
+	@Setter private String region;
+	@Setter private Country country;
 
-
-	public static void setHomeNumber(String homeNumber) {
-		AddressBuilder.homeNumber = homeNumber;
-	}
-
-
-	public static void setStreetNumber(String streetNumber) {
-		AddressBuilder.streetNumber = streetNumber;
-	}
-
-
-	public static void setPostalCode(String postalCode) {
-		AddressBuilder.postalCode = postalCode;
-	}
-
-
-	public static void setStreet(String street) {
-		AddressBuilder.street = street;
-	}
-
-
-	public static void setCityName(String cityName) {
-		AddressBuilder.cityName = cityName;
-	}
-
-
-	public static void setRegion(String region) {
-		AddressBuilder.region = region;
-	}
-
-
-	public static void setCountry(Country country) {
-		AddressBuilder.country = country;
-	}
-
-
-	public static void clear() {
+	public void clear() {
 		homeNumber = null;
 		streetNumber = null;
 		postalCode = null;
@@ -56,7 +28,7 @@ public class AddressBuilder {
 		country = null;
 	}
 	
-	public static boolean isComplete() {
+	public boolean isComplete() {
 		return (streetNumber != null 
 				&& postalCode != null 
 				&& street != null 
@@ -66,7 +38,7 @@ public class AddressBuilder {
 	}
 
 
-	public static Address build() {
+	public Address build() {
 		Home home = new Home(homeNumber, streetNumber, postalCode, street);
 		City city = new City(cityName, region);
 		
@@ -77,7 +49,7 @@ public class AddressBuilder {
 	}
 	
 	
-	public static Address buildAndClear() {
+	public Address buildAndClear() {
 		Address result = build();
 		clear();
 		return result;

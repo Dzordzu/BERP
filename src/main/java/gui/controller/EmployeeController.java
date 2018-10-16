@@ -87,21 +87,21 @@ public class EmployeeController {
         NameBuilder.getInstance().setFirstname(personalController.getFirstnameValue());
         NameBuilder.getInstance().setSurname(personalController.getSurnameValue());
 
-        AddressBuilder.clear();
-        AddressBuilder.setCountry(Country.POLAND); //xD
-        AddressBuilder.setRegion(addressController.getRegionValue());
-        AddressBuilder.setCityName(addressController.getCityValue());
-        AddressBuilder.setStreet(addressController.getStreetValue());
-        AddressBuilder.setStreetNumber(addressController.getStreetNumberValue());
-        AddressBuilder.setHomeNumber(addressController.getHomeNumberValue());
-        AddressBuilder.setPostalCode(addressController.getPostalCodeValue());
+        AddressBuilder.getInstance().clear();
+        AddressBuilder.getInstance().setCountry(Country.POLAND); //xD
+        AddressBuilder.getInstance().setRegion(addressController.getRegionValue());
+        AddressBuilder.getInstance().setCityName(addressController.getCityValue());
+        AddressBuilder.getInstance().setStreet(addressController.getStreetValue());
+        AddressBuilder.getInstance().setStreetNumber(addressController.getStreetNumberValue());
+        AddressBuilder.getInstance().setHomeNumber(addressController.getHomeNumberValue());
+        AddressBuilder.getInstance().setPostalCode(addressController.getPostalCodeValue());
 
         PersonBuilder.clear();
         PersonBuilder.setId(new ID(personalController.getPersonIDTypeValue(), personalController.getPersonIDValue()));
         PersonBuilder.setName(NameBuilder.getInstance().buildAndClear());
         PersonBuilder.setSex(new Sex(personalController.getSexValue()));
         PersonBuilder.setAge(new Age(personalController.getBirthdateValue()));
-        PersonBuilder.setHomeAddress(AddressBuilder.buildAndClear());
+        PersonBuilder.setHomeAddress(AddressBuilder.getInstance().buildAndClear());
 
         EmployeeBuilder.clear();
         EmployeeBuilder.setId(new ID(IDType.COMPANYID, id.getText()));
