@@ -7,8 +7,14 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.util.Callback;
 
+/**
+ * Generates Buttons for the tableview
+ * @param <S>
+ * @link Source [https://stackoverflow.com/questions/29489366/how-to-add-button-in-javafx-table-view]
+ */
+
 /*
- Copied from https://stackoverflow.com/questions/29489366/how-to-add-button-in-javafx-table-view
+ Copied from
  */
 
 public class ActionButtonTableCell<S> extends TableCell<S, Button> {

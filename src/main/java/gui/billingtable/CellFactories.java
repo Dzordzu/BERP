@@ -10,7 +10,7 @@ import javafx.util.Callback;
 import lombok.Getter;
 
 /**
- * Handles all the cell factories
+ * Handles all CellFactories
  */
 
 public enum CellFactories {
