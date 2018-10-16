@@ -1,7 +1,7 @@
 package gui.billingtable;
 
 /**
- * Handles list of displayed columns. Then is used in BillingTablegenerator to render them
+ * Handles list of displayed columns. Then is used in BillingTableGenerator to render them
  * @see BillingTableGenerator
  */
 
