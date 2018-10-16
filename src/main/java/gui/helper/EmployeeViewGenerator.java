@@ -1,5 +1,6 @@
 package gui.helper;
 
+import business.Employee;
 import gui.controller.EmployeeController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -13,7 +14,7 @@ public enum EmployeeViewGenerator {
     EDIT_MODE
     ;
 
-    public Parent generate(EmployeeRow e) throws IOException {
+    public Parent generate(Employee e) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/employee.fxml"));
         Parent result = loader.load();
         EmployeeController resultController = loader.getController();

@@ -1,12 +1,14 @@
 package gui.billingtable;
 
 import business.Employee;
-import gui.helper.EmployeeManagerWrapper;
+import business.EmployeeManager;
 import gui.helper.EmployeeViewGenerator;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.TableColumn;
 import javafx.util.Callback;
 import lombok.Getter;
+
+import java.io.IOException;
 
 /**
  * Handles all the cell factories
@@ -15,19 +17,27 @@ import lombok.Getter;
 public enum CellFactories {
     Fire(
             ActionButtonTableCell.<Employee>forTableColumn("Fire", e -> {
-                EmployeeManagerWrapper.getInstance().fireEmployee(e);
+                EmployeeManager.getInstance().fireEmployee(e);
                 return e;
             })
     ),
     Edit(
             ActionButtonTableCell.<Employee>forTableColumn("Edit", e -> {
-                EmployeeViewGenerator.EDIT_MODE.generate(e);
+                try {
+                    EmployeeViewGenerator.EDIT_MODE.generate(e);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
                 return e;
             })
     ),
     View(
             ActionButtonTableCell.<Employee>forTableColumn("View", e -> {
-                EmployeeViewGenerator.VIEW_MODE.generate(e);
+                try {
+                    EmployeeViewGenerator.VIEW_MODE.generate(e);
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
                 return e;
             })
     ),
