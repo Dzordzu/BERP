@@ -22,7 +22,7 @@ public class EmployeeRow {
         city = employee.getPerson().getHomeAddress().getCity().getName();
         street = employee.getPerson().getHomeAddress().getHome().getStreet();
         streetNumber = employee.getPerson().getHomeAddress().getHome().getStreetNumber();
-        homeNumber = employee.getPerson().getHomeAddress().getHome().getNumber();
+        homeNumber = employee.getPerson().getHomeAddress().getHome().getHomeNumber();
         postalCode = employee.getPerson().getHomeAddress().getHome().getPostalCode();
 
         humanIDType = employee.getPerson().getId().getType();
