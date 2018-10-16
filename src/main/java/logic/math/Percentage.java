@@ -1,5 +1,9 @@
 package logic.math;
 
+/**
+ * Representation of the Percentage math term
+ */
+
 public class Percentage {
     private double value;
 
@@ -21,6 +25,9 @@ public class Percentage {
         return this;
     }
 
+    /**
+     * @return percentage String in the form 'value%'
+     */
     @Override
     public String toString() {
         return getPercentage() + "%";
