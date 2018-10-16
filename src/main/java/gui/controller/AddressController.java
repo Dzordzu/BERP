@@ -47,5 +47,25 @@ public class AddressController {
         regionValue = ((TextField)region.getChildren().get(1)).getText();
     }
 
+    public void changeCity() {
+        cityValue = ((TextField)city.getChildren().get(1)).getText();
+    }
+
+    public void changeStreet() {
+        streetValue = ((TextField)street.getChildren().get(1)).getText();
+    }
+
+    public void changeStreetNumber() {
+        streetNumberValue = ((TextField)streetNumber.getChildren().get(1)).getText();
+    }
+
+    public void changeHomeNumber() {
+        homeNumberValue = ((TextField)homeNumber.getChildren().get(1)).getText();
+    }
+
+    public void changePostalCode() {
+        postalCodeValue = ((TextField)postalCode.getChildren().get(1)).getText();
+    }
+
 
 }

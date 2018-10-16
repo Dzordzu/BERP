@@ -2,6 +2,7 @@ package gui.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.MenuButton;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -42,11 +43,12 @@ public class PersonalController {
     }
 
     public void applyValues() {
-        ((SplitMenuButton)personIDType.getChildren().get(1)).setText(personIDTypeValue.name());
+        // @NOTE @XXX Dangerous zone
+        ((SplitMenuButton)personIDType.getChildren().get(1)).setText(/*personIDTypeValue.name()*/"PESEL");
         ((TextField)personID.getChildren().get(1)).setText(personIDValue);
         ((TextField)firstname.getChildren().get(1)).setText(firstnameValue);
         ((TextField)surname.getChildren().get(1)).setText(surnameValue);
-        ((SplitMenuButton)sex.getChildren().get(1)).setText(sexValue);
+        ((MenuButton)sex.getChildren().get(1)).setText(sexValue);
         ((DatePicker)birthdate.getChildren().get(1)).setValue(birthdateValue);
     }
 
@@ -62,8 +64,20 @@ public class PersonalController {
         personIDValue = ((TextField)personID.getChildren().get(1)).getText();
     }
 
-    public void changePersonIDType() {
+    public void changeMale() {
+        String value = "male";
+        ((MenuButton)(sex.getChildren().get(1))).setText(value);
+        sexValue = value;
+    }
 
+    public void changeFemale() {
+        String value = "female";
+        ((MenuButton)(sex.getChildren().get(1))).setText(value);
+        sexValue = value;
+    }
+
+    public void changeBirthdate() {
+        birthdateValue = ((DatePicker)birthdate.getChildren().get(1)).getValue();
     }
 
 

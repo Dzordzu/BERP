@@ -25,6 +25,9 @@ import valueobj.place.AddressBuilder;
 import valueobj.place.Country;
 import valueobj.time.Age;
 
+import java.time.LocalTime;
+import java.util.Random;
+
 public class EmployeeController {
 
     @FXML Text id;
@@ -33,6 +36,18 @@ public class EmployeeController {
     @FXML JobController jobController;
 
     public void setMode(String mode) {
+
+        if(mode == "CREATE_MODE") {
+
+            // @TODO Prepare idGeneratorClass
+            Random idGenerator = new Random();
+            idGenerator.setSeed(LocalTime.now().toNanoOfDay());
+            long symbolCode = ((idGenerator.nextInt() & 0xffffffffL)%24)+97;
+            long number = ((idGenerator.nextInt() & 0xffffffffL)%90)+10;
+            long idnum = ((idGenerator.nextInt() & 0xffffffffL)%9000)+1000;
+            id.setText(number + "" + (char)symbolCode + "-" + idnum);
+        }
+
         personalController.setMode(mode);
         addressController.setMode(mode);
         jobController.setMode(mode);
@@ -112,7 +127,8 @@ public class EmployeeController {
                 throw new Exception("Chose no payment strategy");
         }
 
-        Money salary = new Money(jobController.getPaymentValue(), jobController.getPaymentCurrencyValue());
+        // @NOTE @XXX Dangerous zone
+        Money salary = new Money(jobController.getPaymentValue(), /*jobController.getPaymentCurrencyValue()*/"PLN");
 
         switch(jobController.getPaymentTypeValue()) {
             case "Net Employment Cost":

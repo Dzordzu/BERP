@@ -48,7 +48,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <TextField />
+            <TextField onKeyReleased="#changeCity" />
          </children>
       </HBox>
       <HBox fx:id="street" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
@@ -58,7 +58,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <TextField />
+            <TextField onKeyReleased="#changeStreet" />
          </children>
       </HBox>
       <HBox fx:id="streetNumber" alignment="CENTER" maxHeight="58.0" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
@@ -68,7 +68,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <TextField />
+            <TextField onKeyReleased="#changeStreetNumber" />
          </children>
       </HBox>
       <HBox fx:id="homeNumber" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
@@ -78,7 +78,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <TextField />
+            <TextField onKeyReleased="#changeHomeNumber" />
          </children>
       </HBox>
       <HBox fx:id="postalCode" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
@@ -88,7 +88,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <TextField />
+            <TextField onKeyReleased="#changePostalCode" />
          </children>
       </HBox>
    </children>
