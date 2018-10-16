@@ -1,6 +1,9 @@
-package gui.helper;
+package gui.billingtable;
 
 import gui.SceneSwitcher;
+import gui.helper.EmployeeManagerWrapper;
+import gui.helper.EmployeeRow;
+import gui.helper.EmployeeViewGenerator;
 import javafx.scene.control.Button;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TableColumn;

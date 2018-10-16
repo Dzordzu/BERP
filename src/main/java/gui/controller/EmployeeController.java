@@ -11,7 +11,7 @@ import business.payment.StandardPayment;
 import business.payment.TestPeriodPayment;
 import business.person.PersonBuilder;
 import gui.SceneSwitcher;
-import gui.helper.BillingTableGenerator;
+import gui.billingtable.BillingTableGenerator;
 import gui.helper.EmployeeManagerWrapper;
 import gui.helper.EmployeeRow;
 import javafx.fxml.FXML;

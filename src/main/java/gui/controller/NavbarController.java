@@ -1,7 +1,7 @@
 package gui.controller;
 
 import gui.SceneSwitcher;
-import gui.helper.BillingTableGenerator;
+import gui.billingtable.BillingTableGenerator;
 import gui.helper.EmployeeViewGenerator;
 
 public class NavbarController {
