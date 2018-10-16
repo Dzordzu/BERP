@@ -1,4 +1,4 @@
-package gui.helper;
+package gui.billingtable;
 
 import java.util.function.Function;
 import javafx.event.ActionEvent;

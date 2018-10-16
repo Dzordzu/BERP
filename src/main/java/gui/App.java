@@ -1,6 +1,6 @@
 package gui;
 
-import gui.helper.BillingTableGenerator;
+import gui.billingtable.BillingTableGenerator;
 import javafx.application.Application;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
