@@ -1,5 +1,7 @@
 package logic.money;
 
-public class Markup {
+/**
+ * TODO implement
+ */
 
-}
+public class Markup {}
