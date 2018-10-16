@@ -11,7 +11,7 @@ import logic.math.Percentage;
 import lombok.Getter;
 
 /**
- * Handles all the CellValueFactories
+ * Handles all CellValueFactories
  */
 
 public enum CellValueFactories {

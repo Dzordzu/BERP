@@ -1,13 +1,14 @@
 package gui.helper;
 
 import business.Employee;
+import gui.ContentGenerator;
 import gui.controller.EmployeeController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 
 import java.io.IOException;
 
-public enum EmployeeViewGenerator {
+public enum EmployeeViewGenerator implements ContentGenerator<Parent> {
 
     VIEW_MODE,
     CREATE_MODE,
@@ -23,14 +24,19 @@ public enum EmployeeViewGenerator {
         return result;
     }
 
-    public Parent generate() throws IOException {
+    public Parent generate() {
 
         /*
          * @NOTE We could not use here ContentLoader. We have to gain access to the employee.fxml
          *  controller. It's why we are using manual method
          */
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/employee.fxml"));
-        Parent result = loader.load();
+        Parent result = null;
+        try {
+            result = loader.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         EmployeeController resultController = loader.getController();
         resultController.setMode(this.name());
         return result;

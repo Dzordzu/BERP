@@ -7,6 +7,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
 
+/**
+ * Simple wrapper for FXMLLoader
+ */
+
 public class ContentLoader {
     private static ContentLoader ourInstance = new ContentLoader();
     public static ContentLoader getInstance() {
