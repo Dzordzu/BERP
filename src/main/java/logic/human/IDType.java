@@ -10,11 +10,9 @@ public enum IDType {
 	private Country country;
 	
 	// General ID for company
-	private IDType() {
-		
-	}
+	IDType() {}
 
-	private IDType(Country country) {
+	IDType(Country country) {
 		this.country = country;
 	}
 
