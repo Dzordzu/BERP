@@ -96,16 +96,16 @@ public class EmployeeController {
         AddressBuilder.getInstance().setHomeNumber(addressController.getHomeNumberValue());
         AddressBuilder.getInstance().setPostalCode(addressController.getPostalCodeValue());
 
-        PersonBuilder.clear();
-        PersonBuilder.setId(new ID(personalController.getPersonIDTypeValue(), personalController.getPersonIDValue()));
-        PersonBuilder.setName(NameBuilder.getInstance().buildAndClear());
-        PersonBuilder.setSex(new Sex(personalController.getSexValue()));
-        PersonBuilder.setAge(new Age(personalController.getBirthdateValue()));
-        PersonBuilder.setHomeAddress(AddressBuilder.getInstance().buildAndClear());
+        PersonBuilder.getInstance().clear();
+        PersonBuilder.getInstance().setId(new ID(personalController.getPersonIDTypeValue(), personalController.getPersonIDValue()));
+        PersonBuilder.getInstance().setName(NameBuilder.getInstance().buildAndClear());
+        PersonBuilder.getInstance().setSex(new Sex(personalController.getSexValue()));
+        PersonBuilder.getInstance().setAge(new Age(personalController.getBirthdateValue()));
+        PersonBuilder.getInstance().setHomeAddress(AddressBuilder.getInstance().buildAndClear());
 
         EmployeeBuilder.clear();
         EmployeeBuilder.setId(new ID(IDType.COMPANYID, id.getText()));
-        EmployeeBuilder.setPerson(PersonBuilder.buildAndClear());
+        EmployeeBuilder.setPerson(PersonBuilder.getInstance().buildAndClear());
 
         PaymentStrategy strategy;
 

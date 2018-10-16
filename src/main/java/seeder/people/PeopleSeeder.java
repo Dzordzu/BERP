@@ -38,16 +38,16 @@ public class PeopleSeeder implements Seeder {
         List<Sex> sexes = SexFileReader.getInstance().getList();
         List<Address> addresses = AddressFileReader.getInstance().getList();
 
-        PersonBuilder.clear();
+        PersonBuilder.getInstance().clear();
 
         for(int i=0; i<100; i++) {
-            PersonBuilder.setAge(ages.get(i));
-            PersonBuilder.setHomeAddress(addresses.get(i));
-            PersonBuilder.setId(ids.get(i));
-            PersonBuilder.setName(names.get(i));
-            PersonBuilder.setSex(sexes.get(i));
+            PersonBuilder.getInstance().setAge(ages.get(i));
+            PersonBuilder.getInstance().setHomeAddress(addresses.get(i));
+            PersonBuilder.getInstance().setId(ids.get(i));
+            PersonBuilder.getInstance().setName(names.get(i));
+            PersonBuilder.getInstance().setSex(sexes.get(i));
 
-            people.addElement(PersonBuilder.buildAndClear());
+            people.addElement(PersonBuilder.getInstance().buildAndClear());
         }
 
         this.people = (List<Person>) people;

@@ -13,7 +13,7 @@ public interface PaymentStrategy {
 	Money getGrossEmploymentCost();
 
 
-	/**
+	/*
 	 * They are the same value
 	 */
 	void setNetEmploymentCost(Money cost);
