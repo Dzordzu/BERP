@@ -49,9 +49,9 @@ public enum CellValueFactories {
     NESGEC(
             (Callback<TableColumn.CellDataFeatures<Employee, Double>, ObservableValue<Double>>) param -> {
                 PaymentStrategy strategy = param.getValue().getJob().getSalary();
-                double NES = strategy.getNetEmployeeSalary().getAmount();
-                double GEC = strategy.getGrossEmployeeSalary().getAmount();
-                Percentage result = new Percentage().setFraction(NES/GEC);
+                double nes = strategy.getNetEmployeeSalary().getAmount();
+                double gec = strategy.getGrossEmploymentCost().getAmount();
+                Percentage result = new Percentage().setFraction(nes/gec);
                 return new SimpleDoubleProperty(result.getPercentage()).asObject();
             }
     ),
