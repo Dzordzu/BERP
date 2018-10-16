@@ -2,10 +2,14 @@ package logic.time;
 
 import java.time.LocalDate;
 
-public class Age extends Date {
+/**
+ * Each instance of this object is immutable. Represents difference between birthday and now or birthday and death date.
+ */
+
+public class Age extends AppliedDateDifference {
 	
 	/*
-	 * Date of the birth
+	 * AppliedDateDifference of the birth
 	 */
 	
 	public LocalDate getBirthDate() {
@@ -19,7 +23,7 @@ public class Age extends Date {
 	}
 	
 	/*
-	 * Date of the death
+	 * AppliedDateDifference of the death
 	 */
 	public LocalDate getDeathDate() {
 		return end;
