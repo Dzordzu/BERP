@@ -25,7 +25,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="JuniorDev">
+            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css">
               <items>
                   <MenuItem mnemonicParsing="false" onAction="#changeJTToJuniorDev" text="JuniorDev" />
                   <MenuItem mnemonicParsing="false" onAction="#changeJTToManager" text="Manager" />
@@ -40,7 +40,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Standard Payment">
+            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css">
               <items>
                 <MenuItem mnemonicParsing="false" onAction="#changePSToStandard" text="Standard Payment" />
                 <MenuItem mnemonicParsing="false" onAction="#changePSToBonus" text="Bonus Payment" />
@@ -75,7 +75,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="Net Employment Cost">
+            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#changePTToNetEmploymentCost" text="Net Employment Cost" />
                   <MenuItem mnemonicParsing="false" onAction="#changePTToGrossEmploymentCost" text="Gross Employment Cost" />
