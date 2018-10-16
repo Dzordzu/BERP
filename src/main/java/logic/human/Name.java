@@ -5,6 +5,12 @@ import lombok.Getter;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Represents name of the person<br />
+ * Has own builder (NameBuilder)
+ * @see NameBuilder
+ */
+
 public class Name {
 	@Getter protected String firstname = null;
 	@Getter protected String surname = null;
@@ -18,24 +24,26 @@ public class Name {
 		this.middlenames = middlenames;
 		this.suffixes = suffixes;
 	}
-	
-	public Name(String firstname, String surname, List<String> middlenames, String[] suffixes) {
-		this.firstname = firstname;
-		this.surname = surname;
-		this.middlenames = middlenames;
-		this.suffixes = Arrays.asList(suffixes);
-	}
 
+	/**
+	 * Chainable setter of the suffixes
+	 * @param suffixes
+	 * @return
+	 */
 	public Name setSuffixes(List<String> suffixes) {
 		this.suffixes = suffixes;
 		return this;
 	}
-	
-	public Name setSuffixes(String[] suffixes) {
-		this.suffixes = Arrays.asList(suffixes);
-		return this;
-	}
-	
+
+	/**
+	 * @return fullName String that contains all the data of the name. Includes:
+	 * <ol>
+     *   <li>suffixes</li>
+     *   <li>firstname</li>
+     *   <li>middlenames</li>
+     *   <li>surname</li>
+	 * </ol>
+	 */
 	public String getFullName() {
 		String fullName = "";
 		if(this.suffixes != null)
@@ -51,7 +59,11 @@ public class Name {
 		
 		return fullName;
 	}
-	
+
+    /**
+     * @return name String consisted of name and surname
+     */
+	@Override
 	public String toString() {
 		return firstname + " " + surname;
 	}
