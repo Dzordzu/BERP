@@ -83,10 +83,9 @@ public class EmployeeController {
 
     public void save() throws Exception {
 
-        NameBuilder.clear();
-        System.out.println("Saved with firstname: " + personalController.getFirstnameValue());
-        NameBuilder.setFirstname(personalController.getFirstnameValue());
-        NameBuilder.setSurname(personalController.getSurnameValue());
+        NameBuilder.getInstance().clear();
+        NameBuilder.getInstance().setFirstname(personalController.getFirstnameValue());
+        NameBuilder.getInstance().setSurname(personalController.getSurnameValue());
 
         AddressBuilder.clear();
         AddressBuilder.setCountry(Country.POLAND); //xD
@@ -99,7 +98,7 @@ public class EmployeeController {
 
         PersonBuilder.clear();
         PersonBuilder.setId(new ID(personalController.getPersonIDTypeValue(), personalController.getPersonIDValue()));
-        PersonBuilder.setName(NameBuilder.buildAndClear());
+        PersonBuilder.setName(NameBuilder.getInstance().buildAndClear());
         PersonBuilder.setSex(new Sex(personalController.getSexValue()));
         PersonBuilder.setAge(new Age(personalController.getBirthdateValue()));
         PersonBuilder.setHomeAddress(AddressBuilder.buildAndClear());

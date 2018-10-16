@@ -1,34 +1,43 @@
 package logic.human;
 
+
+import logic.Builder;
+
 import java.util.Arrays;
 import java.util.List;
 
-public class NameBuilder {
-	protected static String firstname = null;
-	protected static String surname = null;
-	protected static List<String> middlenames = null;
-	protected static List<String> suffixes = null;
-	
-	public static void setFirstname(String firstname) {
-		NameBuilder.firstname = firstname;
+public class NameBuilder implements Builder<Name> {
+	private static NameBuilder ourInstance = new NameBuilder();
+	public static NameBuilder getInstance() {
+		return ourInstance;
 	}
-	public static void setSurname(String surname) {
-		NameBuilder.surname = surname;
+	private NameBuilder() {}
+
+	protected String firstname = null;
+	protected String surname = null;
+	protected List<String> middlenames = null;
+	protected List<String> suffixes = null;
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
 	}
-	public static void setMiddlenames(List<String> middlenames) {
-		NameBuilder.middlenames = middlenames;
+	public void setSurname(String surname) {
+		this.surname = surname;
 	}
-	public static void setMiddlenames(String[] middlenames) {
-		NameBuilder.middlenames = Arrays.asList(middlenames);
+	public void setMiddlenames(List<String> middlenames) {
+		this.middlenames = middlenames;
 	}
-	public static void setSuffixes(List<String> suffixes) {
-		NameBuilder.suffixes = suffixes;
+	public void setMiddlenames(String[] middlenames) {
+		this.middlenames = Arrays.asList(middlenames);
 	}
-	public static void setSuffixes(String[] suffixes) {
-		NameBuilder.suffixes = Arrays.asList(suffixes);
+	public void setSuffixes(List<String> suffixes) {
+		this.suffixes = suffixes;
 	}
-	
-	public static void clear() {
+	public void setSuffixes(String[] suffixes) {
+		this.suffixes = Arrays.asList(suffixes);
+	}
+
+	public void clear() {
 		firstname = null;
 		surname = null;
 		middlenames = null;
@@ -36,15 +45,15 @@ public class NameBuilder {
 	}
 
 
-	public static Name build() {
+	public Name build() {
 		return new Name(firstname, surname, middlenames, suffixes);
 	}
-	
-	public static Name buildAndClear() {
+
+	public Name buildAndClear() {
 		Name result = build();
 		clear();
 		return result;
 	}
-	
-	
+
+
 }
