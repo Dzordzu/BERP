@@ -20,10 +20,10 @@ public enum Columns {
     NetEmployeeSalary(null, null, CellValueFactories.NetEmployeeSalary.getValue()),
     GrossEmploymentCost(null, null, CellValueFactories.GrossEmploymentCost.getValue()),
     Currency(null, null, CellValueFactories.Currency.getValue()),
+    NESGEC("NES/GEC (%)", null, CellValueFactories.NESGEC.getValue()),
     Fire(null, CellFactories.Fire.getValue(), null),
     Edit(null, CellFactories.Edit.getValue(), null),
     View(null, CellFactories.View.getValue(), null),
-    NESGEC("NES/GEC", null, CellValueFactories.NESGEC.getValue()),
     ;
 
     @Getter String labelText;
