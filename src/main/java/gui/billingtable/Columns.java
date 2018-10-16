@@ -25,7 +25,7 @@ public enum Columns {
     ;
 
     public TableColumn getTableViewColumn() {
-        return new TableColumn<>();
+        return new TableColumn(this.toString());
     }
 
     public String toString() {
