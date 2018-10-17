@@ -24,9 +24,9 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <MenuButton mnemonicParsing="false" onAction="#changeCountryTOPOLAND" styleClass="employee-split-menu-button" stylesheets="@styles/main.css">
+            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css">
               <items>
-                  <MenuItem mnemonicParsing="false" text="Poland" />
+                  <MenuItem mnemonicParsing="false" onAction="#changeCountryTOPOLAND" text="Poland" />
               </items>
             </MenuButton>
          </children>

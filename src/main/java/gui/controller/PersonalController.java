@@ -1,11 +1,17 @@
 package gui.controller;
 
+import business.person.Person;
+import business.person.PersonBuilder;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import logic.human.NameBuilder;
+import logic.human.Sex;
+import logic.identity.ID;
+import logic.time.Age;
 import lombok.Getter;
 import lombok.Setter;
 import logic.identity.IDType;
@@ -15,26 +21,24 @@ import java.time.LocalDate;
 public class PersonalController {
 
     @FXML
-    HBox personIDType, personID, firstname, surname, sex, birthdate;
+    HBox personIDType, personID, firstname, surname, personSex, birthdate;
     @Getter
     @Setter
-    private String personIDValue, firstnameValue, surnameValue, sexValue;
+    private Person person;
     @Getter
-    @Setter
-    private IDType personIDTypeValue;
+    IDType idType;
     @Getter
-    @Setter
-    private LocalDate birthdateValue;
+    String id;
 
     public void setMode(String mode) {
         switch (mode) {
             case "EDIT_MODE":
                 birthdate.setDisable(true);
-                sex.setDisable(true);
+                personSex.setDisable(true);
                 break;
             case "VIEW_MODE":
                 birthdate.setDisable(true);
-                sex.setDisable(true);
+                personSex.setDisable(true);
                 firstname.setDisable(true);
                 surname.setDisable(true);
                 personIDType.setDisable(true);
@@ -43,41 +47,53 @@ public class PersonalController {
     }
 
     public void applyValues() {
-        // @NOTE @XXX Dangerous zone
-        ((SplitMenuButton)personIDType.getChildren().get(1)).setText(/*personIDTypeValue.name()*/"PESEL");
-        ((TextField)personID.getChildren().get(1)).setText(personIDValue);
-        ((TextField)firstname.getChildren().get(1)).setText(firstnameValue);
-        ((TextField)surname.getChildren().get(1)).setText(surnameValue);
-        ((MenuButton)sex.getChildren().get(1)).setText(sexValue);
-        ((DatePicker)birthdate.getChildren().get(1)).setValue(birthdateValue);
+        ((MenuButton)personIDType.getChildren().get(1)).setText(person.getId().getType().toString());
+        ((TextField)personID.getChildren().get(1)).setText(person.getId().getValue());
+        ((TextField)firstname.getChildren().get(1)).setText(person.getName().getFirstname());
+        ((TextField)surname.getChildren().get(1)).setText(person.getName().getSurname());
+        ((MenuButton)personSex.getChildren().get(1)).setText(person.getSex().toString());
+        ((DatePicker)birthdate.getChildren().get(1)).setValue(person.getAge().getBirthDate());
+
+        changePersonIDType();
+        changePersonID();
+        changeFirstname();
+        changeSurname();
+        changeSex(person.getSex().toString());
+        changeBirthdate();
     }
 
     public void changeFirstname() {
-        firstnameValue = ((TextField)firstname.getChildren().get(1)).getText();
+        NameBuilder.getInstance().setFirstname(((TextField)firstname.getChildren().get(1)).getText());
     }
 
     public void changeSurname() {
-       surnameValue = ((TextField)surname.getChildren().get(1)).getText();
+        NameBuilder.getInstance().setSurname(((TextField)surname.getChildren().get(1)).getText());
+    }
+
+    public void changePersonIDType() {
+        ((MenuButton)personIDType.getChildren().get(1)).setText(IDType.PESEL.name());
+        idType = IDType.PESEL;
     }
 
     public void changePersonID() {
-        personIDValue = ((TextField)personID.getChildren().get(1)).getText();
+        id = ((TextField)personID.getChildren().get(1)).getText();
+    }
+
+    public void changeSex(String value) {
+        PersonBuilder.getInstance().setSex(new Sex(value));
+        ((MenuButton)(personSex.getChildren().get(1))).setText(value);
     }
 
     public void changeMale() {
-        String value = "male";
-        ((MenuButton)(sex.getChildren().get(1))).setText(value);
-        sexValue = value;
+        changeSex("male");
     }
 
     public void changeFemale() {
-        String value = "female";
-        ((MenuButton)(sex.getChildren().get(1))).setText(value);
-        sexValue = value;
+        changeSex("female");
     }
 
     public void changeBirthdate() {
-        birthdateValue = ((DatePicker)birthdate.getChildren().get(1)).getValue();
+        PersonBuilder.getInstance().setAge(new Age(((DatePicker)birthdate.getChildren().get(1)).getValue()));
     }
 
 

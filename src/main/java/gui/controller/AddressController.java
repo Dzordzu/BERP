@@ -40,6 +40,7 @@ public class AddressController {
         ((TextField)streetNumber.getChildren().get(1)).setText(address.getHome().getStreetNumber());
         ((TextField)homeNumber.getChildren().get(1)).setText(address.getHome().getHomeNumber());
         ((TextField)postalCode.getChildren().get(1)).setText(address.getHome().getPostalCode());
+
         changeCountryTOPOLAND();
         changeRegion();
         changeCity();

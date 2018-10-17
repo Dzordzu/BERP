@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -29,11 +28,11 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <SplitMenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" text="PESEL">
+            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css">
                <items>
-                  <MenuItem mnemonicParsing="false" text="PESEL" />
+                  <MenuItem mnemonicParsing="false" onAction="#changePersonIDType" text="PESEL" />
                </items>
-            </SplitMenuButton>
+            </MenuButton>
          </children>
       </HBox>
       <HBox fx:id="personID" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
@@ -66,7 +65,7 @@
             <TextField onKeyReleased="#changeSurname" />
          </children>
       </HBox>
-      <HBox fx:id="sex" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
+      <HBox fx:id="personSex" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sex">
                <HBox.margin>

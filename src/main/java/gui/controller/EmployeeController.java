@@ -53,12 +53,7 @@ public class EmployeeController {
     }
 
     public void setEmployee(Employee e) {
-        personalController.setFirstnameValue(e.getPerson().getName().getFirstname());
-        personalController.setSurnameValue(e.getPerson().getName().getSurname());
-        personalController.setBirthdateValue(e.getPerson().getAge().getBirthDate());
-        personalController.setPersonIDTypeValue(e.getPerson().getId().getType());
-        personalController.setPersonIDValue(e.getPerson().getId().getValue());
-        personalController.setSexValue(e.getPerson().getSex().toString());
+        personalController.setPerson(e.getPerson());
         personalController.applyValues();
 
         addressController.setAddress(e.getPerson().getHomeAddress());
@@ -76,15 +71,8 @@ public class EmployeeController {
 
     public void save() throws Exception {
 
-        NameBuilder.getInstance().clear();
-        NameBuilder.getInstance().setFirstname(personalController.getFirstnameValue());
-        NameBuilder.getInstance().setSurname(personalController.getSurnameValue());
-
-        PersonBuilder.getInstance().clear();
-        PersonBuilder.getInstance().setId(new ID(personalController.getPersonIDTypeValue(), personalController.getPersonIDValue()));
+        PersonBuilder.getInstance().setId(new ID(personalController.getIdType(), personalController.getId()));
         PersonBuilder.getInstance().setName(NameBuilder.getInstance().buildAndClear());
-        PersonBuilder.getInstance().setSex(new Sex(personalController.getSexValue()));
-        PersonBuilder.getInstance().setAge(new Age(personalController.getBirthdateValue()));
         PersonBuilder.getInstance().setHomeAddress(AddressBuilder.getInstance().buildAndClear());
 
         EmployeeBuilder.clear();
