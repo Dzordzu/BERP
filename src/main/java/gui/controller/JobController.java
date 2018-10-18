@@ -1,7 +1,10 @@
 package gui.controller;
 
+import business.Registry;
+import business.jobs.JobsRegistry;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
@@ -18,6 +21,18 @@ public class JobController {
     @Getter
     @Setter
     private double paymentValue;
+
+    public void initialize() {
+
+        MenuButton jobTitle = (MenuButton)this.jobTitle.getChildren().get(1);
+
+        jobTitle.setText(JobsRegistry.getDefault().toString());
+        for(JobsRegistry j: JobsRegistry.values()) {
+            MenuItem item = new MenuItem(j.toString());
+            item.setOnAction(event -> changeJT(j.toString()));
+            jobTitle.getItems().add(item);
+        }
+    }
 
     public void setMode(String mode) {
         switch (mode) {
