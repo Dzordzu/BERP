@@ -17,7 +17,7 @@ public enum PaymentsRegistry implements Registry {
 
     PaymentsRegistry(){}
 
-    public Registry getDefault() {
+    public static Registry getDefault() {
         return PaymentsRegistry.StandardPayment;
     }
 
