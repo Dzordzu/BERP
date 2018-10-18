@@ -28,7 +28,7 @@ public class JobController {
         jobTitle.setText(JobsRegistry.getDefault().toString());
         for(JobsRegistry j: JobsRegistry.values()) {
             MenuItem item = new MenuItem(j.toString());
-            item.setOnAction(event -> changeJT(j.toString()));
+            item.setOnAction(event -> changeJobTitle(j.toString()));
             jobTitle.getItems().add(item);
         }
     }
@@ -93,16 +93,8 @@ public class JobController {
         changePaymentType("Gross Employment Cost");
     }
 
-    public void changeJT(String value) {
+    public void changeJobTitle(String value) {
         ((MenuButton)jobTitle.getChildren().get(1)).setText(value);
         jobTitleValue = value;
-    }
-
-    public void changeJTToJuniorDev() {
-        changeJT("JuniorDev");
-    }
-
-    public void changeJTToManager() {
-        changeJT("Manager");
     }
 }
