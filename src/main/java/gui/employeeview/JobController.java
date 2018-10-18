@@ -1,6 +1,5 @@
 package gui.employeeview;
 
-import business.Registry;
 import business.jobs.JobsRegistry;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
