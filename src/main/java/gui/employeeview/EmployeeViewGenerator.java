@@ -1,4 +1,4 @@
-package gui.helper;
+package gui.employeeview;
 
 import business.Employee;
 import gui.ContentGenerator;
