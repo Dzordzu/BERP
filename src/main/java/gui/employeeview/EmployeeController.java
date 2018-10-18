@@ -1,4 +1,4 @@
-package gui.controller;
+package gui.employeeview;
 
 import business.Employee;
 import business.EmployeeBuilder;
@@ -18,11 +18,8 @@ import javafx.scene.text.Text;
 import logic.identity.ID;
 import logic.identity.IDType;
 import logic.human.NameBuilder;
-import logic.human.Sex;
 import logic.money.Money;
 import logic.place.AddressBuilder;
-import logic.place.Country;
-import logic.time.Age;
 
 import java.time.LocalTime;
 import java.util.Random;

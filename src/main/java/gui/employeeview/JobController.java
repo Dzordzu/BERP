@@ -1,4 +1,4 @@
-package gui.controller;
+package gui.employeeview;
 
 import business.Registry;
 import business.jobs.JobsRegistry;

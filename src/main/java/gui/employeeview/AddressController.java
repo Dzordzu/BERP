@@ -1,4 +1,4 @@
-package gui.controller;
+package gui.employeeview;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;

@@ -1,4 +1,4 @@
-package gui.controller;
+package gui;
 
 import gui.SceneSwitcher;
 import gui.billingtable.BillingTableGenerator;
