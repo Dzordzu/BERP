@@ -1,0 +1,42 @@
+buildscript {
+    dependencies {
+        classpath group: 'de.dynamicfiles.projects.gradle.plugins', name: 'javafx-gradle-plugin', version: '8.8.2'
+    }
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+
+group = 'berp'
+version = '1.0-SNAPSHOT'
+
+description = """"""
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+
+dependencies {
+    compile group: 'org.json', name: 'json', version:'20180813'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version:'1.18.2'
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+apply plugin: 'javafx-gradle-plugin'
+
+
+jfx {
+    // minimal requirement for jfxJar-task
+    mainClass = 'gui.App'
+
+    // minimal requirement for jfxNative-task
+    //vendor = 'YourName'
+}

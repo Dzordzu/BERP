@@ -1,22 +1,18 @@
-package gui.controller;
+package gui.employeeview;
 
 import business.person.Person;
 import business.person.PersonBuilder;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuButton;
-import javafx.scene.control.SplitMenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
 import logic.human.NameBuilder;
 import logic.human.Sex;
-import logic.identity.ID;
+import logic.identity.IDType;
 import logic.time.Age;
 import lombok.Getter;
 import lombok.Setter;
-import logic.identity.IDType;
-
-import java.time.LocalDate;
 
 public class PersonalController {
 

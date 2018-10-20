@@ -3,7 +3,7 @@ package gui.billingtable;
 import business.Employee;
 import business.EmployeeManager;
 import gui.SceneSwitcher;
-import gui.helper.EmployeeViewGenerator;
+import gui.employeeview.EmployeeViewGenerator;
 import javafx.beans.value.ObservableValue;
 import javafx.scene.control.TableColumn;
 import javafx.util.Callback;

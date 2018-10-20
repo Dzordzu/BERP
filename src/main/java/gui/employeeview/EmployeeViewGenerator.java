@@ -1,8 +1,7 @@
-package gui.helper;
+package gui.employeeview;
 
 import business.Employee;
 import gui.ContentGenerator;
-import gui.controller.EmployeeController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 

@@ -1,8 +1,8 @@
-package gui.controller;
+package gui;
 
 import gui.SceneSwitcher;
 import gui.billingtable.BillingTableGenerator;
-import gui.helper.EmployeeViewGenerator;
+import gui.employeeview.EmployeeViewGenerator;
 
 public class NavbarController {
     public void gotoAbout() throws Exception {

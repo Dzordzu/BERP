@@ -16,7 +16,7 @@ public enum JobsRegistry implements Registry {
     JobsRegistry(){}
     JobsRegistry(String displayName){ this.displayName = displayName; }
 
-    public Registry getDefault() {
+    public static JobsRegistry getDefault() {
         return JobsRegistry.JuniorDev;
     }
 
