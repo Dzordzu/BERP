@@ -2,10 +2,9 @@ package seeder;
 
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
+import java.util.ResourceBundle;
 
 public abstract class SeederFileReader {
     private String file;
@@ -16,20 +15,15 @@ public abstract class SeederFileReader {
 
     public String readFile() throws IOException {
 
-        URL url = getClass().getResource(this.file);
-        File file = new File(url.getPath());
+        InputStream in = getClass().getResourceAsStream(this.file);
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(in));
 
-        /**
-         * Copy paste... https://www.journaldev.com/875/java-read-file-to-string
-         */
-        FileInputStream fis = new FileInputStream(file);
-        byte[] buffer = new byte[10];
+        String line;
         StringBuilder sb = new StringBuilder();
-        while (fis.read(buffer) != -1) {
-            sb.append(new String(buffer));
-            buffer = new byte[10];
+        while ((line = bufferedReader.readLine()) != null) {
+            sb.append(line);
         }
-        fis.close();
+        bufferedReader.close();
 
         return sb.toString();
     }
