@@ -26,7 +26,6 @@ public class AddressBuilder implements Builder<Address> {
 		cityName = null;
 		region = null;
 		country = null;
-		System.out.println("CLEAR");
 	}
 	
 	public boolean isComplete() {
