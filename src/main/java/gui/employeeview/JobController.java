@@ -1,6 +1,7 @@
 package gui.employeeview;
 
-import business.jobs.JobsRegistry;
+import business.ServiceLocatorEntries;
+import business.jobs.JobsServiceLocator;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -25,10 +26,10 @@ public class JobController {
 
         MenuButton jobTitle = (MenuButton)this.jobTitle.getChildren().get(1);
 
-        jobTitle.setText(JobsRegistry.getDefault().toString());
-        for(JobsRegistry j: JobsRegistry.values()) {
-            MenuItem item = new MenuItem(j.toString());
-            item.setOnAction(event -> changeJobTitle(j.toString()));
+        jobTitle.setText(JobsServiceLocator.getInstance().getDefault().getUIName());
+        for(ServiceLocatorEntries j: JobsServiceLocator.getInstance().getValues()) {
+            MenuItem item = new MenuItem(j.getUIName());
+            item.setOnAction(event -> changeJobTitle(j.getUIName()));
             jobTitle.getItems().add(item);
         }
     }
