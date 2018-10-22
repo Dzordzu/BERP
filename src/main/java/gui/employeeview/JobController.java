@@ -28,14 +28,14 @@ public class JobController {
         MenuButton jobTitle = (MenuButton)this.jobTitle.getChildren().get(1);
         MenuButton paymentStrategy = (MenuButton)this.paymentStrategy.getChildren().get(1);
 
-        jobTitle.setText(JobsServiceLocator.getInstance().getDefault().getUIName());
+        changeJobTitle(JobsServiceLocator.getInstance().getDefault().getUIName());
         for(ServiceLocatorEntries j: JobsServiceLocator.getInstance().getValues()) {
             MenuItem item = new MenuItem(j.getUIName());
             item.setOnAction(event -> changeJobTitle(j.getUIName()));
             jobTitle.getItems().add(item);
         }
 
-        paymentStrategy.setText(PaymentsServiceLocator.getInstance().getDefault().getUIName());
+        changePaymentStrategy(PaymentsServiceLocator.getInstance().getDefault().getUIName());
         for(ServiceLocatorEntries p: PaymentsServiceLocator.getInstance().getValues()) {
             MenuItem item = new MenuItem(p.getUIName());
             item.setOnAction(event -> changePaymentStrategy(p.getUIName()));
@@ -92,7 +92,6 @@ public class JobController {
     }
 
     public void changeJobTitle(String value) {
-        System.out.println(value);
         ((MenuButton)jobTitle.getChildren().get(1)).setText(value);
         jobTitleValue = value;
     }
