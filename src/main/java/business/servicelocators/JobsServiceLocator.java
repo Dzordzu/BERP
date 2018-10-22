@@ -1,20 +1,17 @@
-package business.payment;
+package business.servicelocators;
 
-import business.ServiceLocator;
-import business.ServiceLocatorEntries;
 import lombok.Getter;
 
-public class PaymentsServiceLocator implements ServiceLocator {
-    private static PaymentsServiceLocator ourInstance = new PaymentsServiceLocator();
-    public static PaymentsServiceLocator getInstance() {
+public class JobsServiceLocator implements ServiceLocator {
+    private static JobsServiceLocator ourInstance = new JobsServiceLocator();
+    public static JobsServiceLocator getInstance() {
         return ourInstance;
     }
-    private PaymentsServiceLocator() {}
+    private JobsServiceLocator() {}
 
     enum VALUES implements ServiceLocatorEntries {
-        StandardPayment("Standard Payment", "StandardPayment", StandardPayment.class),
-        TestPeriodPayment("Test Period Payment", "TestPeriodPayment", TestPeriodPayment.class),
-        BonusPayment("Bonus Payment", "BonusPayment", BonusPayment.class),
+        JuniorDev("Junior Dev", "JuniorDev", business.jobs.JuniorDev.class),
+        Manager("Manager", "Manager", business.jobs.Manager.class)
         ;
 
         @Getter String UIName;
@@ -26,9 +23,10 @@ public class PaymentsServiceLocator implements ServiceLocator {
             this.serviceName = serviceName;
             this.classRef = classRef;
         }
+
     }
 
-    VALUES defaultValue = VALUES.StandardPayment;
+    VALUES defaultValue = VALUES.JuniorDev;
 
     @Override
     public ServiceLocatorEntries[] getValues() {

@@ -1,4 +1,4 @@
-package business;
+package business.servicelocators;
 
 public interface ServiceLocator {
     ServiceLocatorEntries[] getValues();
