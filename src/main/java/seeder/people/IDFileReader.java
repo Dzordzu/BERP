@@ -11,7 +11,7 @@ import java.util.Vector;
 
 
 /**
- * @XXX DANGEROUS AREA!
+ * XXX DANGEROUS AREA!
  */
 
 public class IDFileReader extends SeederFileReader {

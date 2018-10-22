@@ -19,7 +19,7 @@ public interface ServiceLocatorEntries {
 
     /**
      * Class reference can be used to generate new instances of the class service.
-     * <br />Example :
+     * <br>Example :
      * <code>
      * serviceLocatorEntryInstance.getClassRef().getConstructor().newInstance();
      *  </code>
