@@ -2,7 +2,6 @@ package logic.identity;
 
 import logic.place.Country;
 import lombok.Getter;
-import lombok.Setter;
 
 /**
  * Enum of all supported IDTypes. IDType can be related with a Country
