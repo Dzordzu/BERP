@@ -21,6 +21,8 @@ public class PeopleSeeder implements Seeder {
             ourInstance = new PeopleSeeder();
         } catch (IOException e) {
             e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
@@ -30,7 +32,7 @@ public class PeopleSeeder implements Seeder {
 
     List<Person> people;
 
-    private PeopleSeeder() throws IOException {
+    private PeopleSeeder() throws Exception {
         Vector<Person> people = new Vector<>();
         List<Age> ages = AgeFileReader.getInstance().getList();
         List<ID> ids = IDFileReader.getInstance().getList();
@@ -50,7 +52,7 @@ public class PeopleSeeder implements Seeder {
             people.addElement(PersonBuilder.getInstance().buildAndClear());
         }
 
-        this.people = (List<Person>) people;
+        this.people = people;
 
     }
 

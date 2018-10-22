@@ -19,13 +19,13 @@ public class SexFileReader extends SeederFileReader {
         super("/seeders-data/sexlist.json");
     }
 
-    public List<Sex> getList() throws IOException {
+    public List<Sex> getList() throws Exception {
         JSONObject obj = this.getJSON();
 
         Vector<Sex> result = new Vector<Sex>();
 
         for(Object object: obj.getJSONArray("Sex")) {
-            result.add(new Sex((String)object));
+            result.add(Sex.get((String)object));
         }
 
         return result;

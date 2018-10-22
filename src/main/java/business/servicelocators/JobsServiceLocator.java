@@ -41,7 +41,7 @@ public class JobsServiceLocator implements ServiceLocator {
     @Override
     public Boolean exists(String UIName) {
         for(VALUES v: VALUES.values()) {
-            if(v.getUIName() == UIName) return true;
+            if(v.getUIName().equals(UIName)) return true;
         }
 
         return false;
@@ -50,7 +50,7 @@ public class JobsServiceLocator implements ServiceLocator {
     @Override
     public ServiceLocatorEntries getMatching(String UIName) {
         for(VALUES v: VALUES.values()) {
-            if(v.getUIName() == UIName) return v;
+            if(v.getUIName().equals(UIName)) return v;
         }
 
         return null;

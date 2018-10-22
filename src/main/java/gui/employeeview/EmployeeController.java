@@ -46,7 +46,7 @@ public class EmployeeController {
         jobController.setMode(mode);
     }
 
-    public void setEmployee(Employee e) {
+    public void setEmployee(Employee e) throws Exception {
         personalController.setPerson(e.getPerson());
         personalController.applyValues();
 
