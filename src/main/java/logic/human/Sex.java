@@ -4,22 +4,16 @@ package logic.human;
  * TODO - change to enum
  */
 
-public class Sex {
+
+public enum Sex {
+	Male("male"),
+	Female("female")
+	;
 	
 	protected String sex;
 	
-	public Sex(String sex) {
-		sex = sex.toLowerCase();
-		switch(sex) {
-			case "male": 
-				this.sex = "male";
-				break;
-			case "female":
-				this.sex = "female";
-				break;
-			default:
-				throw new Error("There is no such a sex");
-		}
+	Sex(String sex) {
+		this.sex = sex.toLowerCase();
 	}
 	
 	public boolean isMale() {
@@ -27,6 +21,16 @@ public class Sex {
 	}
 	public boolean isFemale() {
 		return this.sex == "female";
+	}
+
+	public static Sex get(String sex) throws Exception {
+		sex = sex.toLowerCase();
+
+		for(Sex s: Sex.values()) {
+			if(s.toString().equals(sex)) return s;
+		}
+
+		throw new Exception("There is no such a sex: " + sex);
 	}
 	
 	public String toString() {

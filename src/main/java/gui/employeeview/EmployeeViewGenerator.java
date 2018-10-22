@@ -14,7 +14,7 @@ public enum EmployeeViewGenerator implements ContentGenerator<Parent> {
     EDIT_MODE
     ;
 
-    public Parent generate(Employee e) throws IOException {
+    public Parent generate(Employee e) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("fxml/employee.fxml"));
         Parent result = loader.load();
         EmployeeController resultController = loader.getController();

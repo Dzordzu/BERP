@@ -22,11 +22,6 @@ public class PersonBuilder implements Builder<Person> {
 	@Setter private Name name;
 	@Setter private Address homeAddress;
 	@Setter private Address forwardingAddress;
-
-
-	public void setForwardingAddress(Address forwardingAddress) {
-		this.forwardingAddress = forwardingAddress;
-	}
 	
 	public void clear() {
 		id = null;

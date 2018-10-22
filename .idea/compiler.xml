@@ -12,14 +12,16 @@
       <entry name="!?*.clj" />
     </wildcardResourcePatterns>
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JavaFxApplication" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="BERP_main" target="1.8" />
+      <module name="BERP_test" target="1.8" />
       <module name="JavaFxApplication" target="1.8" />
     </bytecodeTargetLevel>
   </component>

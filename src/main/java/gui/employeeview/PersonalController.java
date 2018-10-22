@@ -42,7 +42,7 @@ public class PersonalController {
         }
     }
 
-    public void applyValues() {
+    public void applyValues() throws Exception {
         ((MenuButton)personIDType.getChildren().get(1)).setText(person.getId().getType().toString());
         ((TextField)personID.getChildren().get(1)).setText(person.getId().getValue());
         ((TextField)firstname.getChildren().get(1)).setText(person.getName().getFirstname());
@@ -75,16 +75,16 @@ public class PersonalController {
         id = ((TextField)personID.getChildren().get(1)).getText();
     }
 
-    public void changeSex(String value) {
-        PersonBuilder.getInstance().setSex(new Sex(value));
+    public void changeSex(String value) throws Exception {
+        PersonBuilder.getInstance().setSex(Sex.get(value));
         ((MenuButton)(personSex.getChildren().get(1))).setText(value);
     }
 
-    public void changeMale() {
+    public void changeMale() throws Exception {
         changeSex("male");
     }
 
-    public void changeFemale() {
+    public void changeFemale() throws Exception {
         changeSex("female");
     }
 

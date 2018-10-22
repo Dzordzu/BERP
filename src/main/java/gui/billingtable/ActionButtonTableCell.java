@@ -12,11 +12,6 @@ import javafx.util.Callback;
  * @param <S>
  * @link Source [https://stackoverflow.com/questions/29489366/how-to-add-button-in-javafx-table-view]
  */
-
-/*
- Copied from
- */
-
 public class ActionButtonTableCell<S> extends TableCell<S, Button> {
 
     private final Button actionButton;

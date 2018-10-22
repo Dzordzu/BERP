@@ -9,7 +9,14 @@ buildscript {
     }
 }
 
+plugins {
+    id 'net.ltgt.apt' version '0.10'
+    id "de.lukaskoerfer.gradle.delombok" version "0.2"
+}
+
 apply plugin: 'java'
+apply plugin: 'javafx-gradle-plugin'
+apply plugin: 'idea'
 
 group = 'berp'
 version = '1.0-SNAPSHOT'
@@ -22,7 +29,8 @@ targetCompatibility = 1.8
 
 dependencies {
     compile group: 'org.json', name: 'json', version:'20180813'
-    compileOnly group: 'org.projectlombok', name: 'lombok', version:'1.18.2'
+    compileOnly 'org.projectlombok:lombok:1.18.2'
+    apt 'org.projectlombok:lombok:1.18.2'
 }
 
 repositories {
@@ -30,13 +38,59 @@ repositories {
     mavenCentral()
 }
 
-apply plugin: 'javafx-gradle-plugin'
-
 
 jfx {
     // minimal requirement for jfxJar-task
     mainClass = 'gui.App'
 
     // minimal requirement for jfxNative-task
-    //vendor = 'YourName'
+    vendor = 'berp'
 }
+
+//task ownJavadoc(type: Javadoc) {
+//    source = sourceSets.main.allJava
+//    destinationDir = reporting.file("rest-api-docs")
+//}
+
+
+def BERP_GROUP = "berp";
+def BERP_DELOMBOKED_DIR = "delomboked"
+def BERP_DOC_DIR = "doc"
+
+task berpDelombok(type: Delombok) {
+    source = sourceSets.main.allJava
+    destinationDir = file(BERP_DELOMBOKED_DIR)
+}
+
+task berpJavadoc(type: Javadoc, dependsOn: 'berpDelombok') {
+    source = files(BERP_DELOMBOKED_DIR)
+    destinationDir = file(BERP_DOC_DIR)
+}
+
+
+task berpDirectDOC(type: Javadoc) {
+    source = sourceSets.main.allJava
+    destinationDir = file(BERP_DOC_DIR)
+}
+
+task berpRemoveDelomboked(type: Delete) {
+    delete BERP_DELOMBOKED_DIR
+}
+
+task berpRemoveDoc(type: Delete) {
+    delete BERP_DOC_DIR
+}
+
+task berpClean {
+    dependsOn { tasks.findAll {task -> task.name.startsWith('berpRemove') } }
+}
+
+berpRemoveDoc.group = BERP_GROUP
+berpDirectDOC.group = BERP_GROUP
+berpRemoveDelomboked.group = BERP_GROUP
+berpJavadoc.group = BERP_GROUP
+berpDelombok.group = BERP_GROUP
+berpClean.group = BERP_GROUP
+
+
+
