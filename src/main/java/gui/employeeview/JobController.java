@@ -92,6 +92,7 @@ public class JobController {
     }
 
     public void changeJobTitle(String value) {
+        System.out.println(value);
         ((MenuButton)jobTitle.getChildren().get(1)).setText(value);
         jobTitleValue = value;
     }
