@@ -95,21 +95,14 @@ public class EmployeeController {
                 throw new Exception("Chose no payment type");
         }
 
-        try {
-            Job job;
-            Class jobClass = JobsServiceLocator.getInstance().getMatching(jobController.getJobTitleValue()).getClassRef();
-            job = (Job) jobClass.getDeclaredConstructor(PaymentStrategy.class).newInstance(strategy);
-            System.out.println(job.getSalary().getPaymentName());
+        Job job;
+        Class jobClass = JobsServiceLocator.getInstance().getMatching(jobController.getJobTitleValue()).getClassRef();
+        job = (Job) jobClass.getDeclaredConstructor(PaymentStrategy.class).newInstance(strategy);
+        System.out.println(job.getSalary().getPaymentName());
 
-            EmployeeBuilder.setJob(job);
-            EmployeeManager.getInstance().updateEmployee(EmployeeBuilder.buildAndClear());
-            SceneSwitcher.getInstance().switchScene(BillingTableGenerator.getInstance().generate());
-        } catch(Error e) {
-            System.out.println(e);
-        }
-        catch(Exception e) {
-            System.out.println(e);
-        }
+        EmployeeBuilder.setJob(job);
+        EmployeeManager.getInstance().updateEmployee(EmployeeBuilder.buildAndClear());
+        SceneSwitcher.getInstance().switchScene(BillingTableGenerator.getInstance().generate());
     }
 
     public void cancel() throws Exception {
