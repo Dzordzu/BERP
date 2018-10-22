@@ -85,6 +85,7 @@ task berpClean {
     dependsOn { tasks.findAll {task -> task.name.startsWith('berpRemove') } }
 }
 
+berpRemoveDoc.group = BERP_GROUP
 berpDirectDOC.group = BERP_GROUP
 berpRemoveDelomboked.group = BERP_GROUP
 berpJavadoc.group = BERP_GROUP
