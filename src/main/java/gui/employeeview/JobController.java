@@ -2,6 +2,7 @@ package gui.employeeview;
 
 import business.ServiceLocatorEntries;
 import business.jobs.JobsServiceLocator;
+import business.payment.PaymentsServiceLocator;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -25,12 +26,20 @@ public class JobController {
     public void initialize() {
 
         MenuButton jobTitle = (MenuButton)this.jobTitle.getChildren().get(1);
+        MenuButton paymentStrategy = (MenuButton)this.paymentStrategy.getChildren().get(1);
 
         jobTitle.setText(JobsServiceLocator.getInstance().getDefault().getUIName());
         for(ServiceLocatorEntries j: JobsServiceLocator.getInstance().getValues()) {
             MenuItem item = new MenuItem(j.getUIName());
             item.setOnAction(event -> changeJobTitle(j.getUIName()));
             jobTitle.getItems().add(item);
+        }
+
+        paymentStrategy.setText(PaymentsServiceLocator.getInstance().getDefault().getUIName());
+        for(ServiceLocatorEntries p: PaymentsServiceLocator.getInstance().getValues()) {
+            MenuItem item = new MenuItem(p.getUIName());
+            item.setOnAction(event -> changePaymentStrategy(p.getUIName()));
+            paymentStrategy.getItems().add(item);
         }
     }
 
@@ -57,18 +66,6 @@ public class JobController {
     public void changePaymentStrategy(String value) {
         ((MenuButton)paymentStrategy.getChildren().get(1)).setText(value);
         paymentStrategyValue = value;
-    }
-
-    public void changePSToBonus() {
-        changePaymentStrategy("Bonus Payment");
-    }
-
-    public void changePSToStandard() {
-        changePaymentStrategy("Standard Payment");
-    }
-
-    public void changePSToTestPeriod() {
-        changePaymentStrategy("Test Period Payment");
     }
 
     public void changePayment() {

@@ -35,13 +35,7 @@
                   <Insets left="15.0" right="20.0" />
                </HBox.margin>
             </Text>
-            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#changePSToStandard" text="Standard Payment" />
-                <MenuItem mnemonicParsing="false" onAction="#changePSToBonus" text="Bonus Payment" />
-                  <MenuItem mnemonicParsing="false" onAction="#changePSToTestPeriod" text="Test Period Payment" />
-              </items>
-            </MenuButton>
+            <MenuButton mnemonicParsing="false" styleClass="employee-split-menu-button" stylesheets="@styles/main.css" />
          </children>
       </HBox>
       <HBox fx:id="payment" alignment="CENTER" minHeight="40.0" prefHeight="58.0" styleClass="employee-field">
