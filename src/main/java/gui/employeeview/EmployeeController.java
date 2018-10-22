@@ -30,7 +30,7 @@ public class EmployeeController {
 
     public void setMode(String mode) {
 
-        if(mode == "CREATE_MODE") {
+        if(mode.equals("CREATE_MODE")) {
 
             // @TODO Prepare idGeneratorClass
             Random idGenerator = new Random();
