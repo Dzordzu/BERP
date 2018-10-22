@@ -6,10 +6,7 @@ import business.EmployeeManager;
 import business.jobs.Job;
 import business.jobs.JuniorDev;
 import business.jobs.Manager;
-import business.payment.BonusPayment;
-import business.payment.PaymentStrategy;
-import business.payment.StandardPayment;
-import business.payment.TestPeriodPayment;
+import business.payment.*;
 import business.person.PersonBuilder;
 import gui.SceneSwitcher;
 import gui.billingtable.BillingTableGenerator;
@@ -76,24 +73,9 @@ public class EmployeeController {
         EmployeeBuilder.setId(new ID(IDType.COMPANYID, id.getText()));
         EmployeeBuilder.setPerson(PersonBuilder.getInstance().buildAndClear());
 
+        // @NOTE @TODO Check if code is valid and secure
         PaymentStrategy strategy;
-
-        switch(jobController.getPaymentStrategyValue()) {
-            case "Bonus Payment":
-            case "Bonus":
-                strategy = new BonusPayment();
-                break;
-            case "Test Period":
-            case "Test Period Payment":
-                strategy = new TestPeriodPayment();
-                break;
-            case "Standard":
-            case "Standard Payment":
-                strategy = new StandardPayment();
-                break;
-            default:
-                throw new Exception("Chose no payment strategy");
-        }
+        strategy = (PaymentStrategy) PaymentsServiceLocator.getInstance().getMatching(jobController.getPaymentStrategyValue()).getClassRef().newInstance();
 
         // @NOTE @XXX Dangerous zone
         Money salary = new Money(jobController.getPaymentValue(), /*jobController.getPaymentCurrencyValue()*/"PLN");
