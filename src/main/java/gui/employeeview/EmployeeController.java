@@ -76,7 +76,7 @@ public class EmployeeController {
 
         // @NOTE @TODO Check if code is valid and secure
         PaymentStrategy strategy;
-        strategy = (PaymentStrategy) PaymentsServiceLocator.getInstance().getMatching(jobController.getPaymentStrategyValue()).getClassRef().getDeclaredConstructor().newInstance();
+        strategy = (PaymentStrategy) PaymentsServiceLocator.getInstance().getMatching(jobController.getPaymentStrategyValue()).getClassRef().getConstructor().newInstance();
 
         // @NOTE @XXX Dangerous zone
         Money salary = new Money(jobController.getPaymentValue(), /*jobController.getPaymentCurrencyValue()*/"PLN");
@@ -97,7 +97,7 @@ public class EmployeeController {
 
         Job job;
         Class jobClass = JobsServiceLocator.getInstance().getMatching(jobController.getJobTitleValue()).getClassRef();
-        job = (Job) jobClass.getDeclaredConstructor(PaymentStrategy.class).newInstance(strategy);
+        job = (Job) jobClass.getConstructor(PaymentStrategy.class).newInstance(strategy);
         System.out.println(job.getSalary().getPaymentName());
 
         EmployeeBuilder.setJob(job);
