@@ -82,9 +82,7 @@ task berpRemoveDoc(type: Delete) {
 }
 
 task berpClean {
-    dependsOn {
-        tasks.findAll {task -> task.name.startsWith('berpRemove') }
-    }
+    dependsOn { tasks.findAll {task -> task.name.startsWith('berpRemove') } }
 }
 
 berpDirectDOC.group = BERP_GROUP
