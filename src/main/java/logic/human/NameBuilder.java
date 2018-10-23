@@ -2,6 +2,7 @@ package logic.human;
 
 
 import logic.Builder;
+import logic.DataValidatorException;
 import lombok.Setter;
 
 import java.util.List;
@@ -25,11 +26,11 @@ public class NameBuilder implements Builder<Name> {
 		suffixes = null;
 	}
 
-	public Name build() {
+	public Name build() throws DataValidatorException {
 		return new Name(firstname, surname, middlenames, suffixes);
 	}
 
-	public Name buildAndClear() {
+	public Name buildAndClear() throws DataValidatorException {
 		Name result = build();
 		clear();
 		return result;

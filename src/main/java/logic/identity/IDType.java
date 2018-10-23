@@ -16,7 +16,7 @@ import java.util.regex.Pattern;
 
 public enum IDType implements DataValidator<String> {
 	PESEL(Country.POLAND, Pattern.compile("\\d{9}")),
-	COMPANYID(Pattern.compile("^\\d{2}[a-z]\\-\\d{4}"))
+	COMPANYID(Pattern.compile("^\\d{2}[a-z]\\-\\d{4}$"))
 	;
 	
 	private Country country;

@@ -1,5 +1,6 @@
 package seeder.job;
 
+import logic.DataValidatorException;
 import logic.identity.ID;
 import logic.identity.IDType;
 import org.json.JSONObject;
@@ -24,7 +25,7 @@ public class IDCompanyFileReader extends SeederFileReader {
         super("/seeders-data/idlist-company.json");
     }
 
-    public List<ID> getList() throws IOException {
+    public List<ID> getList() throws IOException, DataValidatorException {
         JSONObject obj = this.getJSON();
 
         Vector<ID> result = new Vector<ID>();
