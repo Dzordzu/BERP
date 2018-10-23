@@ -2,17 +2,21 @@ package gui.employeeview;
 
 import business.person.Person;
 import business.person.PersonBuilder;
+import gui.ErrorDialogGenerator;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.HBox;
+import logic.DataValidatorException;
 import logic.human.NameBuilder;
 import logic.human.Sex;
 import logic.identity.IDType;
 import logic.time.Age;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.zip.DataFormatException;
 
 public class PersonalController {
 
@@ -75,9 +79,14 @@ public class PersonalController {
         id = ((TextField)personID.getChildren().get(1)).getText();
     }
 
-    public void changeSex(String value) throws Exception {
-        PersonBuilder.getInstance().setSex(Sex.get(value));
-        ((MenuButton)(personSex.getChildren().get(1))).setText(value);
+    public void changeSex(String value) {
+        try {
+            PersonBuilder.getInstance().setSex(Sex.get(value));
+            ((MenuButton) (personSex.getChildren().get(1))).setText(value);
+        } catch(DataValidatorException e) {
+            ErrorDialogGenerator gen = new ErrorDialogGenerator(e.getMessage());
+            gen.generate().showAndWait();
+        }
     }
 
     public void changeMale() throws Exception {

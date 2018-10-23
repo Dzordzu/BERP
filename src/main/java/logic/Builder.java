@@ -6,8 +6,8 @@ package logic;
  * @param <ReturnType> Type of built target;
  */
 
-public interface Builder<ReturnType> extends javafx.util.Builder<ReturnType> {
+public interface Builder<ReturnType> {
     void clear();
-    ReturnType build();
-    ReturnType buildAndClear();
+    ReturnType build() throws DataValidatorException;
+    ReturnType buildAndClear() throws DataValidatorException;
 }

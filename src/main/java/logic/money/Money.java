@@ -42,7 +42,7 @@ public class Money {
 		this.currency = Currency.getInstance(currencyCode);
 	}
 
-	public double getAmount() {
+	public Double getAmount() {
 		return round(this.amount, currency.getDefaultFractionDigits());
 	}
 

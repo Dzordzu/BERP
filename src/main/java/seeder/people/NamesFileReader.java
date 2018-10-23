@@ -1,5 +1,6 @@
 package seeder.people;
 
+import logic.DataValidatorException;
 import seeder.SeederFileReader;
 import logic.human.Name;
 import logic.human.NameBuilder;
@@ -18,7 +19,7 @@ public class NamesFileReader extends SeederFileReader {
         return ourInstance;
     }
 
-    public List<Name> getList() throws IOException {
+    public List<Name> getList() throws IOException, DataValidatorException {
         Vector<Name> result = new Vector();
         for(Object obj : super.getJSON().getJSONArray("NamesList")) {
             result.addElement(this.createAddressFromJSON(obj));
@@ -35,7 +36,7 @@ public class NamesFileReader extends SeederFileReader {
         return list;
     }
 
-    private Name createAddressFromJSON(Object obj) {
+    private Name createAddressFromJSON(Object obj) throws DataValidatorException {
 
         if(!(obj instanceof JSONObject)) throw new Error("Cannot read Name");
         JSONObject object = (JSONObject)obj;

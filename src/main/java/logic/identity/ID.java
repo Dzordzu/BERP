@@ -1,5 +1,7 @@
 package logic.identity;
 
+import logic.DataValidator;
+import logic.DataValidatorException;
 import lombok.Getter;
 
 /**
@@ -7,12 +9,15 @@ import lombok.Getter;
  * Immutable
  */
 
+
 public class ID {
 	@Getter private IDType type;
 	@Getter private String value;
-	public ID(IDType type, String value) {
+	public ID(IDType type, String value) throws DataValidatorException {
 		this.type = type;
 		this.value = value;
+
+		type.validate(value);
 	}
 
 	@Override
