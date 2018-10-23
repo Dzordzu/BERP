@@ -113,7 +113,7 @@ public class EmployeeController {
             gen.generate().showAndWait();
         }
         catch(Exception e) {
-            new ErrorDialogGenerator("Whoops. Something went wrong").generate().showAndWait();
+            new ErrorDialogGenerator("Whoops. Something went wrong. \nCheck if all fields are filled").generate().showAndWait();
         }
     }
 
