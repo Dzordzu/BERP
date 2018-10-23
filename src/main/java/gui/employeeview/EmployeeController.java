@@ -68,23 +68,15 @@ public class EmployeeController {
     public void save() {
 
         try {
-            try {
-                PersonBuilder.getInstance().setId(new ID(personalController.getIdType(), personalController.getId()));
-                PersonBuilder.getInstance().setName(NameBuilder.getInstance().buildAndClear());
-            } catch(DataValidatorException e) {
-                ErrorDialogGenerator gen = new ErrorDialogGenerator(e.getMessage());
-                gen.generate().showAndWait();
-            }
+            PersonBuilder.getInstance().setId(new ID(personalController.getIdType(), personalController.getId()));
+            PersonBuilder.getInstance().setName(NameBuilder.getInstance().buildAndClear());
+
             PersonBuilder.getInstance().setHomeAddress(AddressBuilder.getInstance().buildAndClear());
 
             EmployeeBuilder.clear();
-            try {
-                EmployeeBuilder.setId(new ID(IDType.COMPANYID, id.getText()));
-                EmployeeBuilder.setPerson(PersonBuilder.getInstance().buildAndClear());
-            } catch(DataValidatorException e) {
-                ErrorDialogGenerator gen = new ErrorDialogGenerator(e.getMessage());
-                gen.generate().showAndWait();
-            }
+            EmployeeBuilder.setId(new ID(IDType.COMPANYID, id.getText()));
+            EmployeeBuilder.setPerson(PersonBuilder.getInstance().buildAndClear());
+
 
             // @NOTE @TODO Check if code is valid and secure
             PaymentStrategy strategy;
@@ -116,8 +108,12 @@ public class EmployeeController {
             EmployeeManager.getInstance().updateEmployee(EmployeeBuilder.buildAndClear());
             SceneSwitcher.getInstance().switchScene(BillingTableGenerator.getInstance().generate());
 
-        } catch(Exception e) {
-            new ErrorDialogGenerator("Whoops. Something went wrong");
+        } catch(DataValidatorException e) {
+            ErrorDialogGenerator gen = new ErrorDialogGenerator(e.getMessage());
+            gen.generate().showAndWait();
+        }
+        catch(Exception e) {
+            new ErrorDialogGenerator("Whoops. Something went wrong").generate().showAndWait();
         }
     }
 
