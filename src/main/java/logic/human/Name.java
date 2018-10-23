@@ -13,7 +13,7 @@ class NameValidator implements DataValidator<String> {
 	public void validate(String value) throws DataValidatorException {
 		Pattern p = Pattern.compile("^[A-z\\p{L}\\- ]+$");
 		Matcher m = p.matcher(value);
-		if(!m.find()) throw new DataValidatorException("Name has to be a alphabetical value. Given: " + value);
+		if(!m.matches()) throw new DataValidatorException("Name has to be a alphabetical value. Given: " + value);
 	}
 }
 

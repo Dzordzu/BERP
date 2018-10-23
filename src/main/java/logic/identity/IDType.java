@@ -42,6 +42,6 @@ public enum IDType implements DataValidator<String> {
 	@Override
 	public void validate(String value) throws DataValidatorException {
 		Matcher m = this.pattern.matcher(value);
-		if(!m.find()) throw new DataValidatorException(this.name() + " has got improper form");
+		if(!m.matches()) throw new DataValidatorException(this.name() + " has got improper form");
 	}
 }
