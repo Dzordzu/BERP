@@ -8,10 +8,12 @@ import business.servicelocators.JobsServiceLocator;
 import business.payment.*;
 import business.person.PersonBuilder;
 import business.servicelocators.PaymentsServiceLocator;
+import gui.ErrorDialogGenerator;
 import gui.SceneSwitcher;
 import gui.billingtable.BillingTableGenerator;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
+import logic.DataValidatorException;
 import logic.identity.ID;
 import logic.identity.IDType;
 import logic.human.NameBuilder;
@@ -63,45 +65,60 @@ public class EmployeeController {
         id.setText(e.getId().getValue());
     }
 
-    public void save() throws Exception {
+    public void save() {
 
-        PersonBuilder.getInstance().setId(new ID(personalController.getIdType(), personalController.getId()));
-        PersonBuilder.getInstance().setName(NameBuilder.getInstance().buildAndClear());
-        PersonBuilder.getInstance().setHomeAddress(AddressBuilder.getInstance().buildAndClear());
+        try {
+            try {
+                PersonBuilder.getInstance().setId(new ID(personalController.getIdType(), personalController.getId()));
+                PersonBuilder.getInstance().setName(NameBuilder.getInstance().buildAndClear());
+            } catch(DataValidatorException e) {
+                ErrorDialogGenerator gen = new ErrorDialogGenerator(e.getMessage());
+                gen.generate().showAndWait();
+            }
+            PersonBuilder.getInstance().setHomeAddress(AddressBuilder.getInstance().buildAndClear());
 
-        EmployeeBuilder.clear();
-        EmployeeBuilder.setId(new ID(IDType.COMPANYID, id.getText()));
-        EmployeeBuilder.setPerson(PersonBuilder.getInstance().buildAndClear());
+            EmployeeBuilder.clear();
+            try {
+                EmployeeBuilder.setId(new ID(IDType.COMPANYID, id.getText()));
+                EmployeeBuilder.setPerson(PersonBuilder.getInstance().buildAndClear());
+            } catch(DataValidatorException e) {
+                ErrorDialogGenerator gen = new ErrorDialogGenerator(e.getMessage());
+                gen.generate().showAndWait();
+            }
 
-        // @NOTE @TODO Check if code is valid and secure
-        PaymentStrategy strategy;
-        strategy = (PaymentStrategy) PaymentsServiceLocator.getInstance().getMatching(jobController.getPaymentStrategyValue()).getClassRef().getConstructor().newInstance();
+            // @NOTE @TODO Check if code is valid and secure
+            PaymentStrategy strategy;
+            strategy = (PaymentStrategy) PaymentsServiceLocator.getInstance().getMatching(jobController.getPaymentStrategyValue()).getClassRef().getConstructor().newInstance();
 
-        // @NOTE @XXX Dangerous zone
-        Money salary = new Money(jobController.getPaymentValue(), /*jobController.getPaymentCurrencyValue()*/"PLN");
+            // @NOTE @XXX Dangerous zone
+            Money salary = new Money(jobController.getPaymentValue(), /*jobController.getPaymentCurrencyValue()*/"PLN");
 
-        switch(jobController.getPaymentTypeValue()) {
-            case "Net Employment Cost":
-                strategy.setNetEmploymentCost(salary);
-                break;
-            case "Gross Employment Cost":
-                strategy.setGrossEmploymentCost(salary);
-                break;
-            case "Net Employee Salary":
-                strategy.setNetEmployeeSalary(salary);
-                break;
-            default:
-                throw new Exception("Chose no payment type");
+            switch (jobController.getPaymentTypeValue()) {
+                case "Net Employment Cost":
+                    strategy.setNetEmploymentCost(salary);
+                    break;
+                case "Gross Employment Cost":
+                    strategy.setGrossEmploymentCost(salary);
+                    break;
+                case "Net Employee Salary":
+                    strategy.setNetEmployeeSalary(salary);
+                    break;
+                default:
+                    throw new Exception("Chose no payment type");
+            }
+
+            Job job;
+            Class jobClass = JobsServiceLocator.getInstance().getMatching(jobController.getJobTitleValue()).getClassRef();
+            job = (Job) jobClass.getConstructor(PaymentStrategy.class).newInstance(strategy);
+            System.out.println(job.getSalary().getPaymentName());
+
+            EmployeeBuilder.setJob(job);
+            EmployeeManager.getInstance().updateEmployee(EmployeeBuilder.buildAndClear());
+            SceneSwitcher.getInstance().switchScene(BillingTableGenerator.getInstance().generate());
+
+        } catch(Exception e) {
+            new ErrorDialogGenerator("Whoops. Something went wrong");
         }
-
-        Job job;
-        Class jobClass = JobsServiceLocator.getInstance().getMatching(jobController.getJobTitleValue()).getClassRef();
-        job = (Job) jobClass.getConstructor(PaymentStrategy.class).newInstance(strategy);
-        System.out.println(job.getSalary().getPaymentName());
-
-        EmployeeBuilder.setJob(job);
-        EmployeeManager.getInstance().updateEmployee(EmployeeBuilder.buildAndClear());
-        SceneSwitcher.getInstance().switchScene(BillingTableGenerator.getInstance().generate());
     }
 
     public void cancel() throws Exception {

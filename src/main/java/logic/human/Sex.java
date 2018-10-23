@@ -25,7 +25,7 @@ public enum Sex {
 		return this.sex == "female";
 	}
 
-	public static Sex get(String sex) throws Exception {
+	public static Sex get(String sex) throws DataValidatorException {
 		sex = sex.toLowerCase();
 
 		for(Sex s: Sex.values()) {
