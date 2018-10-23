@@ -1,5 +1,7 @@
 package logic.human;
 
+import logic.DataValidatorException;
+
 /**
  * TODO - change to enum
  */
@@ -30,7 +32,7 @@ public enum Sex {
 			if(s.toString().equals(sex)) return s;
 		}
 
-		throw new Exception("There is no such a sex: " + sex);
+		throw new DataValidatorException("There is no such a sex: " + sex);
 	}
 	
 	public String toString() {

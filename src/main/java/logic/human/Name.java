@@ -1,15 +1,27 @@
 package logic.human;
 
+import logic.DataValidator;
+import logic.DataValidatorException;
 import lombok.Getter;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+class NameValidator implements DataValidator<String> {
+	@Override
+	public void validate(String value) throws DataValidatorException {
+		Pattern p = Pattern.compile("^[A-zążółćś]+$");
+		Matcher m = p.matcher(value);
+		if(!m.find()) throw new DataValidatorException("Name has to be a alphabetical value ");
+	}
+}
 
 /**
  * Represents name of the person<br />
  * Has own builder (NameBuilder)
  * @see NameBuilder
  */
-
 public class Name {
 	@Getter protected String firstname = null;
 	@Getter protected String surname = null;
@@ -17,11 +29,19 @@ public class Name {
 	@Getter protected List<String> suffixes = null;
 
 	
-	public Name(String firstname, String surname, List<String> middlenames, List<String> suffixes) {
+	public Name(String firstname, String surname, List<String> middlenames, List<String> suffixes) throws DataValidatorException {
 		this.firstname = firstname;
 		this.surname = surname;
 		this.middlenames = middlenames;
 		this.suffixes = suffixes;
+
+		NameValidator nv = new NameValidator();
+		nv.validate(firstname);
+		nv.validate(surname);
+
+		for(String mn: middlenames) {
+			nv.validate(mn);
+		}
 	}
 
 	/**
