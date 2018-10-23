@@ -39,9 +39,11 @@ public class Name {
 		nv.validate(firstname);
 		nv.validate(surname);
 
-		for(String mn: middlenames) {
-			nv.validate(mn);
-		}
+		if(middlenames != null)
+			if(middlenames.size() > 0)
+				for(String mn: middlenames) {
+					nv.validate(mn);
+				}
 	}
 
 	/**
