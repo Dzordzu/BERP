@@ -11,9 +11,9 @@ import java.util.regex.Pattern;
 class NameValidator implements DataValidator<String> {
 	@Override
 	public void validate(String value) throws DataValidatorException {
-		Pattern p = Pattern.compile("^[A-zążółćś]+$");
+		Pattern p = Pattern.compile("^[A-z\\p{L}\\- ]+$");
 		Matcher m = p.matcher(value);
-		if(!m.find()) throw new DataValidatorException("Name has to be a alphabetical value ");
+		if(!m.find()) throw new DataValidatorException("Name has to be a alphabetical value. Given: " + value);
 	}
 }
 
