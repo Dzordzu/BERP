@@ -3,16 +3,17 @@ package gui;
 import lombok.Getter;
 import lombok.Setter;
 
-enum APP_MODE {
-    DEBUG,
-    NORMAL
-}
 
 /**
  * Predefines mode of the app
  */
 
 public class AppMode {
+
+    public enum APP_MODE {
+        DEBUG,
+        NORMAL
+    }
 
     @Getter @Setter
     APP_MODE mode;

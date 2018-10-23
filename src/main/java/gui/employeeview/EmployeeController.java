@@ -4,19 +4,20 @@ import business.Employee;
 import business.EmployeeBuilder;
 import business.EmployeeManager;
 import business.jobs.Job;
-import business.servicelocators.JobsServiceLocator;
-import business.payment.*;
+import business.payment.PaymentStrategy;
 import business.person.PersonBuilder;
+import business.servicelocators.JobsServiceLocator;
 import business.servicelocators.PaymentsServiceLocator;
+import gui.AppMode;
 import gui.ErrorDialogGenerator;
 import gui.SceneSwitcher;
 import gui.billingtable.BillingTableGenerator;
 import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 import logic.DataValidatorException;
+import logic.human.NameBuilder;
 import logic.identity.ID;
 import logic.identity.IDType;
-import logic.human.NameBuilder;
 import logic.money.Money;
 import logic.place.AddressBuilder;
 
@@ -115,7 +116,7 @@ public class EmployeeController {
         catch(Exception e) {
             new ErrorDialogGenerator("Whoops. Something went wrong. \nCheck if all fields are filled").generate().showAndWait();
 
-            if(false) {
+            if(AppMode.getInstance().getMode() == AppMode.APP_MODE.DEBUG) {
                 System.out.println(e.getClass().getName());
                 for(StackTraceElement el: e.getStackTrace()) {
                     System.out.println(el.getFileName());
