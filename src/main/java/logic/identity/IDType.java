@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
  */
 
 public enum IDType implements DataValidator<String> {
-	PESEL(Country.POLAND, Pattern.compile("\\d{9}")),
+	PESEL(Country.POLAND, Pattern.compile("^\\d{11}$")),
 	COMPANYID(Pattern.compile("^\\d{2}[a-z]\\-\\d{4}$"))
 	;
 	
@@ -42,6 +42,6 @@ public enum IDType implements DataValidator<String> {
 	@Override
 	public void validate(String value) throws DataValidatorException {
 		Matcher m = this.pattern.matcher(value);
-		if(!m.matches()) throw new DataValidatorException(this.name() + " has got improper form");
+		if(!m.matches()) throw new DataValidatorException(this.name() + " has got improper form. Given: " + value);
 	}
 }
