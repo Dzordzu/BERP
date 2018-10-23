@@ -114,6 +114,14 @@ public class EmployeeController {
         }
         catch(Exception e) {
             new ErrorDialogGenerator("Whoops. Something went wrong. \nCheck if all fields are filled").generate().showAndWait();
+            System.out.println(e.getClass().getName());
+
+            for(StackTraceElement el: e.getStackTrace()) {
+                System.out.println(el.getFileName());
+                System.out.println(el.getMethodName());
+                System.out.println(el.getLineNumber());
+                System.out.println("---");
+            }
         }
     }
 
