@@ -1,0 +1,465 @@
+@startuml
+
+title __BILLINGTABLE's Class Diagram__\n
+
+  package gui {
+    package gui.billingtable {
+      class ActionButtonTableCell {
+          - actionButton : Button
+          + ActionButtonTableCell()
+          + getCurrentItem()
+          {static} + forTableColumn()
+          + updateItem()
+      }
+    }
+  }
+  
+
+  class StyleableProperties {
+      {static} - FONT : FontCssMetaData<Labeled>
+      {static} - ALIGNMENT : CssMetaData<Labeled, Pos>
+      {static} - TEXT_ALIGNMENT : CssMetaData<Labeled, TextAlignment>
+      {static} - TEXT_FILL : CssMetaData<Labeled, Paint>
+      {static} - TEXT_OVERRUN : CssMetaData<Labeled, OverrunStyle>
+      {static} - ELLIPSIS_STRING : CssMetaData<Labeled, String>
+      {static} - WRAP_TEXT : CssMetaData<Labeled, Boolean>
+      {static} - GRAPHIC : CssMetaData<Labeled, String>
+      {static} - UNDERLINE : CssMetaData<Labeled, Boolean>
+      {static} - LINE_SPACING : CssMetaData<Labeled, Number>
+      {static} - CONTENT_DISPLAY : CssMetaData<Labeled, ContentDisplay>
+      {static} - LABEL_PADDING : CssMetaData<Labeled, Insets>
+      {static} - GRAPHIC_TEXT_GAP : CssMetaData<Labeled, Number>
+      {static} - STYLEABLES : List<CssMetaData<? extends Styleable, ?>>
+      - StyleableProperties()
+  }
+  
+
+  class StyleableProperties {
+      {static} - SKIN : CssMetaData<Control, String>
+      {static} - STYLEABLES : List<CssMetaData<? extends Styleable, ?>>
+      - StyleableProperties()
+  }
+  
+
+  class StyleableProperties {
+      {static} - PADDING : CssMetaData<Region, Insets>
+      {static} - OPAQUE_INSETS : CssMetaData<Region, Insets>
+      {static} - BACKGROUND : CssMetaData<Region, Background>
+      {static} - BORDER : CssMetaData<Region, Border>
+      {static} - SHAPE : CssMetaData<Region, Shape>
+      {static} - SCALE_SHAPE : CssMetaData<Region, Boolean>
+      {static} - POSITION_SHAPE : CssMetaData<Region, Boolean>
+      {static} - CACHE_SHAPE : CssMetaData<Region, Boolean>
+      {static} - SNAP_TO_PIXEL : CssMetaData<Region, Boolean>
+      {static} - MIN_HEIGHT : CssMetaData<Region, Number>
+      {static} - PREF_HEIGHT : CssMetaData<Region, Number>
+      {static} - MAX_HEIGHT : CssMetaData<Region, Number>
+      {static} - MIN_WIDTH : CssMetaData<Region, Number>
+      {static} - PREF_WIDTH : CssMetaData<Region, Number>
+      {static} - MAX_WIDTH : CssMetaData<Region, Number>
+      {static} - STYLEABLES : List<CssMetaData<? extends Styleable, ?>>
+      - StyleableProperties()
+  }
+  
+
+  class ShapeProperty {
+      - ShapeProperty()
+      + getBean()
+      + getName()
+      + getCssMetaData()
+      # invalidated()
+      + run()
+  }
+  
+
+  class Listener {
+      - wref : WeakReference<ObjectPropertyBase<?>>
+      + Listener()
+      + invalidated()
+  }
+  
+
+  class MinPrefMaxProperty {
+      - name : String
+      - cssMetaData : CssMetaData<? extends Styleable, Number>
+      ~ MinPrefMaxProperty()
+      + invalidated()
+      + getBean()
+      + getName()
+      + getCssMetaData()
+  }
+  
+
+  class Listener {
+      - wref : WeakReference<DoublePropertyBase>
+      + Listener()
+      + invalidated()
+  }
+  
+
+  class InsetsProperty {
+      - cache : Insets
+      - helper : ExpressionHelper<Insets>
+      - InsetsProperty()
+      + getBean()
+      + getName()
+      + addListener()
+      + removeListener()
+      + addListener()
+      + removeListener()
+      ~ fireValueChanged()
+      + get()
+  }
+  
+
+  class AccessibilityProperties {
+      ~ accessibleRoleDescription : ObjectProperty<String>
+      ~ accessibleText : ObjectProperty<String>
+      ~ accessibleHelp : ObjectProperty<String>
+      - AccessibilityProperties()
+      ~ getAccessibleRoleDescription()
+      ~ getAccessibleText()
+      ~ getAccessibleHelp()
+  }
+  
+
+  abstract class LazyBoundsProperty {
+      - helper : ExpressionHelper<Bounds>
+      - valid : boolean
+      - bounds : Bounds
+      - LazyBoundsProperty()
+      + addListener()
+      + removeListener()
+      + addListener()
+      + removeListener()
+      + get()
+      + invalidate()
+      {abstract} # computeBounds()
+  }
+  
+
+  abstract class LazyTransformProperty {
+      {static} # VALID : int
+      {static} # INVALID : int
+      {static} # VALIDITY_UNKNOWN : int
+      # valid : int
+      - helper : ExpressionHelper<Transform>
+      - transform : Transform
+      - canReuse : boolean
+      - LazyTransformProperty()
+      + addListener()
+      + removeListener()
+      + addListener()
+      + removeListener()
+      # getInternalValue()
+      + get()
+      + validityUnknown()
+      + invalidate()
+      {abstract} # validityKnown()
+      {abstract} # computeValidity()
+      {abstract} # computeTransform()
+  }
+  
+
+  class StyleableProperties {
+      {static} - CURSOR : CssMetaData<Node, Cursor>
+      {static} - EFFECT : CssMetaData<Node, Effect>
+      {static} - FOCUS_TRAVERSABLE : CssMetaData<Node, Boolean>
+      {static} - OPACITY : CssMetaData<Node, Number>
+      {static} - BLEND_MODE : CssMetaData<Node, BlendMode>
+      {static} - ROTATE : CssMetaData<Node, Number>
+      {static} - SCALE_X : CssMetaData<Node, Number>
+      {static} - SCALE_Y : CssMetaData<Node, Number>
+      {static} - SCALE_Z : CssMetaData<Node, Number>
+      {static} - TRANSLATE_X : CssMetaData<Node, Number>
+      {static} - TRANSLATE_Y : CssMetaData<Node, Number>
+      {static} - TRANSLATE_Z : CssMetaData<Node, Number>
+      {static} - VISIBILITY : CssMetaData<Node, Boolean>
+      {static} - STYLEABLES : List<CssMetaData<? extends Styleable, ?>>
+      - StyleableProperties()
+  }
+  
+
+  class TreeVisiblePropertyReadOnly {
+      - helper : ExpressionHelper<Boolean>
+      - valid : boolean
+      ~ TreeVisiblePropertyReadOnly()
+      + addListener()
+      + removeListener()
+      + addListener()
+      + removeListener()
+      # invalidate()
+      + get()
+  }
+  
+
+  class FocusedProperty {
+      - value : boolean
+      - valid : boolean
+      - needsChangeEvent : boolean
+      ~ FocusedProperty()
+      + store()
+      + notifyListeners()
+      - markInvalid()
+      + get()
+      + getBean()
+      + getName()
+  }
+  
+
+  class MiscProperties {
+      - boundsInParent : LazyBoundsProperty
+      - boundsInLocal : LazyBoundsProperty
+      - cache : BooleanProperty
+      - cacheHint : ObjectProperty<CacheHint>
+      - clip : ObjectProperty<Node>
+      - cursor : ObjectProperty<Cursor>
+      - depthTest : ObjectProperty<DepthTest>
+      - disable : BooleanProperty
+      - effect : ObjectProperty<Effect>
+      - inputMethodRequests : ObjectProperty<InputMethodRequests>
+      - mouseTransparent : BooleanProperty
+      - MiscProperties()
+      + getBoundsInParent()
+      + boundsInParentProperty()
+      + invalidateBoundsInParent()
+      + getBoundsInLocal()
+      + boundsInLocalProperty()
+      + invalidateBoundsInLocal()
+      + isCache()
+      + cacheProperty()
+      + getCacheHint()
+      + cacheHintProperty()
+      + getClip()
+      + clipProperty()
+      + getCursor()
+      + cursorProperty()
+      + getDepthTest()
+      + depthTestProperty()
+      + isDisable()
+      + disableProperty()
+      + getEffect()
+      + effectProperty()
+      + getInputMethodRequests()
+      + inputMethodRequestsProperty()
+      + isMouseTransparent()
+      + mouseTransparentProperty()
+      + canSetCursor()
+      + canSetEffect()
+  }
+  
+
+  class EffectiveOrientationProperty {
+      - EffectiveOrientationProperty()
+      + get()
+      + getBean()
+      + getName()
+      + invalidate()
+  }
+  
+
+  class NodeTransformation {
+      - translateX : DoubleProperty
+      - translateY : DoubleProperty
+      - translateZ : DoubleProperty
+      - scaleX : DoubleProperty
+      - scaleY : DoubleProperty
+      - scaleZ : DoubleProperty
+      - rotate : DoubleProperty
+      - rotationAxis : ObjectProperty<Point3D>
+      - transforms : ObservableList<Transform>
+      - localToParentTransform : LazyTransformProperty
+      - localToSceneTransform : LazyTransformProperty
+      - listenerReasons : int
+      - localToSceneInvLstnr : InvalidationListener
+      - NodeTransformation()
+      - getLocalToSceneInvalidationListener()
+      + incListenerReasons()
+      + decListenerReasons()
+      + getLocalToParentTransform()
+      + localToParentTransformProperty()
+      + invalidateLocalToParentTransform()
+      + getLocalToSceneTransform()
+      + localToSceneTransformProperty()
+      + invalidateLocalToSceneTransform()
+      + getTranslateX()
+      + translateXProperty()
+      + getTranslateY()
+      + translateYProperty()
+      + getTranslateZ()
+      + translateZProperty()
+      + getScaleX()
+      + scaleXProperty()
+      + getScaleY()
+      + scaleYProperty()
+      + getScaleZ()
+      + scaleZProperty()
+      + getRotate()
+      + rotateProperty()
+      + getRotationAxis()
+      + rotationAxisProperty()
+      + getTransforms()
+      + canSetTranslateX()
+      + canSetTranslateY()
+      + canSetTranslateZ()
+      + canSetScaleX()
+      + canSetScaleY()
+      + canSetScaleZ()
+      + canSetRotate()
+      + hasTransforms()
+      + hasScaleOrRotate()
+  }
+  
+
+  class LocalToSceneTransformProperty {
+      - localToSceneListeners : List
+      - stamp : long
+      - parentStamp : long
+      ~ LocalToSceneTransformProperty()
+      # computeTransform()
+      + getBean()
+      + getName()
+      # validityKnown()
+      # computeValidity()
+      + addListener()
+      + addListener()
+      + removeListener()
+      + removeListener()
+  }
+  
+
+  class ReadOnlyObjectWrapperManualFire {
+      - ReadOnlyObjectWrapperManualFire()
+      + getBean()
+      + getName()
+      # fireValueChangedEvent()
+      + fireSuperValueChangedEvent()
+  }
+  
+
+  class ReadOnlyPropertyImpl {
+      - ReadOnlyPropertyImpl()
+      + get()
+      + getBean()
+      + getName()
+  }
+  
+
+  class Listener {
+      - wref : WeakReference<ObjectPropertyBase<?>>
+      + Listener()
+      + invalidated()
+  }
+  
+
+  package gui {
+    package gui.billingtable {
+      class BillingTableGenerator {
+          {static} - ourInstance : BillingTableGenerator
+          {static} + getInstance()
+          - BillingTableGenerator()
+          + generate()
+      }
+    }
+  }
+  
+
+  package gui {
+    package gui.billingtable {
+      enum CellFactories {
+        Fire
+        Edit
+        View
+        value
+      }
+    }
+  }
+  
+
+  package gui {
+    package gui.billingtable {
+      enum CellValueFactories {
+        ID
+        Name
+        JobTitle
+        PaymentStrategy
+        NetEmployeeSalary
+        GrossEmploymentCost
+        Currency
+        NESGEC
+        value
+      }
+    }
+  }
+  
+
+  package gui {
+    package gui.billingtable {
+      enum Columns {
+        ID
+        Name
+        JobTitle
+        PaymentStrategy
+        NetEmployeeSalary
+        GrossEmploymentCost
+        Currency
+        NESGEC
+        Fire
+        Edit
+        View
+        labelText
+        cellFactory
+        cellValueFactory
+      }
+    }
+  }
+  
+
+  ActionButtonTableCell -up-|> TableCell
+  ActionButtonTableCell +-down- StyleableProperties
+  ActionButtonTableCell +-down- StyleableProperties
+  ActionButtonTableCell +-down- StyleableProperties
+  ActionButtonTableCell +-down- ShapeProperty
+  ActionButtonTableCell +-down- MinPrefMaxProperty
+  ActionButtonTableCell +-down- InsetsProperty
+  ActionButtonTableCell +-down- AccessibilityProperties
+  ActionButtonTableCell +-down- LazyBoundsProperty
+  ActionButtonTableCell +-down- LazyTransformProperty
+  ActionButtonTableCell +-down- StyleableProperties
+  ActionButtonTableCell +-down- TreeVisiblePropertyReadOnly
+  ActionButtonTableCell +-down- FocusedProperty
+  ActionButtonTableCell +-down- MiscProperties
+  ActionButtonTableCell +-down- EffectiveOrientationProperty
+  ActionButtonTableCell +-down- NodeTransformation
+  ActionButtonTableCell +-down- ReadOnlyObjectWrapperManualFire
+  ShapeProperty -up-|> Runnable
+  ShapeProperty -up-|> StyleableObjectProperty
+  ShapeProperty +-down- Listener
+  Listener -up-|> InvalidationListener
+  MinPrefMaxProperty -up-|> StyleableDoubleProperty
+  MinPrefMaxProperty +-down- Listener
+  Listener -up-|> InvalidationListener
+  InsetsProperty -up-|> ReadOnlyObjectProperty
+  LazyBoundsProperty -up-|> ReadOnlyObjectProperty
+  LazyTransformProperty -up-|> ReadOnlyObjectProperty
+  TreeVisiblePropertyReadOnly -up-|> BooleanExpression
+  FocusedProperty -up-|> ReadOnlyBooleanPropertyBase
+  EffectiveOrientationProperty -up-|> ReadOnlyObjectPropertyBase
+  NodeTransformation +-down- LocalToSceneTransformProperty
+  LocalToSceneTransformProperty -up-|> LazyTransformProperty
+  ReadOnlyObjectWrapperManualFire -up-|> ReadOnlyObjectWrapper
+  ReadOnlyObjectWrapperManualFire +-down- ReadOnlyPropertyImpl
+  ReadOnlyObjectWrapperManualFire +-down- Listener
+  ReadOnlyPropertyImpl -up-|> ReadOnlyObjectPropertyBase
+  Listener -up-|> InvalidationListener
+  BillingTableGenerator -up-|> ContentGenerator
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

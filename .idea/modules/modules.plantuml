@@ -1,0 +1,625 @@
+@startuml
+
+title __BERP_MAIN's Class Diagram__\n
+
+  package gui {
+    package gui.billingtable {
+      class ActionButtonTableCell {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.place {
+      class Address {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.place {
+      class AddressBuilder {
+      }
+    }
+  }
+  
+
+  package gui {
+    package gui.employeeview {
+      class AddressController {
+      }
+    }
+  }
+  
+
+  package seeder {
+    package seeder.people {
+      class AddressFileReader {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.time {
+      class Age {
+      }
+    }
+  }
+  
+
+  package seeder {
+    package seeder.people {
+      class AgeFileReader {
+      }
+    }
+  }
+  
+
+  package gui {
+    class App {
+    }
+  }
+  
+
+  package gui {
+    class AppMode {
+    }
+  }
+  
+
+  package logic {
+    package logic.time {
+      abstract class AppliedDateDifference {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.money {
+      package logic.money.tax {
+        class Assurances {
+        }
+      }
+    }
+  }
+  
+
+  package gui {
+    package gui.billingtable {
+      class BillingTableGenerator {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.payment {
+      class BonusPayment {
+      }
+    }
+  }
+  
+
+  package logic {
+    interface Builder {
+    }
+  }
+  
+
+  package gui {
+    package gui.billingtable {
+      enum CellFactories {
+      }
+    }
+  }
+  
+
+  package gui {
+    package gui.billingtable {
+      enum CellValueFactories {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.place {
+      class City {
+      }
+    }
+  }
+  
+
+  package gui {
+    package gui.billingtable {
+      enum Columns {
+      }
+    }
+  }
+  
+
+  package gui {
+    interface ContentGenerator {
+    }
+  }
+  
+
+  package gui {
+    class ContentLoader {
+    }
+  }
+  
+
+  package logic {
+    package logic.money {
+      class Converter {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.place {
+      enum Country {
+      }
+    }
+  }
+  
+
+  package logic {
+    interface DataValidator {
+    }
+  }
+  
+
+  package logic {
+    class DataValidatorException {
+    }
+  }
+  
+
+  package logic {
+    package logic.time {
+      interface DateDifference {
+      }
+    }
+  }
+  
+
+  package gui {
+    class ElementsHandler {
+    }
+  }
+  
+
+  package business {
+    class Employee {
+    }
+  }
+  
+
+  package business {
+    class EmployeeBuilder {
+    }
+  }
+  
+
+  package gui {
+    package gui.employeeview {
+      class EmployeeController {
+      }
+    }
+  }
+  
+
+  package business {
+    class EmployeeManager {
+    }
+  }
+  
+
+  package seeder {
+    package seeder.job {
+      class EmployeeSeeder {
+      }
+    }
+  }
+  
+
+  package gui {
+    package gui.employeeview {
+      enum EmployeeViewGenerator {
+      }
+    }
+  }
+  
+
+  package gui {
+    class ErrorDialogGenerator {
+    }
+  }
+  
+
+  package logic {
+    package logic.place {
+      class Home {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.identity {
+      class ID {
+      }
+    }
+  }
+  
+
+  package seeder {
+    package seeder.job {
+      class IDCompanyFileReader {
+      }
+    }
+  }
+  
+
+  package seeder {
+    package seeder.people {
+      class IDFileReader {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.identity {
+      enum IDType {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.jobs {
+      abstract class Job {
+      }
+    }
+  }
+  
+
+  package gui {
+    package gui.employeeview {
+      class JobController {
+      }
+    }
+  }
+  
+
+  package seeder {
+    package seeder.job {
+      class JobFileReader {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.servicelocators {
+      class JobsServiceLocator {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.jobs {
+      class JuniorDev {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.jobs {
+      class Manager {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.money {
+      class Markup {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.money {
+      class Money {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.human {
+      class Name {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.human {
+      class NameBuilder {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.human {
+      class NameValidator {
+      }
+    }
+  }
+  
+
+  package seeder {
+    package seeder.people {
+      class NamesFileReader {
+      }
+    }
+  }
+  
+
+  package gui {
+    class NavbarController {
+    }
+  }
+  
+
+  package business {
+    package business.payment {
+      interface PaymentStrategy {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.servicelocators {
+      class PaymentsServiceLocator {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.money {
+      package logic.money.tax {
+        class PensionTax {
+        }
+      }
+    }
+  }
+  
+
+  package seeder {
+    package seeder.people {
+      class PeopleSeeder {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.math {
+      class Percentage {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.person {
+      class Person {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.person {
+      class PersonBuilder {
+      }
+    }
+  }
+  
+
+  package gui {
+    package gui.employeeview {
+      class PersonalController {
+      }
+    }
+  }
+  
+
+  package gui {
+    class SceneSwitcher {
+    }
+  }
+  
+
+  package seeder {
+    interface Seeder {
+    }
+  }
+  
+
+  package seeder {
+    abstract class SeederFileReader {
+    }
+  }
+  
+
+  package business {
+    package business.servicelocators {
+      interface ServiceLocator {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.servicelocators {
+      interface ServiceLocatorEntries {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.human {
+      enum Sex {
+      }
+    }
+  }
+  
+
+  package seeder {
+    package seeder.people {
+      class SexFileReader {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.payment {
+      class StandardPayment {
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.money {
+      package logic.money.tax {
+        interface Tax {
+        }
+      }
+    }
+  }
+  
+
+  package logic {
+    package logic.money {
+      package logic.money.tax {
+        class TestPeriod {
+        }
+      }
+    }
+  }
+  
+
+  package business {
+    package business.payment {
+      class TestPeriodPayment {
+      }
+    }
+  }
+  
+
+  ActionButtonTableCell -up-|> TableCell
+  Address o-- Country : country
+  Address o-- City : city
+  Address o-- Home : home
+  AddressBuilder -up-|> Builder
+  AddressBuilder o-- Country : country
+  AddressController o-- Address : address
+  AddressFileReader -up-|> SeederFileReader
+  Age -up-|> AppliedDateDifference
+  AgeFileReader -up-|> SeederFileReader
+  App -up-|> Application
+  AppMode o-- APP_MODE : mode
+  AppliedDateDifference -up-|> DateDifference
+  Assurances -up-|> Tax
+  Assurances o-- Percentage : percentage
+  BillingTableGenerator -up-|> ContentGenerator
+  BonusPayment -up-|> PaymentStrategy
+  BonusPayment o-- Money : netEmploymentCost
+  BonusPayment o-- Tax : pensionTax
+  BonusPayment o-- Tax : assurances
+  BonusPayment o-- Tax : testPeriod
+  Employee o-- ID : id
+  Employee o-- Person : person
+  Employee o-- Job : job
+  EmployeeController o-- PersonalController : personalController
+  EmployeeController o-- AddressController : addressController
+  EmployeeController o-- JobController : jobController
+  EmployeeSeeder -up-|> Seeder
+  EmployeeViewGenerator -up-|> ContentGenerator
+  ErrorDialogGenerator -up-|> ContentGenerator
+  ID o-- IDType : type
+  IDCompanyFileReader -up-|> SeederFileReader
+  IDFileReader -up-|> SeederFileReader
+  IDType -up-|> DataValidator
+  IDType o-- Country : country
+  Job o-- PaymentStrategy : salary
+  JobFileReader -up-|> SeederFileReader
+  JobsServiceLocator -up-|> ServiceLocator
+  JobsServiceLocator o-- VALUES : defaultValue
+  JuniorDev -up-|> Job
+  Manager -up-|> Job
+  NameBuilder -up-|> Builder
+  NameValidator -up-|> DataValidator
+  NamesFileReader -up-|> SeederFileReader
+  PaymentsServiceLocator -up-|> ServiceLocator
+  PaymentsServiceLocator o-- VALUES : defaultValue
+  PensionTax -up-|> Tax
+  PensionTax o-- Percentage : percentage
+  PeopleSeeder -up-|> Seeder
+  Person o-- ID : id
+  Person o-- Sex : sex
+  Person o-- Age : age
+  Person o-- Name : name
+  Person o-- Address : homeAddress
+  Person o-- Address : forwardingAddress
+  PersonBuilder -up-|> Builder
+  PersonBuilder o-- ID : id
+  PersonBuilder o-- Sex : sex
+  PersonBuilder o-- Age : age
+  PersonBuilder o-- Name : name
+  PersonBuilder o-- Address : homeAddress
+  PersonBuilder o-- Address : forwardingAddress
+  PersonalController o-- Person : person
+  PersonalController o-- IDType : idType
+  SexFileReader -up-|> SeederFileReader
+  StandardPayment -up-|> PaymentStrategy
+  StandardPayment o-- Money : netEmploymentCost
+  StandardPayment o-- Tax : pensionTax
+  StandardPayment o-- Tax : assurances
+  TestPeriod -up-|> Tax
+  TestPeriodPayment -up-|> PaymentStrategy
+  TestPeriodPayment o-- Money : netEmploymentCost
+  TestPeriodPayment o-- Tax : pensionTax
+  TestPeriodPayment o-- Tax : assurances
+  TestPeriodPayment o-- Tax : testPeriod
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml
