@@ -3,7 +3,7 @@
 title __SERVICELOCATORS's Class Diagram__\n
 
   package business {
-    package business.servicelocators {
+    package business.servicelocator {
       class JobsServiceLocator {
           {static} - ourInstance : JobsServiceLocator
           {static} + getInstance()
@@ -18,7 +18,7 @@ title __SERVICELOCATORS's Class Diagram__\n
   
 
   package business {
-    package business.servicelocators {
+    package business.servicelocator {
       enum VALUES {
         JuniorDev
         Manager
@@ -31,7 +31,7 @@ title __SERVICELOCATORS's Class Diagram__\n
   
 
   package business {
-    package business.servicelocators {
+    package business.servicelocator {
       class PaymentsServiceLocator {
           {static} - ourInstance : PaymentsServiceLocator
           {static} + getInstance()
@@ -46,7 +46,7 @@ title __SERVICELOCATORS's Class Diagram__\n
   
 
   package business {
-    package business.servicelocators {
+    package business.servicelocator {
       enum VALUES {
         StandardPayment
         TestPeriodPayment
@@ -60,7 +60,7 @@ title __SERVICELOCATORS's Class Diagram__\n
   
 
   package business {
-    package business.servicelocators {
+    package business.servicelocator {
       interface ServiceLocator {
           {abstract} + getValues()
           {abstract} + getDefault()
@@ -72,7 +72,7 @@ title __SERVICELOCATORS's Class Diagram__\n
   
 
   package business {
-    package business.servicelocators {
+    package business.servicelocator {
       interface ServiceLocatorEntries {
           {abstract} + getUIName()
           {abstract} + getServiceName()

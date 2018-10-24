@@ -2,7 +2,7 @@ business
 business.jobs
 business.payment
 business.person
-business.servicelocators
+business.servicelocator
 gui
 gui.billingtable
 gui.employeeview
