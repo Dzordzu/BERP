@@ -8,6 +8,7 @@ import business.payment.PaymentStrategy;
 import business.person.PersonBuilder;
 import business.servicelocators.JobsServiceLocator;
 import business.servicelocators.PaymentsServiceLocator;
+import debug.Debugger;
 import gui.AppMode;
 import gui.ErrorDialogGenerator;
 import gui.SceneSwitcher;
@@ -117,13 +118,8 @@ public class EmployeeController {
             new ErrorDialogGenerator("Whoops. Something went wrong. \nCheck if all fields are filled").generate().showAndWait();
 
             if(AppMode.getInstance().getMode() == AppMode.APP_MODE.DEBUG) {
-                System.out.println(e.getClass().getName());
-                for(StackTraceElement el: e.getStackTrace()) {
-                    System.out.println(el.getFileName());
-                    System.out.println(el.getMethodName());
-                    System.out.println(el.getLineNumber());
-                    System.out.println("---");
-                }
+                Debugger d = new Debugger("Employee Controller Debugger", System.out);
+                d.debug(e);
             }
 
         }
