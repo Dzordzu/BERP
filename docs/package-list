@@ -3,6 +3,7 @@ business.jobs
 business.payment
 business.person
 business.servicelocator
+debug
 gui
 gui.billingtable
 gui.employeeview
