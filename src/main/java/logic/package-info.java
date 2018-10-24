@@ -1,4 +1,5 @@
 /**
- * The core package that handles all of the low level logic and basic terms, classes etc.
+ * The core package. Handles interfaces, exceptions, abstract classes needed in
+ * another packages
  */
 package logic;
