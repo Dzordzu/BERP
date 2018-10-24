@@ -55,7 +55,7 @@ jfx {
 
 def BERP_GROUP = "berp";
 def BERP_DELOMBOKED_DIR = "delomboked"
-def BERP_DOC_DIR = "doc"
+def BERP_DOC_DIR = "docs"
 
 task berpDelombok(type: Delombok) {
     source = sourceSets.main.allJava
