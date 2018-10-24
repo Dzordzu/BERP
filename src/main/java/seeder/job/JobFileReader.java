@@ -1,14 +1,11 @@
 package seeder.job;
 
 import business.jobs.Job;
-import business.jobs.JuniorDev;
-import business.jobs.Manager;
 import business.payment.BonusPayment;
 import business.payment.PaymentStrategy;
 import business.payment.StandardPayment;
 import business.payment.TestPeriodPayment;
-import business.servicelocators.JobsServiceLocator;
-import business.servicelocators.ServiceLocatorEntries;
+import business.servicelocator.JobsServiceLocator;
 import logic.money.Money;
 import org.json.JSONObject;
 import seeder.SeederFileReader;

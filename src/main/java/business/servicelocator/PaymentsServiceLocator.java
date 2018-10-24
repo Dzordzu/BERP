@@ -1,4 +1,4 @@
-package business.servicelocators;
+package business.servicelocator;
 
 import lombok.Getter;
 
