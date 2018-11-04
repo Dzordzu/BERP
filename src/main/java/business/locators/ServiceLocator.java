@@ -4,7 +4,7 @@ package business.locators;
  * Provides info about registered services.
  */
 
-public interface ServiceLocator {
+public interface ServiceLocator<LocatorEntries> {
     /**
      * @return values List of the registered services.
      */
