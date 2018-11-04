@@ -1,4 +1,4 @@
-package business.servicelocator;
+package business.locators;
 
 
 /**

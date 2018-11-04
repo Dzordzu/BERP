@@ -1,17 +1,18 @@
-package business.servicelocator;
+package business.locators;
 
 import lombok.Getter;
 
-public class JobsServiceLocator implements ServiceLocator {
-    private static JobsServiceLocator ourInstance = new JobsServiceLocator();
-    public static JobsServiceLocator getInstance() {
+public class PaymentsServiceLocator implements ServiceLocator {
+    private static PaymentsServiceLocator ourInstance = new PaymentsServiceLocator();
+    public static PaymentsServiceLocator getInstance() {
         return ourInstance;
     }
-    private JobsServiceLocator() {}
+    private PaymentsServiceLocator() {}
 
     enum VALUES implements ServiceLocatorEntries {
-        JuniorDev("Junior Dev", "JuniorDev", business.jobs.JuniorDev.class),
-        Manager("Manager", "Manager", business.jobs.Manager.class)
+        StandardPayment("Standard Payment", "StandardPayment", business.payment.StandardPayment.class),
+        TestPeriodPayment("Test Period Payment", "TestPeriodPayment", business.payment.TestPeriodPayment.class),
+        BonusPayment("Bonus Payment", "BonusPayment", business.payment.BonusPayment.class),
         ;
 
         @Getter String UIName;
@@ -23,10 +24,9 @@ public class JobsServiceLocator implements ServiceLocator {
             this.serviceName = serviceName;
             this.classRef = classRef;
         }
-
     }
 
-    VALUES defaultValue = VALUES.JuniorDev;
+    VALUES defaultValue = VALUES.StandardPayment;
 
     @Override
     public ServiceLocatorEntries[] getValues() {
@@ -41,7 +41,7 @@ public class JobsServiceLocator implements ServiceLocator {
     @Override
     public Boolean exists(String UIName) {
         for(VALUES v: VALUES.values()) {
-            if(v.getUIName().equals(UIName)) return true;
+            if(v.getUIName() == UIName) return true;
         }
 
         return false;
@@ -50,7 +50,7 @@ public class JobsServiceLocator implements ServiceLocator {
     @Override
     public ServiceLocatorEntries getMatching(String UIName) {
         for(VALUES v: VALUES.values()) {
-            if(v.getUIName().equals(UIName)) return v;
+            if(v.getUIName() == UIName) return v;
         }
 
         return null;

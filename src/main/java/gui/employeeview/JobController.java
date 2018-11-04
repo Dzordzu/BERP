@@ -1,8 +1,8 @@
 package gui.employeeview;
 
-import business.servicelocator.ServiceLocatorEntries;
-import business.servicelocator.JobsServiceLocator;
-import business.servicelocator.PaymentsServiceLocator;
+import business.locators.ServiceLocatorEntries;
+import business.locators.JobsServiceLocator;
+import business.locators.PaymentsServiceLocator;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;

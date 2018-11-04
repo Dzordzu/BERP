@@ -2,7 +2,7 @@ business
 business.jobs
 business.payment
 business.person
-business.servicelocator
+business.locators
 debug
 gui
 gui.billingtable
