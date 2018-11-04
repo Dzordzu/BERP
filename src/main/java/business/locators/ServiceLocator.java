@@ -8,12 +8,12 @@ public interface ServiceLocator {
     /**
      * @return values List of the registered services.
      */
-    ServiceLocatorEntries[] getValues();
+    LocatorEntries[] getValues();
 
     /**
      * @return defaultService
      */
-    ServiceLocatorEntries getDefault();
+    LocatorEntries getDefault();
 
     /**
      * Checks if service with given name (registered within ServiceLocator implementation) exists
@@ -26,5 +26,5 @@ public interface ServiceLocator {
      * @param name
      * @return
      */
-    ServiceLocatorEntries getMatching(String name);
+    LocatorEntries getMatching(String name);
 }
