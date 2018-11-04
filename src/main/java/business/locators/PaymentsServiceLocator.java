@@ -40,11 +40,7 @@ public class PaymentsServiceLocator implements ServiceLocator {
 
     @Override
     public Boolean exists(String UIName) {
-        for(VALUES v: VALUES.values()) {
-            if(v.getUIName() == UIName) return true;
-        }
-
-        return false;
+        return getMatching(UIName) != null;
     }
 
     @Override

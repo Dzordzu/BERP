@@ -9,33 +9,46 @@ public class PaymentTypeServiceLocator implements ServiceLocator<SimpleLocatorEn
     private PaymentTypeServiceLocator() {}
 
     enum VALUES implements SimpleLocatorEntries {
-
-
+        NetEmploymentCost("Net Employment Cost"),
+        GrossEmploymentCost("Gross Employment Cost"),
+        NetEmployeeSalary("Net Employee Salary"),
         ;
+
+        String name;
+
+        VALUES(String name) {
+            this.name = name;
+        }
 
         @Override
         public String getName() {
-            return this.name();
+            return this.name;
         }
     }
 
+    VALUES defaultValue = VALUES.GrossEmploymentCost;
+
     @Override
     public SimpleLocatorEntries[] getValues() {
-        return new SimpleLocatorEntries[0];
+        return VALUES.values();
     }
 
     @Override
     public SimpleLocatorEntries getDefault() {
-        return null;
+        return defaultValue;
     }
 
     @Override
     public Boolean exists(String name) {
-        return null;
+        return getMatching(name) != null;
     }
 
     @Override
     public SimpleLocatorEntries getMatching(String name) {
+        for(VALUES v: VALUES.values()) {
+            if(v.getName() == name) return v;
+        }
+
         return null;
     }
 }
