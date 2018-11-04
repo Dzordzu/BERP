@@ -1,6 +1,6 @@
 package gui.employeeview;
 
-import business.locators.ServiceLocatorEntries;
+import business.locators.NormalLocatorEntries;
 import business.locators.JobsServiceLocator;
 import business.locators.PaymentsServiceLocator;
 import javafx.fxml.FXML;
@@ -29,14 +29,14 @@ public class JobController {
         MenuButton paymentStrategy = (MenuButton)this.paymentStrategy.getChildren().get(1);
 
         changeJobTitle(JobsServiceLocator.getInstance().getDefault().getUIName());
-        for(ServiceLocatorEntries j: JobsServiceLocator.getInstance().getValues()) {
+        for(NormalLocatorEntries j: JobsServiceLocator.getInstance().getValues()) {
             MenuItem item = new MenuItem(j.getUIName());
             item.setOnAction(event -> changeJobTitle(j.getUIName()));
             jobTitle.getItems().add(item);
         }
 
         changePaymentStrategy(PaymentsServiceLocator.getInstance().getDefault().getUIName());
-        for(ServiceLocatorEntries p: PaymentsServiceLocator.getInstance().getValues()) {
+        for(NormalLocatorEntries p: PaymentsServiceLocator.getInstance().getValues()) {
             MenuItem item = new MenuItem(p.getUIName());
             item.setOnAction(event -> changePaymentStrategy(p.getUIName()));
             paymentStrategy.getItems().add(item);

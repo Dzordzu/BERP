@@ -4,7 +4,7 @@ package business.locators;
 /**
  * Dedicated for enums or lists handling info about registered services
  */
-public interface ServiceLocatorEntries extends LocatorEntries {
+public interface NormalLocatorEntries extends LocatorEntries {
     /**
      * UI name is the main identifier of the service within GUI, API etc.
      * @return UIName

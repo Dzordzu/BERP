@@ -9,7 +9,7 @@ public class PaymentsServiceLocator implements ServiceLocator {
     }
     private PaymentsServiceLocator() {}
 
-    enum VALUES implements ServiceLocatorEntries {
+    enum VALUES implements NormalLocatorEntries {
         StandardPayment("Standard Payment", "StandardPayment", business.payment.StandardPayment.class),
         TestPeriodPayment("Test Period Payment", "TestPeriodPayment", business.payment.TestPeriodPayment.class),
         BonusPayment("Bonus Payment", "BonusPayment", business.payment.BonusPayment.class),
@@ -29,12 +29,12 @@ public class PaymentsServiceLocator implements ServiceLocator {
     VALUES defaultValue = VALUES.StandardPayment;
 
     @Override
-    public ServiceLocatorEntries[] getValues() {
+    public NormalLocatorEntries[] getValues() {
         return VALUES.values();
     }
 
     @Override
-    public ServiceLocatorEntries getDefault() {
+    public NormalLocatorEntries getDefault() {
         return defaultValue;
     }
 
@@ -48,7 +48,7 @@ public class PaymentsServiceLocator implements ServiceLocator {
     }
 
     @Override
-    public ServiceLocatorEntries getMatching(String UIName) {
+    public NormalLocatorEntries getMatching(String UIName) {
         for(VALUES v: VALUES.values()) {
             if(v.getUIName() == UIName) return v;
         }
