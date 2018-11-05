@@ -23,8 +23,8 @@ title __GUI's Class Diagram__\n
         {static} - ourInstance : AppMode
         {static} + getInstance()
         - AppMode()
-        + setMode()
         + getMode()
+        + setMode()
     }
   }
   
@@ -61,10 +61,10 @@ title __GUI's Class Diagram__\n
         {static} - ourInstance : ElementsHandler
         {static} + getInstance()
         - ElementsHandler()
-        + setPrimaryScene()
-        + setMain()
         + getPrimaryScene()
         + getMain()
+        + setPrimaryScene()
+        + setMain()
     }
   }
   

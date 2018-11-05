@@ -190,6 +190,12 @@ title __BERP_MAIN's Class Diagram__\n
   }
   
 
+  package debug {
+    class Debugger {
+    }
+  }
+  
+
   package gui {
     class ElementsHandler {
     }
@@ -309,7 +315,7 @@ title __BERP_MAIN's Class Diagram__\n
   
 
   package business {
-    package business.servicelocators {
+    package business.locators {
       class JobsServiceLocator {
       }
     }
@@ -319,6 +325,14 @@ title __BERP_MAIN's Class Diagram__\n
   package business {
     package business.jobs {
       class JuniorDev {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.locators {
+      interface LocatorEntries {
       }
     }
   }
@@ -387,6 +401,14 @@ title __BERP_MAIN's Class Diagram__\n
   
 
   package business {
+    package business.locators {
+      interface NormalLocatorEntries {
+      }
+    }
+  }
+  
+
+  package business {
     package business.payment {
       interface PaymentStrategy {
       }
@@ -395,7 +417,15 @@ title __BERP_MAIN's Class Diagram__\n
   
 
   package business {
-    package business.servicelocators {
+    package business.locators {
+      class PaymentTypeServiceLocator {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.locators {
       class PaymentsServiceLocator {
       }
     }
@@ -471,16 +501,8 @@ title __BERP_MAIN's Class Diagram__\n
   
 
   package business {
-    package business.servicelocators {
+    package business.locators {
       interface ServiceLocator {
-      }
-    }
-  }
-  
-
-  package business {
-    package business.servicelocators {
-      interface ServiceLocatorEntries {
       }
     }
   }
@@ -497,6 +519,14 @@ title __BERP_MAIN's Class Diagram__\n
   package seeder {
     package seeder.people {
       class SexFileReader {
+      }
+    }
+  }
+  
+
+  package business {
+    package business.locators {
+      interface SimpleLocatorEntries {
       }
     }
   }
@@ -574,6 +604,7 @@ title __BERP_MAIN's Class Diagram__\n
   IDType -up-|> DataValidator
   IDType o-- Country : country
   Job o-- PaymentStrategy : salary
+  JobController o-- SimpleLocatorEntries : paymentTypeValue
   JobFileReader -up-|> SeederFileReader
   JobsServiceLocator -up-|> ServiceLocator
   JobsServiceLocator o-- VALUES : defaultValue
@@ -582,6 +613,8 @@ title __BERP_MAIN's Class Diagram__\n
   NameBuilder -up-|> Builder
   NameValidator -up-|> DataValidator
   NamesFileReader -up-|> SeederFileReader
+  PaymentTypeServiceLocator -up-|> ServiceLocator
+  PaymentTypeServiceLocator o-- VALUES : defaultValue
   PaymentsServiceLocator -up-|> ServiceLocator
   PaymentsServiceLocator o-- VALUES : defaultValue
   PensionTax -up-|> Tax

@@ -21,8 +21,8 @@ title __EMPLOYEEVIEW's Class Diagram__\n
           + changeHomeNumber()
           + changePostalCode()
           + changeCountryTOPOLAND()
-          + setAddress()
           + getAddress()
+          + setAddress()
       }
     }
   }
@@ -62,7 +62,6 @@ title __EMPLOYEEVIEW's Class Diagram__\n
           - jobTitleValue : String
           - paymentStrategyValue : String
           - paymentCurrencyValue : String
-          - paymentTypeValue : String
           - paymentValue : double
           + initialize()
           + setMode()
@@ -70,20 +69,17 @@ title __EMPLOYEEVIEW's Class Diagram__\n
           + changePaymentStrategy()
           + changePayment()
           + changePaymentType()
-          + changePTToNetEmployeeSalary()
-          + changePTToNetEmploymentCost()
-          + changePTToGrossEmploymentCost()
           + changeJobTitle()
-          + setJobTitleValue()
-          + setPaymentStrategyValue()
-          + setPaymentCurrencyValue()
-          + setPaymentTypeValue()
-          + setPaymentValue()
           + getJobTitleValue()
           + getPaymentStrategyValue()
           + getPaymentCurrencyValue()
-          + getPaymentTypeValue()
           + getPaymentValue()
+          + getPaymentTypeValue()
+          + setJobTitleValue()
+          + setPaymentStrategyValue()
+          + setPaymentCurrencyValue()
+          + setPaymentValue()
+          + setPaymentTypeValue()
       }
     }
   }
@@ -109,10 +105,10 @@ title __EMPLOYEEVIEW's Class Diagram__\n
           + changeMale()
           + changeFemale()
           + changeBirthdate()
-          + setPerson()
           + getPerson()
           + getIdType()
           + getId()
+          + setPerson()
       }
     }
   }
@@ -123,6 +119,7 @@ title __EMPLOYEEVIEW's Class Diagram__\n
   EmployeeController o-- AddressController : addressController
   EmployeeController o-- JobController : jobController
   EmployeeViewGenerator -up-|> ContentGenerator
+  JobController o-- SimpleLocatorEntries : paymentTypeValue
   PersonalController o-- Person : person
   PersonalController o-- IDType : idType
 
