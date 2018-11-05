@@ -5,7 +5,7 @@ import business.payment.PaymentStrategy;
 public class JuniorDev extends Job {
 	
 	public JuniorDev(PaymentStrategy salary) {
-		super("JuniorDev", salary);
+		super("Junior Dev", salary);
 	}
 	
 	/*
