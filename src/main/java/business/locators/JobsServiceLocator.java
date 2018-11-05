@@ -1,4 +1,4 @@
-package business.servicelocator;
+package business.locators;
 
 import lombok.Getter;
 
@@ -9,7 +9,7 @@ public class JobsServiceLocator implements ServiceLocator {
     }
     private JobsServiceLocator() {}
 
-    enum VALUES implements ServiceLocatorEntries {
+    enum VALUES implements NormalLocatorEntries {
         JuniorDev("Junior Dev", "JuniorDev", business.jobs.JuniorDev.class),
         Manager("Manager", "Manager", business.jobs.Manager.class)
         ;
@@ -29,12 +29,12 @@ public class JobsServiceLocator implements ServiceLocator {
     VALUES defaultValue = VALUES.JuniorDev;
 
     @Override
-    public ServiceLocatorEntries[] getValues() {
+    public NormalLocatorEntries[] getValues() {
         return VALUES.values();
     }
 
     @Override
-    public ServiceLocatorEntries getDefault() {
+    public NormalLocatorEntries getDefault() {
         return defaultValue;
     }
 
@@ -48,7 +48,7 @@ public class JobsServiceLocator implements ServiceLocator {
     }
 
     @Override
-    public ServiceLocatorEntries getMatching(String UIName) {
+    public NormalLocatorEntries getMatching(String UIName) {
         for(VALUES v: VALUES.values()) {
             if(v.getUIName().equals(UIName)) return v;
         }

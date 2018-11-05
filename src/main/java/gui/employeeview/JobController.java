@@ -1,8 +1,6 @@
 package gui.employeeview;
 
-import business.servicelocator.ServiceLocatorEntries;
-import business.servicelocator.JobsServiceLocator;
-import business.servicelocator.PaymentsServiceLocator;
+import business.locators.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
@@ -18,28 +16,39 @@ public class JobController {
     HBox jobTitle, paymentStrategy, payment, paymentType;
     @Getter
     @Setter
-    private String jobTitleValue, paymentStrategyValue, paymentCurrencyValue, paymentTypeValue;
+    private String jobTitleValue, paymentStrategyValue, paymentCurrencyValue;
     @Getter
     @Setter
     private double paymentValue;
+    @Getter
+    @Setter
+    SimpleLocatorEntries paymentTypeValue;
 
     public void initialize() {
 
         MenuButton jobTitle = (MenuButton)this.jobTitle.getChildren().get(1);
         MenuButton paymentStrategy = (MenuButton)this.paymentStrategy.getChildren().get(1);
+        MenuButton paymentType = (MenuButton)this.paymentType.getChildren().get(1);
 
         changeJobTitle(JobsServiceLocator.getInstance().getDefault().getUIName());
-        for(ServiceLocatorEntries j: JobsServiceLocator.getInstance().getValues()) {
+        for(NormalLocatorEntries j: JobsServiceLocator.getInstance().getValues()) {
             MenuItem item = new MenuItem(j.getUIName());
             item.setOnAction(event -> changeJobTitle(j.getUIName()));
             jobTitle.getItems().add(item);
         }
 
         changePaymentStrategy(PaymentsServiceLocator.getInstance().getDefault().getUIName());
-        for(ServiceLocatorEntries p: PaymentsServiceLocator.getInstance().getValues()) {
+        for(NormalLocatorEntries p: PaymentsServiceLocator.getInstance().getValues()) {
             MenuItem item = new MenuItem(p.getUIName());
             item.setOnAction(event -> changePaymentStrategy(p.getUIName()));
             paymentStrategy.getItems().add(item);
+        }
+
+        changePaymentType(PaymentTypeServiceLocator.getInstance().getDefault());
+        for(SimpleLocatorEntries p: PaymentTypeServiceLocator.getInstance().getValues()) {
+            MenuItem item = new MenuItem(p.getUIName());
+            item.setOnAction(event -> changePaymentType(p));
+            paymentType.getItems().add(item);
         }
     }
 
@@ -60,7 +69,7 @@ public class JobController {
         ((MenuButton)paymentStrategy.getChildren().get(1)).setText(paymentStrategyValue);
         ((TextField)payment.getChildren().get(1)).setText(((Double)paymentValue).toString());
         ((SplitMenuButton)payment.getChildren().get(2)).setText(paymentCurrencyValue);
-        ((MenuButton)paymentType.getChildren().get(1)).setText(paymentTypeValue);
+        ((MenuButton)paymentType.getChildren().get(1)).setText(paymentTypeValue.getUIName());
     }
 
     public void changePaymentStrategy(String value) {
@@ -74,21 +83,9 @@ public class JobController {
         paymentValue = Double.valueOf(value);
     }
 
-    public void changePaymentType(String type) {
-        ((MenuButton)paymentType.getChildren().get(1)).setText(type);
+    public void changePaymentType(SimpleLocatorEntries type) {
+        ((MenuButton)paymentType.getChildren().get(1)).setText(type.getUIName());
         paymentTypeValue = type;
-    }
-
-    public void changePTToNetEmployeeSalary() {
-        changePaymentType("Net Employee Salary");
-    }
-
-    public void changePTToNetEmploymentCost() {
-        changePaymentType("Net Employment Cost");
-    }
-
-    public void changePTToGrossEmploymentCost() {
-        changePaymentType("Gross Employment Cost");
     }
 
     public void changeJobTitle(String value) {

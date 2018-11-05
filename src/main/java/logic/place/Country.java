@@ -27,7 +27,7 @@ public enum Country {
 	}
 
 	/**
-	 * @return name Same as getName()
+	 * @return name Same as getUIName()
 	 */
 	public String toString() {
 		return name;

@@ -5,7 +5,7 @@ import business.payment.BonusPayment;
 import business.payment.PaymentStrategy;
 import business.payment.StandardPayment;
 import business.payment.TestPeriodPayment;
-import business.servicelocator.JobsServiceLocator;
+import business.locators.JobsServiceLocator;
 import logic.money.Money;
 import org.json.JSONObject;
 import seeder.SeederFileReader;
