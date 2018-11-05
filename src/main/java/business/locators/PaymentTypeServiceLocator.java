@@ -21,12 +21,17 @@ public class PaymentTypeServiceLocator implements ServiceLocator<SimpleLocatorEn
         }
 
         @Override
-        public String getName() {
+        public String getServiceName() {
+            return this.name();
+        }
+
+        @Override
+        public String getUIName() {
             return this.name;
         }
     }
 
-    VALUES defaultValue = VALUES.GrossEmploymentCost;
+    VALUES defaultValue = VALUES.NetEmploymentCost;
 
     @Override
     public SimpleLocatorEntries[] getValues() {
@@ -46,7 +51,7 @@ public class PaymentTypeServiceLocator implements ServiceLocator<SimpleLocatorEn
     @Override
     public SimpleLocatorEntries getMatching(String name) {
         for(VALUES v: VALUES.values()) {
-            if(v.getName() == name) return v;
+            if(v.getUIName() == name) return v;
         }
 
         return null;

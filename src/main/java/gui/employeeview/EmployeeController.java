@@ -4,6 +4,7 @@ import business.Employee;
 import business.EmployeeBuilder;
 import business.EmployeeManager;
 import business.jobs.Job;
+import business.locators.PaymentTypeServiceLocator;
 import business.payment.PaymentStrategy;
 import business.person.PersonBuilder;
 import business.locators.JobsServiceLocator;
@@ -61,7 +62,7 @@ public class EmployeeController {
         jobController.setJobTitleValue(e.getJob().getJobTitle());
         jobController.setPaymentStrategyValue(e.getJob().getSalary().getPaymentName());
         jobController.setPaymentCurrencyValue(e.getJob().getSalary().getGrossEmploymentCost().getCurrency().getCurrencyCode());
-        jobController.setPaymentTypeValue("Net Employment Cost");
+        jobController.setPaymentTypeValue(PaymentTypeServiceLocator.getInstance().getDefault());
         jobController.applyValues();
 
         id.setText(e.getId().getValue());
@@ -87,18 +88,14 @@ public class EmployeeController {
             // @NOTE @XXX Dangerous zone
             Money salary = new Money(jobController.getPaymentValue(), /*jobController.getPaymentCurrencyValue()*/"PLN");
 
-            switch (jobController.getPaymentTypeValue()) {
-                case "Net Employment Cost":
-                    strategy.setNetEmploymentCost(salary);
-                    break;
-                case "Gross Employment Cost":
-                    strategy.setGrossEmploymentCost(salary);
-                    break;
-                case "Net Employee Salary":
-                    strategy.setNetEmployeeSalary(salary);
-                    break;
-                default:
-                    throw new Exception("Chose no payment type");
+            if(jobController.getPaymentTypeValue() != null) {
+                strategy
+                        .getClass()
+                        .getMethod("set" + jobController.getPaymentTypeValue().getServiceName(), Money.class)
+                        .invoke(strategy, salary);
+            }
+            else {
+                throw new Exception("Chose no payment type");
             }
 
             Job job;
