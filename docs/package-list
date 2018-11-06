@@ -1,8 +1,8 @@
 business
 business.jobs
+business.locators
 business.payment
 business.person
-business.locators
 debug
 gui
 gui.billingtable

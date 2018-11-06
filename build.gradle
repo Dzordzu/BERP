@@ -65,7 +65,8 @@ task berpDelombok {
 }
 
 task berpJavadoc(type: Javadoc, dependsOn: 'berpDelombok') {
-    source = files(BERP_DELOMBOKED_DIR)
+    println("GENERATING DOCUMENTATION")
+    source = sourceSets.main.allJava
     destinationDir = file(BERP_DOC_DIR)
 }
 
