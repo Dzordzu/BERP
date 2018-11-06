@@ -11,7 +11,6 @@ buildscript {
 
 plugins {
     id 'net.ltgt.apt' version '0.10'
-    id "de.lukaskoerfer.gradle.delombok" version "0.2"
 }
 
 apply plugin: 'java'
@@ -29,7 +28,7 @@ targetCompatibility = 1.8
 
 dependencies {
     compile group: 'org.json', name: 'json', version:'20180813'
-    compileOnly 'org.projectlombok:lombok:1.18.2'
+    compile 'org.projectlombok:lombok:1.18.2'
     apt 'org.projectlombok:lombok:1.18.2'
 }
 
@@ -57,9 +56,12 @@ def BERP_GROUP = "berp";
 def BERP_DELOMBOKED_DIR = "delomboked"
 def BERP_DOC_DIR = "docs"
 
-task berpDelombok(type: Delombok) {
-    source = sourceSets.main.allJava
-    destinationDir = file(BERP_DELOMBOKED_DIR)
+
+task berpDelombok {
+    description 'Delomboks the source code'
+    ant.taskdef(classname: 'lombok.delombok.ant.Tasks$Delombok', classpath: configurations.compile.asPath,  name: 'delombok')
+    ant.mkdir(dir: BERP_DELOMBOKED_DIR)
+    ant.delombok(verbose: 'true', encoding: 'UTF-8', to: BERP_DELOMBOKED_DIR, from: 'src/main/java')
 }
 
 task berpJavadoc(type: Javadoc, dependsOn: 'berpDelombok') {

@@ -13,8 +13,8 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="BERP_main" />
-    <orderEntry type="library" scope="PROVIDED" name="Gradle: org.projectlombok:lombok:1.18.2" level="project" />
     <orderEntry type="library" name="Gradle: org.json:json:20180813" level="project" />
+    <orderEntry type="library" name="Gradle: org.projectlombok:lombok:1.18.2" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="BERP_main" />
 </module>
